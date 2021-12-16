@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 21, 2016 6:06:04 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.siservices.societyMgmt.MvpSocietyAccTbl" table="mvp_society_acc_tbl" >
+    
+        <id name="societyAccId" type="java.lang.Integer">
+            <column name="SOCIETY_ACC_ID" />
+            <generator class="identity" />
+        </id>
+      
+        <property name="bankName" type="string">
+            <column name="BANK_NAME" length="50" />
+        </property>
+        <property name="ifscCode" type="string">
+            <column name="IFSC_CODE" length="20" />
+        </property>
+        <property name="bankAccName" type="string">
+            <column name="BANK_ACC_NAME" length="30"  />
+        </property>
+        <property name="bankAccNo" type="string">
+            <column name="BANK_ACC_NO"  length="100" />
+        </property>
+        <property name="statusFlag" type="java.lang.Integer">
+            <column name="STATUS_FLAG">
+                <comment>1-ACTIVE 0-INACTIVE</comment>
+            </column>
+        </property>
+        <property name="entryBy" type="java.lang.Integer">
+            <column name="ENTRY_BY" />
+        </property>
+        <property name="entryDatetime" type="timestamp">
+            <column name="ENTRY_DATETIME" length="19" />
+        </property>
+        <property name="modifyDatetime" type="timestamp">
+            <column name="MODIFY_DATETIME" length="19"  />
+        </property>
+        
+          <many-to-one name="societyId" class="com.siservices.uam.persistense.SocietyMstTbl" lazy="false">
+            <column name="SOCIETY_ID" />
+        </many-to-one>
+        
+        <many-to-one name="userId" class="com.siservices.signup.persistense.UserMasterTblVo" lazy="false">
+            <column name="USR_ID" />
+        </many-to-one>
+        
+    </class>
+</hibernate-mapping>

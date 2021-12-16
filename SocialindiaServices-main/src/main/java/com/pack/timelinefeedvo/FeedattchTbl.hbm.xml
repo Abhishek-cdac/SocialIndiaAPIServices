@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 29, 2016 11:14:41 AM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.pack.timelinefeedvo.FeedattchTblVO" table="mvp_feed_attch_tbl">
+		<id name="ivrBnATTCH_ID" column="UNIQ_ID" type="integer">
+			<generator class="native"></generator>
+		</id>	
+		<many-to-one name="ivrBnFEED_ID" column="FEED_ID" class="com.pack.timelinefeedvo.FeedsTblVO" lazy="false"></many-to-one>	
+		<property name="ivrBnATTACH_NAME" column="ATTACH_NAME" type="string" ></property>	
+		<property name="ivrBnTHUMP_IMAGE" column="THUMP_IMAGE" type="string" ></property>	
+		<property name="ivrBnFILE_TYPE" column="FILE_TYPE" type="integer" length="11"></property>		
+		<property name="ivrBnSTATUS" column="STATUS" type="integer" length="11"></property>	
+		<property name="ivrBnENTRY_DATETIME" column="ENTRY_DATETIME" type="timestamp"></property>	
+		<property name="ivrBnMODIFY_DATETIME" column="MODIFY_DATETIME" type="timestamp"></property>	
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.mobi.commonvo.ResponseMsgTblVo" table="mvp_response_code_tbl" >
+		<id name="uniqId" type="java.lang.Integer">
+			<column name="UNIQ_ID" />
+			<generator class="identity" />
+		</id>
+		<property name="statusCode" type="string">
+			<column name="STATUS_CODE" length="2" />
+		</property>
+		<property name="responseCode" type="string">
+			<column name="RESPONSE_CODE" length="5" />
+		</property>
+		<property name="message" type="string">
+			<column name="MESSAGE" length="500" />
+		</property>
+		<property name="status" type="java.lang.Integer">
+			<column name="STATUS" />
+		</property>
+		<property name="enrtyDatetime" type="timestamp">
+			<column name="ENRTY_DATETIME" length="19" />
+		</property>
+		<property name="modifyDatetime" type="timestamp">
+			<column name="MODIFY_DATETIME" length="19" />
+		</property>
+	</class>
+</hibernate-mapping>

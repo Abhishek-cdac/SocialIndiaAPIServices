@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Sep 30, 2016 11:47:33 AM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.mobi.addpost.MvpAdpostTbl" table="mvp_adpost_tbl">
+        <id name="postUniqueId" type="java.lang.Integer">
+            <column name="POST_UNIQUE_ID" />
+            <generator class="identity" />
+        </id>
+        
+        <property name="postTitle" type="string">
+            <column name="POST_TITLE" length="200" />
+        </property>
+        <property name="shortDesc" type="string">
+            <column name="SHORT_DESC" length="250" />
+        </property>
+        <property name="descr" type="string">
+            <column name="DESCR" length="65535" />
+        </property>
+        <property name="contactNo" type="string">
+            <column name="CONTACT_NO" length="20" />
+        </property>
+        <property name="price" type="java.lang.Float">
+            <column name="PRICE" />
+        </property>
+         <property name="feedId" type="java.lang.Integer">
+            <column name="FEED_ID"  /> </property>
+        <property name="buyerSellerFlag" type="java.lang.Integer">
+            <column name="BUYER_SELLER_FLG" />
+        </property>
+        <property name="actSts" type="java.lang.Integer">
+            <column name="ACT_STS">
+                <comment>0-Deactive, 1 - Active</comment>
+            </column>
+        </property>
+        <property name="entryBy" type="java.lang.Integer">
+            <column name="ENTRY_BY" />
+        </property>
+        <property name="entryDatetime" type="timestamp">
+            <column name="ENTRY_DATETIME" length="19" />
+        </property>
+        <property name="modifyDatetime" type="timestamp">
+            <column name="MODIFY_DATETIME" length="19"  />
+        </property>
+        
+          <many-to-one name="ivrBnSKILL_ID" class="com.pack.commonvo.SkillMasterTblVO" fetch="select" lazy="false">
+            <column name="SKILL_ID" />
+        </many-to-one>
+        
+        <many-to-one name="userId" class="com.siservices.signup.persistense.UserMasterTblVo" fetch="select" lazy="false">
+            <column name="USR_ID" /></many-to-one>
+            
+        <many-to-one name="iVOCATEGORY_ID" class="com.pack.commonvo.CategoryMasterTblVO" fetch="select" lazy="false">
+            <column name="CATEGORY_ID" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

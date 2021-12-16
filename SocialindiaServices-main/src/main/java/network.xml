@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "../lib/struts-2.3.dtd">
+
+<struts>
+	<package name="mobinetworkServices" namespace="/" extends="struts-default,json-default">
+
+		
+			<action name="network_userlist" class="com.mobi.networkUserList.networkUserList">
+			<result name="success" type="json"></result>
+		</action>
+		
+		<action name="invite_network" class="com.mobi.networkUserList.networkInvite">
+			<result name="success" type="json"></result>
+		</action>
+		
+		
+		
+	</package>
+</struts>

@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 9, 2016 3:43:04 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.socialindiaservices.vo.MvpEvotingImageTbl" table="mvp_evoting_image_tbl">
+        <id name="evotingImageId" type="java.lang.Integer">
+            <column name="EVOTING_IMAGE_ID" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="mvpEvotingMstTbl" class="com.socialindiaservices.vo.MvpEvotingMstTbl" fetch="select">
+            <column name="EVOTING_ID" not-null="true" />
+        </many-to-one>
+        <property name="imageName" type="string">
+            <column name="IMAGE_NAME" length="200" not-null="true" />
+        </property>
+        <property name="thumpImage" column="THUMP_IMAGE" type="string" ></property>	
+		<property name="fileType" column="FILE_TYPE" type="integer" length="11"></property>
+        <property name="statusFlag" type="int">
+            <column name="STATUS_FLAG" not-null="true" />
+        </property>
+        <property name="entryDatetime" type="timestamp">
+            <column name="ENTRY_DATETIME" length="19" not-null="true" />
+        </property>
+        <property name="modifyDatetime" type="timestamp">
+            <column name="MODIFY_DATETIME" length="19" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

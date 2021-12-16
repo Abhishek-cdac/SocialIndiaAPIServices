@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 27, 2016 3:52:18 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.siservices.SMSConfigVO.SMSConfTbl" table="sms_smpp_tbl">      
+        <id name="sno" type="java.lang.Integer">
+            <column name="SERNO" />
+            <generator class="native" />
+        </id>
+         <property name="usrName" type="string">
+                <column name="USERNAME" length="150" />
+            </property>
+            <property name="passwd" type="string">
+                <column name="PASSWORD" length="15" />
+            </property>
+            <property name="httpurl" type="string">
+                <column name="HTTP_URL" length="150" />
+            </property>
+             <property name="sender" type="string">
+                <column name="SENDER" length="10" />
+            </property>
+             <property name="cdmasender" type="string">
+                <column name="CDMASENDER" length="15" />
+            </property>
+             <property name="actflg" type="java.lang.Integer">
+                <column name="AVTIVE_FLAG" />
+            </property>
+            <property name="proname" type="string">
+                <column name="PROVIDER_NAME" length="35" />
+            </property>
+              <property name="fetchrow" type="java.lang.Integer">
+                <column name="TYPE_OF_NO"/>
+            </property>
+            <property name="blklmtfechrow" type="java.lang.Integer">
+                <column name="FETCH_COUNT" />
+            </property>
+            </class>
+</hibernate-mapping>

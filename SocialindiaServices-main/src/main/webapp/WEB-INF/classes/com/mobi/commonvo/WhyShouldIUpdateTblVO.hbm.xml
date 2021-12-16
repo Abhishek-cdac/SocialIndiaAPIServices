@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.mobi.commonvo.WhyShouldIUpdateTblVO" table="mvp_why_should_i_update_tbl" >
+		<id name="uniqId" type="java.lang.Integer">
+			<column name="UNIQ_ID" />
+			<generator class="identity" />
+		</id>
+		<property name="shortDescp" type="string">
+			<column name="SHORT_DESCP"  />
+		</property>
+		<property name="descp" type="string">
+			<column name="DESCP" length="500" />
+		</property>
+		<property name="status" type="java.lang.Integer">
+			<column name="STATUS" />
+		</property>
+		<property name="entryBy" type="java.lang.Integer">
+			<column name="ENTRY_BY" />
+		</property>
+		<property name="entryDatetime" type="timestamp">
+			<column name="ENTRY_DATETIME" length="19" />
+		</property>
+		<property name="modifyDatetime" type="timestamp">
+			<column name="MODIFY_DATETIME" length="19" />
+		</property>
+	</class>
+</hibernate-mapping>

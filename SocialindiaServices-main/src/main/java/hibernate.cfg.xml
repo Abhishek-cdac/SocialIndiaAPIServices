@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+
+<hibernate-configuration>
+	<session-factory>
+
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+		<!-- Assume test is the database name -->
+
+		<!-- <property name="hibernate.connection.url">jdbc:mysql://192.168.1.10:3306/social_india</property> -->
+		<!-- <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/socialindia?autoReconnect=true</property>
+		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.connection.password">S0cy8^dm1n</property> -->
+
+		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/socialindia?autoReconnect=true</property>
+		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.connection.password">root123</property>
+		
+		<property name="show_sql">false</property>
+		<property name="hibernate.current_session_context_class">thread</property>
+		<property name="default_batch_fetch_size">16</property>
+		<property name="connection.autoReconnect">true</property>
+    	<property name="connection.autoReconnectForPools">true</property>
+   		<property name="connection.is-connection-validation-required">true</property>
+   		<property name="hibernate.transaction.factory_class">org.hibernate.transaction.JDBCTransactionFactory</property>
+   		<property name="hibernate.jdbc.batch_size">29</property>
+   		<property name="hibernate.connection.autocommit">true</property>
+		<!--dbcp connection pool -->
+		<property name="hibernate.connection.provider_class">com.social.load.DBCPConnectionProvider</property>
+		<property name="hibernate.dbcp.initialSize">20</property>
+		<property name="hibernate.dbcp.maxIdle">100</property>
+		<property name="hibernate.dbcp.minIdle">20</property>
+		<property name="hibernate.dbcp.maxActive">100</property>
+
+
+
+
+		<!-- <property name="current_session_context_class">thread</property>
+		<property name="hibernate.connection.autocommit">true</property>
+		<property name="connection.pool_size">50</property>
+		<property name="hibernate.jdbc.batch_size">150</property>
+		<property name="format_sql">false</property>
+		<property name="use_sql_comments">false</property>
+		<property name="hibernate.transaction.factory_class">org.hibernate.transaction.JDBCTransactionFactory</property>
+		<property name="connection.autoReconnect">true</property>
+    	<property name="connection.autoReconnectForPools">true</property>
+   		<property name="connection.is-connection-validation-required">true</property> -->
+
+
+		<!-- <property name="hibernate.dialect">org.hibernate.dialect.SQLServer2008Dialect</property> -->
+		<!-- <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+			<property name="hibernate.connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
+			<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+			Assume test is the database name <property name="hibernate.connection.url">jdbc:sqlserver://192.168.1.32;databaseName=test</property>
+			<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/test</property>
+			<property name="hibernate.connection.username">root</property> <property
+			name="hibernate.connection.password">root123</property> <property name="show_sql">true</property>
+			<property name="current_session_context_class">thread</property> <property
+			name="hibernate.connection.autocommit">true</property> -->
+
+
+
+		<!-- <property name="hibernate.jdbc.batch_size">50</property> <property
+			name="format_sql">true</property> <property name="use_sql_comments">true</property>
+			<property name="hibernate.transaction.factory_class">org.hibernate.transaction.JDBCTransactionFactory</property>
+			<property name="hibernate.current_session_context_class">thread</property> -->
+
+		<!-- <property name="hibernate.connection.autocommit">false</property>
+			<property name="hibernate.hbm2ddl.auto">update</property> -->
+
+		<mapping resource="com/siservices/signup/persistense/ActivationKey.hbm.xml" />
+		<mapping resource="com/siservices/signup/persistense/UserMasterTbl.hbm.xml" />
+		<mapping resource="com/siservices/uam/persistense/GroupMasterTbl.hbm.xml" />
+		<mapping resource="com/siservices/uam/persistense/MenuMasterTbl.hbml.xml" />
+		<mapping resource="com/siservices/uam/persistense/RightsMasterTbl.hbm.xml" />
+		<mapping resource="com/siservices/uam/persistense/TownshipMstTbl.hbm.xml" />
+		<mapping resource="com/siservices/uam/persistense/SocietyMstTbl.hbm.xml" />
+		<mapping resource="com/siservices/uam/persistense/MvpFamilymbrTbl.hbm.xml" />
+
+		<mapping resource="com/pack/commonvo/CountryMasterTbl.hbm.xml" />
+		<mapping resource="com/pack/commonvo/StateMasterTbl.hbm.xml" />
+		<mapping resource="com/pack/commonvo/CityMasterTbl.hbm.xml" />
+		<mapping resource="com/pack/commonvo/PostalCodeMasterTbl.hbm.xml" />
+		<mapping resource="com/pack/commonvo/IDCardMasterTbl.hbm.xml" />
+		<mapping resource="com/pack/commonvo/KnownusTbl.hbm.xml" />
+		<mapping resource="com/pack/commonvo/EduMstrTbl.hbm.xml" />
+		<mapping resource="com/pack/commonvo/CategoryMasterTbl.hbm.xml" />
+		<mapping resource="com/pack/commonvo/SkillMasterTbl.hbm.xml" />
+		<mapping resource="com/pack/commonvo/DoctypMasterTbl.hbm.xml" />
+		<mapping resource="com/pack/commonvo/StaffCategoryMasterTbl.hbm.xml" />
+		<mapping resource="com/pack/commonvo/LaborWrkTypMasterTbl.hbm.xml" />
+
+		<mapping resource="com/social/sms/persistense/SmssmppConfpojo.hbm.xml" />
+		<mapping resource="com/social/sms/persistense/SmsErrorpojo.hbm.xml" />
+		<mapping resource="com/social/sms/persistense/SmsInpojo.hbm.xml" />
+		<mapping resource="com/social/sms/persistense/SmsOutpojo.hbm.xml" />
+		<mapping resource="com/social/sms/persistense/SmsTemplateParserpojo.hbm.xml" />
+		<mapping resource="com/social/sms/persistense/SmsTemplatepojo.hbm.xml" />
+
+		<mapping resource="com/pack/passwordvo/ForgetpasswordTbl.hbm.xml" />
+
+		<mapping resource="com/pack/audittrialvo/AuditlogTbl.hbm.xml" />
+
+		<mapping resource="com/pack/laborvo/LaborProfileTbl.hbm.xml" />
+		<mapping resource="com/pack/laborvo/LaborDetailsTbl.hbm.xml" />
+		<mapping resource="com/pack/laborvo/LaborSkillTbl.hbm.xml" />
+
+		<mapping resource="com/pack/eventvo/EventTbl.hbm.xml" />
+		<mapping resource="com/pack/eventvo/EventDispTbl.hbm.xml" />
+		<mapping resource="com/pack/feedbackvo/FeedbackTbl.hbm.xml" />
+		<mapping resource="com/pack/enewsvo/EeNewsTbl.hbm.xml" />
+
+		<mapping resource="com/siservices/societyMgmt/SocietyWingsDetailTbl.hbm.xml" />
+		<mapping resource="com/siservices/societyMgmt/MvpSocietyAccTbl.hbm.xml" />
+
+		<mapping resource="com/social/email/persistense/EmailConfigTbl.hbm.xml" />
+		<mapping resource="com/social/email/persistense/EmailErrorTbl.hbm.xml" />
+		<mapping resource="com/social/email/persistense/EmailInTbl.hbm.xml" />
+		<mapping resource="com/social/email/persistense/EmailOutTbl.hbm.xml" />
+		<mapping resource="com/social/email/persistense/EmailTemplateTbl.hbm.xml" />
+		<mapping resource="com/social/email/persistense/EmailTemplateParserTbl.hbm.xml" />
+		<mapping
+			resource="com/socialindia/generalmgnt/persistance/StaffMasterTblVo.hbm.xml" />
+		<mapping
+			resource="com/siservices/socialmedia/persistense/MvpSocialProTbl.hbm.xml" />
+		<mapping
+			resource="com/socialindia/generalmgnt/persistance/StaffSlryTblVO.hbm.xml" />
+		<mapping
+			resource="com/socialindia/generalmgnt/persistance/StaffWrkTblVO.hbm.xml" />
+		<mapping
+			resource="com/siservices/committeeMgmt/persistense/CommittteeRoleMstTbl.hbm.xml" />
+		<mapping resource="com/pack/commonvo/CompanyMstTbl.hbm.xml" />
+		<mapping resource="com/pack/commonvo/FlatMasterTbl.hbm.xml" />
+		<mapping resource="com/pack/accessvo/AccessDetails.hbm.xml" />
+		<mapping resource="com/pack/residentvo/UsrUpldfrmExceTbl.hbm.xml" />
+		<mapping resource="com/pack/residentvo/UsrUpldfrmExceFailedTbl.hbm.xml" />
+
+
+		<mapping resource="com/socialindiaservices/vo/DocumentManageTbl.hbm.xml" />
+		<mapping resource="com/socialindiaservices/vo/DocumentShareTbl.hbm.xml" />
+		<mapping resource="com/socialindiaservices/vo/MaintenanceFeeTbl.hbm.xml" />
+		<mapping resource="com/socialindiaservices/vo/NotificationTbl.hbm.xml" />
+
+		<mapping resource="com/siservices/forumVo/MvpFourmTopicsTbl.hbm.xml" />
+		<mapping resource="com/siservices/forumVo/MvpFourmDiscussTbl.hbm.xml" />
+		<mapping resource="com/pack/complaintVO/ComplaintsTbl.hbm.xml"/>
+		<mapping resource="com/pack/complaintVO/ComplaintattchTbl.hbm.xml" />
+
+		<mapping resource="com/siservices/materialVo/MaterialCategoryTbl.hbm.xml" />
+		<mapping resource="com/siservices/materialVo/MvpMaterialTbl.hbm.xml" />
+		<mapping resource="com/pack/tenderVO/TenderTbl.hbm.xml" />
+		<mapping resource="com/pack/tenderVO/TenderDocTbl.hbm.xml" />
+
+		<mapping resource="com/socialindiaservices/vo/MerchantTbl.hbm.xml" />
+		<mapping resource="com/socialindiaservices/vo/MerchantCategoryTbl.hbm.xml" />
+		<mapping resource="com/socialindiaservices/vo/MerchantStockDetailTbl.hbm.xml" />
+		<mapping resource="com/pack/expencevo/ExpenceTbl.hbm.xml" />
+		<mapping resource="com/pack/enewsvo/EeNewsDocTbl.hbm.xml" />
+		<mapping resource="com/socialindiaservices/vo/MerchantUtilitiImageTbl.hbm.xml" />
+		<mapping resource="com/socialindiaservices/vo/MerchantUtilitiTbl.hbm.xml" />
+		<mapping resource="com/siservices/emailvo/EmailConfTbl.hbm.xml" />
+		<mapping resource="com/siservices/SMSConfigVO/SMSConfTbl.hbm.xml" />
+		<mapping resource="com/social/failedSignonvo/FailedSignOnVO.hbm.xml" />
+		<mapping resource="com/socialindiaservices/vo/DisputeRiseTbl.hbm.xml" />
+
+
+
+
+		<mapping resource="com/mobi/apiinitiatevo/DeviceinfoAccesslog.hbm.xml" />
+		<mapping resource="com/mobi/contactusreportissuevo/ReportIssueTbl.hbm.xml" />
+		<mapping resource="com/mobi/skillhelpvo/ServiceBooking.hbm.xml" />
+		<mapping resource="com/mobi/feedvo/FeedCommentTblVO.hbm.xml" />
+		<mapping resource="com/mobi/feedvo/FeedLikeUnlikeTBLVO.hbm.xml" />
+		<mapping resource="com/mobi/messagevo/ChatTblVO.hbm.xml" />
+		<mapping resource="com/mobi/messagevo/ChatBlockUnblockTblVO.hbm.xml" />
+		<mapping resource="com/mobi/messagevo/GroupChatMstrTblVO.hbm.xml" />
+		<mapping resource="com/mobi/messagevo/GroupChatMemTblVO.hbm.xml" />
+		<mapping resource="com/mobi/messagevo/GroupChatTblVO.hbm.xml" />
+		<mapping resource="com/mobi/commonvo/ResponseMsgTblVo.hbm.xml" />
+		<mapping resource="com/mobi/commonvo/WhyShouldIUpdateTblVO.hbm.xml" />
+		<mapping resource="com/pack/timelinefeedvo/FeedattchTbl.hbm.xml" />
+		<mapping resource="com/pack/timelinefeedvo/FeedsViewTbl.hbm.xml" />
+		<mapping resource="com/pack/timelinefeedvo/FeedsTbl.hbm.xml"/>
+		<mapping resource="com/mobi/messagevo/ChatAttachTblVO.hbm.xml"/>
+		<mapping resource="com/mobi/messagevo/GrpChatAttachTblVO.hbm.xml"/>
+		<mapping resource="com/mobi/publishskillvo/PublishSkillTblVO.hbm.xml"/>
+		<mapping resource="com/mobi/commonvo/PrivacyInfoTblVO.hbm.xml" />
+
+
+	 	<mapping resource="com/mobile/otpVo/MvpSystemParameterTbl.hbm.xml"/>
+		<mapping resource="com/mobile/otpVo/MvpUserOtpTbl.hbm.xml"/>
+	    <mapping resource="com/mobile/profile/MvpUsrSkillTbl.hbm.xml"/>
+		<mapping resource="com/mobile/wishlist/MvpWishlistTbl.hbm.xml"/>
+		<mapping resource="com/pack/commonvo/MvpTitleMstTbl.hbm.xml" />
+		<mapping resource="com/pack/commonvo/MvpBloodGroupTbl.hbm.xml" />
+		<mapping resource="com/mobi/networkUserListVO/MvpNetworkTbl.hbm.xml" />
+
+		<mapping resource="com/mobi/addpost/MvpAdpostTbl.hbm.xml"/>
+		<mapping resource="com/mobi/addpost/MvpAdpostAttchTbl.hbm.xml"/>
+
+		<mapping resource="com/socialindiaservices/vo/CarMasterTbl.hbm.xml"/>
+		<mapping resource="com/socialindiaservices/vo/CarPoolingTbl.hbm.xml"/>
+		<mapping resource="com/socialindiaservices/vo/CarPoolBookingTbl.hbm.xml"/>
+		<mapping resource="com/socialindiaservices/vo/MerchantIssuePosting.hbm.xml"/>
+		<mapping resource="com/socialindiaservices/vo/MerchantProductOrder.hbm.xml"/>
+		<mapping resource="com/socialindiaservices/vo/MerchantProductItems.hbm.xml"/>
+		<mapping resource="com/socialindiaservices/vo/FunctionMasterTbl.hbm.xml"/>
+		<mapping resource="com/socialindiaservices/vo/FunctionTemplateTbl.hbm.xml"/>
+		
+		<mapping resource="com/socialindiaservices/vo/MaintenanceBillTaxDtlsTbl.hbm.xml"/>
+		<mapping resource="com/socialindiaservices/vo/BiometricDatabaseInfoTbl.hbm.xml"/>
+		<mapping resource="com/socialindiaservices/vo/BiometricDeviceInfoTbl.hbm.xml"/>
+		<mapping resource="com/socialindiaservices/vo/BiometricUserInfoTbl.hbm.xml"/>
+
+			<mapping resource="com/pack/emailtempvo/EmailParsereditTbl.hbm.xml"/>
+			<mapping resource="com/socialindiaservices/vo/FacilityMstTbl.hbm.xml"/>
+		<mapping resource="com/socialindiaservices/vo/FacilityBookingTbl.hbm.xml"/>
+		<mapping resource="com/socialindiaservices/vo/MerchantrRatingTbl.hbm.xml"/>
+		<mapping resource="com/socialindiaservices/vo/MerchantIssueTbl.hbm.xml"/>
+		<mapping resource="com/socialindiaservices/issuemgmt/persistence/IssueTblVO.hbm.xml"/>
+
+		<mapping resource="com/socialindiaservices/vo/NotificationStatusTbl.hbm.xml"/>
+		<mapping resource="com/socialindiaservices/vo/MvpGatepassDetailTbl.hbm.xml"/>
+		<mapping resource="com/socialindiaservices/vo/GatepassEntryTbl.hbm.xml"/>
+
+		<mapping resource="com/socialindiaservices/vo/MvpEvotingMstTbl.hbm.xml"/>
+		<mapping resource="com/socialindiaservices/vo/MvpEvotingImageTbl.hbm.xml"/>
+		<mapping resource="com/socialindiaservices/vo/MvpEvotePoolingTbl.hbm.xml"/>
+		<mapping resource="com/socialindiaservices/vo/MvpFavouriteTbl.hbm.xml"/>
+		<mapping resource="com/socialindiaservices/vo/MvpDonationTbl.hbm.xml"/>
+		<mapping resource="com/socialindiaservices/vo/MvpDonationCategoryMstTbl.hbm.xml"/>
+		<mapping resource="com/socialindiaservices/vo/MvpDonationSubcategoryMstTbl.hbm.xml"/>
+		<mapping resource="com/socialindiaservices/vo/MvpDonationInstitutionTbl.hbm.xml"/>
+		<mapping resource="com/socialindiaservices/vo/MaintenanceFileUploadTblVO.hbm.xml" />
+		<mapping resource="com/social/billmaintenanceVO/BillmaintenanceVO.hbm.xml" />
+		<mapping resource="com/pack/billpaymentvo/CyberplatoptrsTbl.hbm.xml" />
+		
+		<mapping resource="com/mobi/easypayvo/MvpExternalOperatorConfigTbl.hbm.xml" />
+		<mapping resource="com/mobi/easypayvo/MvpPaygateTbl.hbm.xml" />
+		<mapping resource="com/mobi/easypayvo/MvpTransactionTbl.hbm.xml" />
+		<mapping resource="com/mobi/easypayvo/MvpUtilityPayLogTbl.hbm.xml" />
+		<mapping resource="com/mobi/easypayvo/MvpUtilityPayTbl.hbm.xml" />
+		<mapping resource="com/mobi/easypayvo/PassportTblVo.hbm.xml" />
+		
+		<mapping resource="com/pack/reconcilevo/CyberplatrecondataTbl.hbm.xml" />
+		<mapping resource="com/pack/reconcilevo/CyberplatsetmtfileTbl.hbm.xml" />
+		<mapping resource="com/pack/reconcilevo/PaygaterecondataTbl.hbm.xml" />
+		<mapping resource="com/pack/reconcilevo/PaygatesetmtfileTbl.hbm.xml" />
+		<mapping resource="com/socialindiaservices/vo/MvpDonationAttachTbl.hbm.xml"/>
+		<mapping resource="com/socialindiaservices/vo/MvpDonationItemTypeTbl.hbm.xml"/>
+				<mapping resource="com/pack/reconcilevo/ReconicileresultTblVo.hbm.xml" />
+				<mapping resource="com/mobi/contents/FlashNewsTbl.hbm.xml" />
+				<mapping resource="com/mobi/contents/MvpFaqMstTbl.hbm.xml" />
+	
+		<mapping resource="com/socialindiaservices/vo/OneWayCommunicationTbl.hbm.xml"/>
+		<mapping resource="com/socialindiaservices/vo/ManageGSTTblVO.hbm.xml"/>				
+	</session-factory>
+</hibernate-configuration>

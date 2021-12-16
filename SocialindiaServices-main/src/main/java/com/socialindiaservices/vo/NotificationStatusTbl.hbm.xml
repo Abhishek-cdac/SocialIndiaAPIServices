@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Aug 17, 2016 11:27:35 AM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.socialindiaservices.vo.NotificationStatusTblVO" table="mvp_notfication_status_tbl"  >
+        <id name="notificationId" type="java.lang.Integer">
+            <column name="NOTIFICATION_NO" />
+            <generator class="identity" />
+        </id>
+        <property name="mobileNo" type="string">
+            <column name="MOBILE_NUMBER" length="25" />
+        </property>
+         <property name="notificationFlag" type="integer">
+            <column name="NOTIFICATION_FLAG"/>
+        </property>
+         
+        <property name="entryDatetime" type="timestamp">
+            <column name="ENTRY_DATETIME" length="19" />
+        </property>
+        <property name="modifyDatetime" type="timestamp">
+            <column name="MODIFY_DATETIME" length="19"  />
+        </property>
+			 <many-to-one name="entryBy" column="ENTRY_BY"
+			class="com.siservices.signup.persistense.UserMasterTblVo" lazy="false">
+			</many-to-one>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Aug 17, 2016 11:27:35 AM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.socialindiaservices.vo.MerchantProductOrderTblVO" table="mvp_mrch_product_order_tbl"  >
+        <id name="orderId" type="java.lang.Integer">
+            <column name="ORDER_ID" />
+            <generator class="identity" />
+        </id>
+        <property name="orderComments" type="string">
+            <column name="ORDER_COMMENTS" length="1000" />
+        </property>
+         <property name="supplyComments" type="string">
+            <column name="SUPPLY_COMMENTS" length="1000"/>
+        </property>
+         <property name="orderAcceptStatus" type="java.lang.Integer">
+            <column name="ORDER_ACCEPT_STATUS">
+                <comment>1-Accept 0-Notaccept</comment>
+            </column>
+        </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="STATUS">
+                <comment>1-ACTIVE 0-DEACTIVE</comment>
+            </column>
+        </property>
+        <property name="entryDatetime" type="timestamp">
+            <column name="ENTRY_DATETIME" length="19" />
+        </property>
+        <property name="modifyDatetime" type="timestamp">
+            <column name="MODIFY_DATETIME" length="19"  />
+        </property>
+        <property name="orderUrl" type="string">
+            <column name="ORDER_URL" length="500"  />
+        </property>
+         <many-to-one name="orderBy" column="ORDERBY"
+			class="com.siservices.signup.persistense.UserMasterTblVo" lazy="false">
+			</many-to-one>
+			  <many-to-one name="mrchntId" column="MERCHANT_ID"
+			class="com.socialindiaservices.vo.MerchantTblVO" lazy="false">
+			</many-to-one>
+    </class>
+</hibernate-mapping>

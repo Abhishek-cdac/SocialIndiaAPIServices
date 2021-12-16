@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.social.sms.persistense.SmsErrorpojo" table="sms_error_tbl">
+<id name="smid" column="SNO">
+<generator class="native"></generator>
+</id>
+<property name="mobNo" column="MOB_NO" type="string" length="2550"></property>
+<property name="cardNo" column="CARD_NO" type="string" length="20"></property>
+<property name="msgid" column="MESG_ID" type="string" length="20"></property>
+<property name="message" column="MESSAGE" type="string" length="350"></property>
+<property name="tempId" column="TMPLT_ID" type="string" length="20"></property>
+<property name="tempVAl" column="TMPLT_VAL" type="string" length="100"></property>
+<property name="poolFlag" column="POLL_FLAG" type="string" length="5"></property>
+<property name="smstempId" column="SMS_TEMPID" type="string" length="30"></property>
+<property name="entryDate" column="ENTRY_DATETIME" type="timestamp"></property>
+<property name="errorstatus" column="ERROR_STATUS" type="string" length="100"></property>
+</class>
+</hibernate-mapping>

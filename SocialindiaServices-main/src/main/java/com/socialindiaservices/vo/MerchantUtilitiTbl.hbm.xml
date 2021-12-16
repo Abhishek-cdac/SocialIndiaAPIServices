@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 13, 2016 6:24:09 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+	<class name="com.socialindiaservices.vo.MerchantUtilitiTblVO"
+		table="mvp_mrch_utility_tbl" >
+
+		<id name="merchantUtilId" type="java.lang.Integer">
+			<column name="UNIQUE_ID" />
+			<generator class="identity" />
+		</id>
+		<property name="broucherName" type="java.lang.String" length="100">
+			<column name="BROUCHER_NAME" />
+		</property>
+		<property name="offerName" type="java.lang.String" length="100">
+			<column name="OFFER_NAME" />
+		</property>
+		<property name="offerPrice" type="java.lang.Float">
+		<column name="OFFER_PRICE"></column>
+		</property>
+		<property name="actualPrice" type="java.lang.Float">
+		<column name="ACTUAL_PRICE"></column>
+		</property>
+		<property name="description" type="java.lang.String">
+			<column name="DESCRIPTION" />
+		</property>
+		<property name="offerValidFrom" type="timestamp">
+			<column name="OFFER_VALID_FROM" />
+		</property>
+		<property name="offerValidTo" type="timestamp">
+			<column name="OFFER_VALID_TO" />
+		</property>
+		<property name="statusFlag" type="java.lang.Integer">
+		<column name="ACT_STS"></column>
+		</property>
+		<property name="entryDatetime" type="timestamp">
+			<column name="ENTRY_DATETIME" />
+		</property>
+		<property name="modifyDatetime" type="timestamp">
+			<column name="MODIFY_DATETIME" length="19" />
+		</property>
+		<many-to-one name="mrchntId" column="MRCHNT_ID"
+			class="com.socialindiaservices.vo.MerchantTblVO" lazy="false"></many-to-one>
+			<many-to-one name="entryBy" column="ENTRY_BY"
+			class="com.siservices.signup.persistense.UserMasterTblVo" lazy="false"></many-to-one>
+	</class>
+</hibernate-mapping>
+

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.pack.commonvo.SkillMasterTblVO" table="mvp_skill_tbl">
+		<id name="ivrBnSKILL_ID" column="SKILL_ID" type="integer">
+			<generator class="native"></generator>
+		</id>
+		<property name="ivrBnSKILL_NAME" column="SKILL_NAME" type="string" length="100"></property>
+		<property name="ivrBnACT_STAT" column="ACT_STAT" type="integer" length="11"></property>
+		<property name="entryDatetime" type="timestamp">
+            <column name="ENTRY_DATETIME" length="19" />
+        </property>
+        <property name="ivrcreatorby" type="string" length="100">
+                <column name="CREATED_BY" />
+            </property>
+            <property name="ivrcreateflg" type="java.lang.Integer">
+                <column name="CREATOR_FLAG" />
+            </property>
+		<many-to-one name="ivrBnCategoryid" column="CATEG_ID" class="com.pack.commonvo.CategoryMasterTblVO" lazy="false"></many-to-one>
+	</class>
+</hibernate-mapping>

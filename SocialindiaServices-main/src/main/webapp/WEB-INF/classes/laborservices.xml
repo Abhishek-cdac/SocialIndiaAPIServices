@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "../lib/struts-2.3.dtd">
+
+<struts>
+	<package name="laborservices" namespace="/" extends="struts-default,json-default">
+
+		<action name="lbrupdates" class="com.pack.labor.LaborUpdate">
+			<result name="success" type="json"></result>
+		</action>
+
+		<action name="lbrselectall" class="com.pack.labor.LaborDetailsview">
+			<result name="success" type="json"></result>
+		</action>
+		<action name="merchantandlabourreportissueviewall" class="com.pack.labor.LaborReportissueDetailsview">
+			<result name="success" type="json"></result>
+		</action>
+		<action name="lbrskilledselectall" class="com.pack.labor.LaborSkilledSearchDetailsview">
+			<result name="success" type="json"></result>
+		</action>
+	</package>
+</struts>

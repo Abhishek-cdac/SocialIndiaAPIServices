@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "../lib/struts-2.3.dtd">
+
+<struts>
+<package name="Bloodtypelist" namespace="/" extends="struts-default,json-default">
+	  <action name="bloodtypelistviewall" class="com.pack.Bloodtypelist.Bloodtypelistviewall">
+		<result name="success" type="json"></result>
+	</action> 
+	 <action name="bloodtypelistupdates" class="com.pack.Bloodtypelist.Bloodtypelistupdates">
+		<result name="success" type="json"></result>
+	</action> 
+</package>
+</struts>

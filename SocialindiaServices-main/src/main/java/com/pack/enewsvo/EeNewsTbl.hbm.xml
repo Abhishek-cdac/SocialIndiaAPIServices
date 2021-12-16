@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.pack.enewsvo.EeNewsTblVO" table="mvp_enews_tbl">
+		<id name="ivrBnENEWS_ID" column="ENEWS_ID" type="integer">
+			<generator class="native"></generator>
+		</id>	
+		<property name="ivrBnTITLE" column="TITLE" type="string" length="250"></property>			
+		<property name="ivrBnDESCRIPTION" column="DESCRIPTION" type="string"></property>
+		<property name="ivrBnSHRTDESC" column="SHOT_DESCP" type="string"></property>				
+		<property name="ivrBnSTATUS" column="STATUS" type="integer" length="11"></property>
+		<property name="ivrBnENTRY_BY" column="ENTRY_BY" type="integer" length="11"></property>		
+		<property name="ivrBnENTRY_DATETIME" column="ENTRY_DATETIME" type="timestamp"></property>
+		<many-to-one name="ivrBnUAMObj" column="USR_ID" class="com.siservices.signup.persistense.UserMasterTblVo" lazy="false"></many-to-one>
+		<many-to-one name="ivrBnGRPObj" column="GROUP_ID" class="com.siservices.uam.persistense.GroupMasterTblVo" lazy="false"></many-to-one>				
+	</class>
+</hibernate-mapping>

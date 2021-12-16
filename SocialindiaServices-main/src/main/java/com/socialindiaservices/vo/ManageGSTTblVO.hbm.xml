@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 13, 2016 6:24:09 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+	<class name="com.socialindiaservices.vo.ManageGSTTblVO"
+		table="manage_gst" >
+
+		<id name="ID" type="java.lang.Integer">
+			<column name="id" />
+			<generator class="identity" />
+		</id>
+		<property name="gstNum" type="java.lang.String" length="45">
+			<column name="gst_num"></column>
+		</property>
+		<property name="minGstAmt" type="java.lang.String" length="45">
+			<column name="min_gst_amt"></column>
+		</property>
+		<property name="minAmt" type="java.lang.String" length="45">
+			<column name="min_amt"></column>
+		</property>
+	</class>
+</hibernate-mapping>

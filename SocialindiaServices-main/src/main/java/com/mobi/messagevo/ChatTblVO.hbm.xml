@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.mobi.messagevo.ChatTblVO" table="mvp_chat_tbl">
+		<id name="chatId" type="java.lang.Integer">
+			<column name="CHAT_ID" />
+			<generator class="identity" />
+		</id>
+		<property name="msgContent" type="string">
+			<column name="MSG_CONTENT" />
+		</property>
+		<property name="urlThumbImage" type="string">
+			<column name="URLS_THUMB_IMG" />
+		</property>
+		<property name="urlTitle" type="string">
+			<column name="URLS_TITLE" />
+		</property>
+		<property name="pageUrl" type="string">
+			<column name="URLS_PAGEURL" />
+		</property>
+		<property name="msgType" type="java.lang.Integer">
+			<column name="MSG_TYPE" />
+		</property>
+		<property name="readFlg" type="java.lang.Integer">
+			<column name="READ_FLG"/>			
+		</property>
+		<property name="status" type="java.lang.Integer">
+			<column name="STATUS"/>			
+		</property>
+		<property name="entryDatetime" type="timestamp">
+			<column name="ENTRY_DATETIME" length="19" />
+		</property>
+		<property name="modifyDatetime" type="timestamp">
+			<column name="MODIFY_DATETIME" length="19" not-null="true" />
+		</property>
+		<many-to-one name="fromUsrId" column="FROM_USR_ID" class="com.siservices.signup.persistense.UserMasterTblVo" lazy="false"></many-to-one>
+		<many-to-one name="toUsrId" column="TO_USR_ID" class="com.siservices.signup.persistense.UserMasterTblVo" lazy="false"></many-to-one>
+	</class>
+</hibernate-mapping>

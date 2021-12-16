@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "../lib/struts-2.3.dtd">
+
+<struts>
+	<package name="easyPay" namespace="/" extends="struts-default,json-default">
+		<action name="passport_add_edit" class="com.mobi.easypay.PassportAddEdit">
+			<result name="success" type="json"></result>
+		</action>
+
+		<action name="passportList" class="com.mobi.easypay.PassportList">
+			<result name="success" type="json"></result>
+		</action>
+		
+		<action name="easyPaymentGate" class="com.mobi.easypay.EasyPayGateway">
+			<result name="success">resources/jsp/easyPay/paygatetcallurl.jsp</result>
+			<result name="input">resources/jsp/easyPay/cyberResponse.jsp</result>
+		</action>
+		
+		<action name="paymentGateResponse" class="com.mobi.easypay.EasyPayGateway" method="payGateResponseFunc">
+			<result name="success">resources/jsp/easyPay/cyperPlatecallurl.jsp</result>
+			<result name="input">resources/jsp/easyPay/cyberResponse.jsp</result>
+		</action>
+		
+		<action name="cyperPlateResponse" class="com.mobi.easypay.EasyPayGateway" method="cyperPlateResponseFunc">
+			<result name="success">resources/jsp/easyPay/cyberResponse.jsp</result>
+			<result name="input">resources/jsp/easyPay/cyberResponse.jsp</result>
+		</action>
+		
+		<action name="easypayResponse" class="com.mobi.easypay.EasyPayResponseMob" >
+          <result name="success">resources/jsp/easyPay/paymentResponse.jsp</result>
+        </action>
+		
+		
+
+		<action name="transactionList" class="com.mobi.easypay.TransactionList">
+			<result name="success" type="json"></result>
+		</action>
+		
+		<action name="maintenanceBillList" class="com.mobi.easypay.MaintenanceFeeList">
+			<result name="success" type="json"></result>
+		</action>
+
+	</package>
+</struts>

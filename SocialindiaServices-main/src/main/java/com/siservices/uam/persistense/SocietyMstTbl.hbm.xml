@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 14, 2016 2:48:14 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.siservices.uam.persistense.SocietyMstTbl" table="society_mst_tbl">
+        <id name="societyId" type="java.lang.Integer">
+            <column name="SOCIETY_ID" />
+            <generator class="identity" />
+        </id>
+       
+        <property name="societyUniqyeId" type="string">
+            <column name="SOCIETY_UNIQUE_ID" length="50"  />
+        </property>
+        <property name="societyName" type="string">
+            <column name="SOCIETY_NAME" length="50" />
+        </property>
+         <property name="activationKey" type="string">
+            <column name="ACTIVATION_KEY" length="50" />
+        </property>
+         <property name="oldActivationKey" type="string">
+            <column name="OLD_ACTIVATION_KEY" length="50" />
+        </property>
+        
+         <property name="logoImage" type="string">
+            <column name="LOGO_NAME" length="50" />
+        </property>
+         <property name="icoImage" type="string">
+            <column name="ICO_NAME" length="50" />
+        </property>
+         <property name="colourCode" type="string">
+            <column name="COLOR_CODE" length="50" />
+        </property>
+        
+         <property name="noOfBlocksWings" type="string">
+            <column name="NO_OF_BLOCK_WINGS" length="50" />
+        </property>
+         <property name="registerNo" type="string">
+            <column name="REGISTRATION_NO" length="20" />
+        </property>
+         <property name="imprintName" type="string">
+            <column name="IMPRINT_NAME" length="30" />
+        </property>
+        
+        <property name="entryby" type="java.lang.Integer">
+            <column name="ENTRYBY" />
+        </property>
+        <property name="entryDatetime" type="timestamp">
+            <column name="ENTRY_DATETIME" length="19" />
+        </property>
+        <property name="modifyDatetime" type="timestamp">
+            <column name="MODIFY_DATETIME" length="19"  />
+        </property>
+       
+        <property name="noOfMemebers" type="java.lang.Integer">
+            <column name="NO_OF_COMMITTEE_MEMBRS" />
+        </property>
+        <property name="statusFlag" column="STATUS" type="java.lang.Integer" length="2"></property>
+ 		<many-to-one name="townshipId" class="com.siservices.uam.persistense.TownshipMstTbl" lazy="false" fetch="select">
+            <column name="TOWNSHIP_ID" />
+        </many-to-one>
+        
+        <property name="gstin" type="string">
+            <column name="GSTIN" length="50" />
+        </property>
+        <property name="hsn" type="string">
+            <column name="HSN" length="50" />
+        </property>
+    </class>
+</hibernate-mapping>

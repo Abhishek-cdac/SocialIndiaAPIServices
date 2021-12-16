@@ -1,0 +1,119 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 20, 2016 4:29:08 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.siservices.uam.persistense.MvpFamilymbrTbl" table="mvp_familymbr_tbl">
+        <id name="fmbrTntId" type="java.lang.Integer">
+            <column name="FMBR_TNT_ID" />
+            <generator class="identity" />
+        </id>
+        <property name="fmbrName" type="string">
+            <column name="FMBR_NAME" length="30" />
+        </property>
+        <property name="fmbrGender" type="string">
+            <column name="FMBR_GENDER" length="15" />
+        </property>
+        <property name="fmbrAge" type="java.lang.Integer">
+            <column name="FMBR_AGE" />
+        </property>
+        <property name="fmbrDob" type="timestamp">
+            <column name="FMBR_DOB" length="19" />
+        </property>
+        <property name="fmbrEmail" type="string">
+            <column name="FMBR_EMAIL" length="50" />
+        </property>
+        <property name="fmbrPswd" type="string">
+            <column name="FMBR_PSWD" length="200">
+                <comment>while parent will set access status - 1 then password will generate and send sms</comment>
+            </column>
+        </property>
+        <property name="fmbrPhNo" type="string">
+            <column name="FMBR_PH_NO" length="20" />
+        </property>
+        <property name="fmbrIsdCode" type="string">
+            <column name="FMBR_ISD_CODE" length="20" />
+        </property>
+        <property name="fmbrAdd" type="string">
+            <column name="FMBR_ADD" length="100" />
+        </property>
+        <property name="fmbrCntry" type="java.lang.Integer">
+            <column name="FMBR_CNTRY" />
+        </property>
+        <property name="fmbrState" type="java.lang.Integer">
+            <column name="FMBR_STATE" />
+        </property>
+        <property name="fmbrCity" type="java.lang.Integer">
+            <column name="FMBR_CITY" />
+        </property>
+        <property name="fmbrIdCardTyp" type="java.lang.Integer">
+            <column name="FMBR_ID_CARD_TYP" />
+        </property>
+        <property name="fmbrIdCardNo" type="string">
+            <column name="FMBR_ID_CARD_NO" length="100" />
+        </property>
+        <property name="fmbrType" type="java.lang.Integer">
+            <column name="FMBR_TYPE">
+                <comment>1-Relation,2-Tenent</comment>
+            </column>
+        </property>
+        <property name="fmbrProfAcc" type="java.lang.Integer">
+            <column name="FMBR_PROF_ACC">
+                <comment>0- Not Access, 1- Access</comment>
+            </column>
+        </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="STATUS">
+                <comment>0- deactive, 1 - active</comment>
+            </column>
+        </property>
+        <property name="entryByGrpId" type="java.lang.Integer">
+            <column name="ENTRY_BY_GRP_ID" />
+        </property>
+        <property name="isInvited" type="java.lang.Integer">
+            <column name="is_invited" />
+        </property>
+        
+         <property name="mobileOtpFlg" type="java.lang.Integer">
+            <column name="MOB_OTP_FLAG" />
+        </property>
+        
+         <property name="EmailVerifyFlg" type="java.lang.Integer">
+            <column name="EMAIL_VERIFY_FLAG" />
+        </property>
+        
+        <property name="socialType" column="SOCIAL_TYPE" type="java.lang.Integer" ></property>
+			<property name="socialId" column="SOCIAL_ID" type="string"  length="50"></property>
+	
+	 <property name="socialProfileUrl" column="SOCIAL_PICTURE" type="string" ></property> 
+	 
+	 
+        
+        <property name="entryBy" type="java.lang.Integer">
+            <column name="ENTRY_BY" />
+        </property>
+        <property name="entryDatetime" type="timestamp">
+            <column name="ENTRY_DATETIME" length="19" />
+        </property>
+        <property name="modifyDatetime" type="timestamp">
+            <column name="MODIFY_DATETIME" length="19"  />
+        </property>
+        
+         <many-to-one name="userId" class="com.siservices.signup.persistense.UserMasterTblVo" lazy="false" fetch="select">
+            <column name="USR_ID" />
+        </many-to-one>
+        
+         <many-to-one name="iVOKNOWN_US_ID" class="com.pack.commonvo.KnownusTblVO" lazy="false" fetch="select">
+            <column name="KNOWN_US_ID" />
+        </many-to-one>
+        
+          <many-to-one name="titleId" class="com.pack.commonvo.MvpTitleMstTbl" lazy="false" fetch="select">
+            <column name="TITLE_ID" />
+        </many-to-one>
+        
+          <many-to-one name="bloodGroupId" class="com.pack.commonvo.MvpBloodGroupTbl" lazy="false" fetch="select">
+            <column name="BLOOD_GROUP_ID" />
+        </many-to-one>
+        
+    </class>
+</hibernate-mapping>

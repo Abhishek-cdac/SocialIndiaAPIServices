@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "../lib/struts-2.3.dtd">
+
+<struts>
+	<package name="signupservices" namespace="/" extends="struts-default,json-default">
+
+		<action name="adminsignUp" class="com.siservices.signup.signUpProcess">
+			<result name="success" type="json"></result>
+		</action>
+		<action name="accessInfo" class="com.pack.access.AccessInfo">
+			<result name="success" type="json"></result>
+		</action>
+		
+		<action name="membersignUp" class="com.siservices.signup.memberSignUp">
+			<result name="success" type="json"></result>
+		</action>
+		
+		<action name="ProfileEditAction" class="com.siservices.signup.ProfileEditAction">
+			<result name="success" type="json"></result>
+		</action>
+		
+		<action name="userProfileUpdate" class="com.siservices.signup.userProfileUpdate">
+			<result name="success" type="json"></result>
+		</action>
+		<action name="ProfileEditAction" class="com.siservices.signup.ProfileEditAction">
+			<result name="success" type="json"></result>
+		</action>
+		
+		<action name="userProfileUpdate" class="com.siservices.signup.userProfileUpdate">
+			<result name="success" type="json"></result>
+		</action>
+		
+		<action name="userProfileExceptAdminEdit" class="com.siservices.signup.userProfileExceptAdminEdit">
+			<result name="success" type="json"></result>
+		</action>
+		
+		<action name="userProfileExceptAdmin" class="com.siservices.signup.userProfileExceptAdmin">
+			<result name="success" type="json"></result>
+		</action>
+		<action name="getdashboardchartdetails" class="com.siservices.signup.Getdashboardchartdetails">
+			<result name="success" type="json"></result>
+		</action>
+	</package>
+</struts>

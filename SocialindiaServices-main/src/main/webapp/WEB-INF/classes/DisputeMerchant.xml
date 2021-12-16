@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "../lib/struts-2.3.dtd">
+
+<struts>
+<package name="DisputeMerchantlist" namespace="/" extends="struts-default,json-default">
+	  <action name="disputetomerchantviewall" class="com.pack.DisputeMerchantlist.DisputeMerchantlistviewall">
+		<result name="success" type="json"></result>
+	</action> 
+	 <action name="disputetomerchantlistupdates" class="com.pack.DisputeMerchantlist.DisputeMerchantupdates">
+		<result name="success" type="json"></result>
+	</action> 
+	<action name="sitomerchantSendEmail" class="com.pack.DisputeMerchantlist.SitoMerchantSendEmail">
+			<result name="success" type="json"></result>
+		</action>
+		<action name="sitomerchantSendSMS" class="com.pack.DisputeMerchantlist.SitoMerchantnSendSMS">
+			<result name="success" type="json"></result>
+		</action>
+</package>
+</struts>

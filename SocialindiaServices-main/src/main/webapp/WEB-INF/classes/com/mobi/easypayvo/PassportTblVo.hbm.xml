@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.mobi.easypayvo.PassportTblVo" table="mvp_passport_tbl">
+		<id name="passId" type="java.lang.Integer">
+			<column name="PASS_ID" />
+			<generator class="native" />
+		</id>
+		<property name="profileName" type="string">
+			<column name="PROFILE_NAME" length="100" />
+		</property>
+		<property name="mobileNumber" type="string">
+			<column name="MOBILE_NUMBER" length="20" />
+		</property>
+		<property name="dthConsumerNumber" type="string">
+			<column name="DTH_CONSUMER_NUMBER" length="50" />
+		</property>
+		<property name="datacardConsumerNumber" type="string">
+			<column name="DATACARD_CONSUMER_NUMBER" length="50" />
+		</property>
+		<property name="gasConsumerNumber" type="string">
+			<column name="GAS_CONSUMER_NUMBER" length="50" />
+		</property>
+		<property name="electricityConsumerNumber" type="string">
+			<column name="ELECTRICITY_CONSUMER_NUMBER" length="50" />
+		</property>
+		<property name="landlineNo" type="string">
+			<column name="LANDLINE_NO" length="100" />
+		</property>
+		<property name="broadbandNumber" type="string">
+			<column name="BROADBAND_NUMBER" length="50" />
+		</property>
+		<property name="bankAccountNumber" type="string">
+			<column name="BANK_ACCOUNT_NUMBER" length="50" />
+		</property>
+		<property name="reEnterAccountNumber" type="string">
+			<column name="RE_ENTER_ACCOUNT_NUMBER" length="50" />
+		</property>
+		<property name="bankAccountName" type="string">
+			<column name="BANK_ACCOUNT_NAME" length="50" />
+		</property>
+		<property name="accountType" type="string">
+			<column name="ACCOUNT_TYPE" length="50" />
+		</property>
+		<property name="bankName" type="string">
+			<column name="BANK_NAME" length="50" />
+		</property>
+		<property name="ifscName" type="string">
+			<column name="IFSC_NAME" length="50" />
+		</property>
+		<property name="upiIdVirtualPaymentAddress" type="string">
+			<column name="UPI_ID_VIRTUAL_PAYMENT_ADDRESS" length="50" />
+		</property>
+		<property name="entryBy" type="java.lang.Integer">
+			<column name="ENTRY_BY" />
+		</property>
+		<property name="status" type="java.lang.Integer">
+			<column name="STATUS" />
+		</property>
+		<property name="entryDateTime" type="timestamp">
+			<column name="ENTRY_DATE_TIME" length="19" />
+		</property>
+		<property name="modifyDateTime" type="timestamp">
+			<column name="MODIFY_DATE_TIME" length="19" />
+		</property>
+		<many-to-one name="usrId" class="com.siservices.signup.persistense.UserMasterTblVo" fetch="select" lazy="false">
+            <column name="USR_ID" />
+        </many-to-one>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Aug 16, 2016 3:19:39 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.siservices.materialVo.MvpMaterialTbl" table="mvp_material_tbl" >
+        <id name="materialId" type="java.lang.Integer">
+            <column name="MATERIAL_ID" />
+            <generator class="identity" />
+        </id>
+       
+        <property name="materialName" type="string">
+            <column name="MATERIAL_NAME" length="500" />
+        </property>
+        <property name="materialDesc" type="string">
+            <column name="MATERIAL_DESC" length="65535" />
+        </property>
+        <property name="materialQnty" type="java.lang.Integer">
+            <column name="MATERIAL_QNTY" />
+        </property>
+        <property name="totalQnty" type="java.lang.Integer">
+            <column name="TOTAL_QNTY" />
+        </property>
+        <property name="usedQnty" type="java.lang.Integer">
+            <column name="USED_QNTY" />
+        </property>
+        <property name="materialPrice" type="java.lang.Float">
+            <column name="MATERIAL_PRICE" precision="12" scale="0" />
+        </property>
+        <property name="purchaseDate" type="date">
+            <column name="PURCHASE_DATE" length="10" />
+        </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="STATUS">
+                <comment>0- deactive, 1 - active</comment>
+            </column>
+        </property>
+        <property name="entryBy" type="java.lang.Integer">
+            <column name="ENTRY_BY" />
+        </property>
+        <property name="entryDatetime" type="timestamp">
+            <column name="ENTRY_DATETIME" length="19" />
+        </property>
+        <property name="modifyDatetime" type="timestamp">
+            <column name="MODIFY_DATETIME" length="19" />
+        </property>
+        
+         <many-to-one name="societyId" class="com.siservices.uam.persistense.SocietyMstTbl" lazy="false" fetch="select">
+            <column name="SOCIETY_ID" />
+        </many-to-one>
+        <many-to-one name="materialCategoryId" class="com.siservices.materialVo.MaterialCategoryTbl" lazy="false" fetch="select">
+            <column name="MATERIAL_CATEGORY_ID" />
+        </many-to-one>
+        
+    </class>
+</hibernate-mapping>

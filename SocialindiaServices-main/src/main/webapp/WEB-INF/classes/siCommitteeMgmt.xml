@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "../lib/struts-2.3.dtd">
+
+<struts>
+	<package name="siCommitteeMgmt" namespace="/" extends="struts-default,json-default">
+
+		
+		<action name="siCommitteeMasterTblAction" class="com.siservices.committeeMgmt.siCommitteeMasterTblAction">
+			<result name="success" type="json"></result>
+		</action>
+		
+		<action name="siCommitteeCreationAction" class="com.siservices.committeeMgmt.siCommitteeCreationAction">
+			<result name="success" type="json"></result>
+		</action>
+		
+		<action name="siCommitteeViewAction" class="com.siservices.committeeMgmt.siCommitteeViewAction">
+			<result name="success" type="json"></result>
+		</action>
+		
+			<action name="siCommitteeMgmt" class="com.siservices.committeeMgmt.siCommitteeMgmt">
+			<result name="success" type="json"></result>
+		</action>
+		
+		<action name="siCommitteeEditAction" class="com.siservices.committeeMgmt.siCommitteeEditAction">
+			<result name="success" type="json"></result>
+		</action>
+		
+		<action name="siCommitteeUpdateAction" class="com.siservices.committeeMgmt.siCommitteeUpdateAction">
+			<result name="success" type="json"></result>
+		</action>
+		
+	</package>
+</struts>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.pack.audittrialvo.AuditlogTblVO" table="audit_log_tbl">
+		<id name="ivrBnAUDIT_ID" column="AUDIT_ID" type="integer">
+			<generator class="native"></generator>
+		</id>
+		
+		<property name="ivrBnOPERATIONS" column="OPERATIONS" type="string" length="100"></property>
+		<property name="ivrBnLOG_CODE" column="LOG_CODE" type="string" length="10"></property>
+		<property name="ivrBnENTRY_BY" column="ENTRY_BY" type="integer" length="11"></property>	
+		<property name="ivrBnENTRY_DATETIME" column="ENTRY_DATETIME" type="timestamp"></property>
+		<property name="ivrBnMODIFY_DATETIME" column="MODY_DATETIME" type="timestamp"></property>		
+		<many-to-one name="ivrBnUserMstrTblobj" column="USR_ID" class="com.siservices.signup.persistense.UserMasterTblVo" lazy="false"></many-to-one>	
+	</class>
+</hibernate-mapping>

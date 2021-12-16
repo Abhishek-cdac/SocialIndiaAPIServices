@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 29, 2016 11:14:41 AM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.pack.complaintVO.ComplaintattchTblVO" table="mvp_complaints_attch_tbl">
+		<id name="ivrBnATTCH_ID" column="ATTCH_ID" type="integer">
+			<generator class="native"></generator>
+		</id>	
+		<property name="ivrBnCOMPLAINTS_ID" column="COMPLAINTS_ID" type="integer" length="11"></property>	
+		<property name="ivrBnATTACH_NAME" column="ATTACH_NAME" type="string" length="50"></property>
+		<property name="thumbImage" column="THUMP_IMAGE" type="string" length="50"></property>	
+			<property name="ivrBnFILE_TYPE" column="file_type" type="integer" length="11"></property>		
+		<property name="ivrBnSTATUS" column="STATUS" type="integer" length="11"></property>	
+		<property name="ivrBnENTRY_DATETIME" column="ENTRY_DATETIME" type="timestamp"></property>		
+	</class>
+</hibernate-mapping>

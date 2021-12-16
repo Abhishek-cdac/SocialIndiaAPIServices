@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 5, 2017 11:25:37 AM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.socialindiaservices.vo.MvpDonationItemTypeTblVo" table="mvp_donation_item_type_tbl" >
+        <id name="itemtypeId" type="java.lang.Integer">
+            <column name="ITEM_TYPE_ID" />
+            <generator class="identity" />
+        </id>
+        <property name="itemtypeName" type="string">
+            <column name="ITEM_TYPE" length="250" />
+        </property>
+        <many-to-one name="donationSubcategory" class="com.pack.commonvo.SkillMasterTblVO" fetch="select" lazy="false">
+            <column name="SUBCATEGORY_ID" />
+        </many-to-one>
+        <property name="itemtImageName" type="string">
+            <column name="ITEM_IMAGE_NAME" length="50" />
+        </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="STATUS"/>
+        </property>
+        <property name="entryBy" type="java.lang.Integer">
+            <column name="ENTRY_BY"/>
+        </property>
+        <property name="entryDate" type="timestamp">
+            <column name="ENTRY_DATETIME" length="19" />
+        </property>
+        <property name="modifyDate" type="timestamp">
+            <column name="MODIFY_DATETIME" length="19"/>
+        </property>
+    </class>
+</hibernate-mapping>

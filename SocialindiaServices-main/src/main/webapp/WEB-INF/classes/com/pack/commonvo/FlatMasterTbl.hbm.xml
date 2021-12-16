@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.pack.commonvo.FlatMasterTblVO" table="usr_flat_detail_tbl">
+		<id name="flat_id" column="FLAT_ID" type="integer">
+			<generator class="native"></generator>
+		</id>
+		 <many-to-one name="usrid" column="USR_ID" class="com.siservices.signup.persistense.UserMasterTblVo" lazy="false"> </many-to-one>
+		<!-- <property name="usrid" column="USR_ID" type="integer" length="11"></property> -->
+		<property name="wingsname" column="WINGS_NAME" type="string" length="30"></property>
+		<property name="flatno" column="FALTNO" type="string" length="30"></property>
+		<property name="status" column="STATUS" type="integer" length="11"></property>
+		<property name="entryby" column="ENRTY_BY" type="integer" length="11"></property>
+		<property name="ivrBnismyself" column="IS_MYSELF" type="java.lang.Integer" length="11"></property>
+		<property name="entryDatetime" type="timestamp">
+            <column name="ENTRY_DATE" />
+        </property>
+        <property name="modifyDatetime" type="timestamp">
+            <column name="MODIFY_DATE"  />
+        </property>
+	</class>
+</hibernate-mapping>

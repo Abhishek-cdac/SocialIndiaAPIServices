@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.mobi.easypayvo.MvpUtilityPayTbl" table="mvp_utility_pay_tbl">
+        <id name="utilityPayId" type="java.lang.Integer">
+            <column name="UTILITY_PAY_ID" />
+            <generator class="native" />
+        </id>
+        <property name="sd" type="string">
+            <column name="SD" length="30" />
+        </property>
+        <property name="ap" type="string">
+            <column name="AP" length="30" />
+        </property>
+        <property name="op" type="string">
+            <column name="OP" length="30" />
+        </property>
+        <property name="session" type="string">
+            <column name="SESSION" length="50" />
+        </property>
+        <property name="number" type="string">
+            <column name="NUMBER" length="30" />
+        </property>
+        <property name="amount" type="java.lang.Float">
+            <column name="AMOUNT" precision="12" scale="3" />
+        </property>
+        <property name="amountAll" type="string">
+            <column name="AMOUNT_ALL" length="30" />
+        </property>
+        <property name="comment" type="string">
+            <column name="COMMENT" length="250" />
+        </property>
+        <property name="termId" type="string">
+            <column name="TERM_ID" length="30" />
+        </property>
+        <property name="authenticator3" type="string">
+            <column name="AUTHENTICATOR3" length="250" />
+        </property>
+        <property name="date" type="string">
+            <column name="DATE" length="30" />
+        </property>
+        <property name="error" type="string">
+            <column name="ERROR" length="5" />
+        </property>
+        <property name="result" type="string">
+            <column name="RESULT" length="5" />
+        </property>
+        <property name="transid" type="string">
+            <column name="TRANSID" length="30" />
+        </property>
+        <property name="phonenumber" type="string">
+            <column name="PHONENUMBER" length="30" />
+        </property>
+        <property name="circle" type="string">
+            <column name="CIRCLE" length="30" />
+        </property>
+        <property name="account" type="string">
+            <column name="ACCOUNT" length="30" />
+        </property>
+        <property name="authcode" type="string">
+            <column name="AUTHCODE" length="30" />
+        </property>
+        <property name="addinfo" type="string">
+            <column name="ADDINFO" length="250" />
+        </property>
+        <property name="price" type="string">
+            <column name="PRICE" length="30" />
+        </property>
+        <property name="billdate" type="string">
+            <column name="BILLDATE" length="30" />
+        </property>
+        <property name="billnumber" type="string">
+            <column name="BILLNUMBER" length="30" />
+        </property>
+        <property name="errmsg" type="string">
+            <column name="ERRMSG" length="250" />
+        </property>
+        <property name="trnxstatus" type="string">
+            <column name="TRNXSTATUS" length="30" />
+        </property>
+        <property name="finalStatus" type="java.lang.Integer">
+            <column name="FINAL_STATUS" />
+        </property>
+        <property name="usrId" type="int">
+            <column name="USR_ID" not-null="true" />
+        </property>
+        <property name="operatorCodeId" type="integer">
+            <column name="OPERATOR_ID_CODE"  />
+        </property>
+        <property name="entryDatetime" type="timestamp">
+            <column name="ENTRY_DATETIME" length="19" />
+        </property>
+        <property name="modifyDatetime" type="timestamp">
+            <column name="MODIFY_DATETIME" length="19" not-null="true" />
+        </property>     
+    </class>
+</hibernate-mapping>

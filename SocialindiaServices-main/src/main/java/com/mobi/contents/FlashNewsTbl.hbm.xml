@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Sep 17, 2016 5:02:59 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.mobi.contents.FlashNewsTblVO" table="mvp_flash_news_tbl" >
+        <id name="newsId" type="java.lang.Integer">
+            <column name="NEWS_ID" />
+            <generator class="identity" />
+        </id>
+        <property name="newsContent" type="string">
+            <column name="NEWS_CONTENT" />
+        </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="STATUS" />
+        </property>
+        <property name="title" type="string">
+            <column name="TITLE" />
+        </property>
+        <property name="newsimageName" type="string">
+            <column name="IMAGE" />
+        </property>
+          <property name="expiryDate" type="timestamp">
+            <column name="EXPIRY_DATE"/>
+        </property>
+         <property name="entryDateTime" type="timestamp">
+            <column name="ENTRY_DATETIME"/>
+        </property>
+        <property name="modifyDateTime" type="timestamp">
+            <column name="MODIFY_DATETIME"/>
+        </property>
+         <many-to-one name="societyId" class="com.siservices.uam.persistense.SocietyMstTbl" lazy="false">
+            <column name="SOCIETY_ID" />
+        </many-to-one>
+         <many-to-one name="entryBy" class="com.siservices.signup.persistense.UserMasterTblVo" lazy="false">
+            <column name="ENTRYBY" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

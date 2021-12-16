@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.siservices.uam.persistense.MenuMasterTblVo" table="menu_mst_tbl">
+		<id name="menuId" type="integer" column="MENU_ID">
+			<generator class="native"></generator>
+		</id>
+		<property name="menuDesc" type="string" column="MENU_DESC" length="25"></property>
+		<property name="menuPath" type="string" column="MENU_PATH" length="50"></property>
+		<property name="menuType" type="string" column="MENU_TYPE" length="5"></property>
+		<property name="subMenuId" type="integer" column="SUB_MENU_ID"></property>
+		<property name="rootDesc" type="string" column="ROOT_DESC" length="50"></property>
+		<property name="updateBy" type="integer" column="UPDATE_BY"></property>
+		<property name="entryTime" type="date" column="ENTRY_DATETIME"></property>
+		<property name="updateTime" type="date" column="MODY_DATETIME"></property>
+		<property name="entryBy" column="ENTRY_BY" type="integer"></property>
+		<property name="menuClass" type="string" column="MENU_CLASS" length="100"></property>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "../lib/struts-2.3.dtd">
+
+<struts>
+	<package name="flashnewServices" namespace="/" extends="struts-default,json-default">
+
+			<action name="flashnewsMgmtaction" class="com.pack.flashnews.FlashNewViewAll">
+			<result name="success" type="json"></result>
+		</action>
+		<action name="newflashnewsaction" class="com.pack.flashnews.FlashnewUpdate">
+			<result name="success" type="json"></result>
+		</action>
+		
+		
+	</package>
+</struts>

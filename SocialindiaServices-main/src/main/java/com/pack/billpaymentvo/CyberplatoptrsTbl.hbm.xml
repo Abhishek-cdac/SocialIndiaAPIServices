@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.pack.billpaymentvo.CyberplatoptrsTblVo" table="mvp_utility_cyberplat_optrs_tbl">
+		<id name="ivrBnBILLER_ID" column="BILLER_ID" type="integer">
+			<generator class="native"></generator>
+		</id>	
+		<property name="ivrBnBILLER_NAME" column="BILLER_NAME" type="string" length="300"></property>
+		<property name="ivrBILLER_GATE_ID_CODE" column="BILLER_GATE_ID_CODE" type="java.lang.Integer" length="11"></property>			
+		<property name="ivrBILLER_CATEGORY" column="BILLER_CATEGORY" type="java.lang.Integer" length="11"></property>
+		<property name="ivrBnVALIDATE_URL" column="VALIDATE_URL" type="string" length="500"></property>
+		<property name="ivrBnPAYMENT_URL" column="PAYMENT_URL" type="string" length="500"></property>
+		<property name="ivrBnSTATUS_CHECK_URL" column="STATUS_CHECK_URL" type="string" length="500"></property>
+		<property name="ivrBnADDITIONAL_VALIDATION" column="ADDITIONAL_VALIDATION" type="string"></property>
+		<property name="ivrBnSTATUS" column="STATUS" type="integer" length="11"></property>		
+		<property name="ivrBnENTRY_DATETIME" column="ENTRY_DATETIME" type="timestamp"></property>						
+	</class>
+</hibernate-mapping>

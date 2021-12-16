@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.mobi.publishskillvo.PublishSkillTblVO" table="mvp_publish_skill_tbl">
+		<id name="pubSkilId" type="java.lang.Integer">
+			<column name="PUB_SKIL_ID" />
+			<generator class="identity" />
+		</id>
+		<property name="title" type="string">
+			<column name="TITLE" />
+		</property>
+		<property name="duration" type="java.lang.Integer">
+			<column name="DURATION"/>
+		</property>
+		<property name="durationFlg" type="java.lang.Integer">
+			<column name="DURATION_FLG"/>			
+		</property>	
+		<property name="avbilDays" type="string">
+			<column name="AVBIL_DAYS" />
+		</property>
+		<property name="briefDesc" type="string">
+			<column name="BRIEF_DESC" />
+		</property>
+		<property name="fees" type="java.lang.Float">
+			<column name="FEES" />
+		</property>
+<!-- 		<property name="ivrBnLBR_COST" column="FEES" type="java.lang.Float" precision="12" scale="0" ></property> -->
+		<property name="status" type="java.lang.Integer">
+			<column name="STATUS"/>			
+		</property>
+		<property name="entryBy" type="java.lang.Integer">
+			<column name="ENTRY_BY"/>			
+		</property>
+		<property name="entryDatetime" type="timestamp">
+			<column name="ENRTY_DATETIME" length="19" />
+		</property>
+		<property name="modifyDatetime" type="timestamp">
+			<column name="MODIFY_DATETIME" length="19" not-null="true" />
+		</property>
+		<many-to-one name="userId" class="com.siservices.signup.persistense.UserMasterTblVo" fetch="select" lazy="false">
+            <column name="USER_ID" /></many-to-one>
+        <many-to-one name="feedId" class="com.pack.timelinefeedvo.FeedsTblVO" fetch="select" lazy="false">
+            <column name="FEED_ID" /></many-to-one>
+        <many-to-one name="categoryId" class="com.pack.commonvo.CategoryMasterTblVO" fetch="select" lazy="false">
+            <column name="CATEGORY_ID" /></many-to-one>
+        <many-to-one name="skillId" class="com.pack.commonvo.SkillMasterTblVO" fetch="select" lazy="false">
+            <column name="SKILL_ID" /></many-to-one>   
+         
+	</class>
+</hibernate-mapping>

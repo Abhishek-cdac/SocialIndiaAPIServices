@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Bank Info Report" pageWidth="842"  isIgnorePagination="true" orientation="Landscape" whenNoDataType="AllSectionsNoDetail" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" isDefault="false" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" isDefault="false" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
+	<style name="Column header" isDefault="false" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Roman"/>
+	<style name="Detail" isDefault="false" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman"/>
+	<style name="Row" isDefault="false" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue() % 2 == 0)]]></conditionExpression>
+			<style isDefault="false" style="Row" mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<field name="orderNo" class="java.lang.String"/>
+	<field name="txnAmount" class="java.lang.Float"/>
+	<field name="txnDatetime" class="java.util.Date"/>
+	<field name="finalStatus" class="java.lang.Integer"/>
+	<field name="serviceType" class="java.lang.Integer"/>
+
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+		<title>
+		<band height="1" splitType="Stretch">
+		
+		</band>
+	</title>
+<pageHeader>
+		<band height="41" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="900" height="25" forecolor="#000000" backcolor="#0066CC"/>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement x="600" y="0" width="244" height="25" forecolor="#FFFFFF" />
+					<textElement textAlignment="Right" verticalAlignment="Middle" markup="none">
+						<font fontName="SansSerif" size="12" isBold="false"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="10" y="0" width="272" height="25" forecolor="#FFFFFF" />
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="SansSerif" size="18" isBold="false"/>
+					</textElement>
+				<text><![CDATA[Transaction List]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="37" splitType="Stretch">
+			<frame>
+				<reportElement style="Column header" mode="Opaque" x="0" y="0" width="900" height="37" forecolor="#000000" backcolor="#FFFFFF"/>
+				<staticText>
+					<reportElement mode="Opaque" x="2" y="0" width="200" height="37" forecolor="#000000" backcolor="#CCCCCC"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="SansSerif" size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Ref Number]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Opaque" x="205" y="0" width="150" height="37" forecolor="#000000" backcolor="#CCCCCC"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="SansSerif" size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Txn Amount]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Opaque" x="360" y="0" width="150" height="37" forecolor="#000000" backcolor="#CCCCCC"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="SansSerif" size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Txn Date time]]></text>
+				</staticText>
+					<staticText>
+					<reportElement mode="Opaque" x="515" y="0" width="170" height="37" forecolor="#000000" backcolor="#CCCCCC"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="SansSerif" size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Service Type]]></text>
+				</staticText>
+				
+				<staticText>
+					<reportElement mode="Opaque" x="690" y="0" width="200" height="37" forecolor="#000000" backcolor="#CCCCCC"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="SansSerif" size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Final Status]]></text>
+				</staticText>
+				
+		
+				
+				
+			</frame>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="15">
+			<frame>
+				<reportElement style="Row" mode="Opaque" x="0" y="0" width="900" height="15"/>
+		
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="5" y="0" width="200" height="15"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle"/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{orderNo}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="205" y="0" width="150" height="15"/>
+					<textElement textAlignment="Right"/>
+					<textFieldExpression class="java.lang.Float"><![CDATA[$F{txnAmount}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="360" y="0" width="150" height="15"/>
+					<textElement textAlignment="Left"/>
+					<textFieldExpression class="java.util.Date"><![CDATA[$F{txnDatetime}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="515" y="0" width="150" height="15"/>
+					<textElement textAlignment="Left"/>
+					<textFieldExpression class="java.lang.String"><![CDATA[($F{serviceType})==1 ? "Prepaid" : ($F{serviceType})==2 ? "DTH" :($F{serviceType})==3 ? "Prepaid Datacard" :($F{serviceType})==4 ? "Postpaid" :($F{serviceType})==5 ? "Land Line" :($F{serviceType})==6 ? "Electicity" :($F{serviceType})==7 ? "Gas Bill" :($F{serviceType})==8 ? "Insance" :($F{serviceType})==9 ? "Broadband" :($F{serviceType})==10 ? "Direct Money" :($F{serviceType})==11 ? "Postpaid Datacard":" "]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="690" y="0" width="200" height="15"/>
+					<textElement textAlignment="Left"/>
+					<textFieldExpression class="java.lang.String"><![CDATA[($F{finalStatus})==1 ? "Pending" : ($F{finalStatus})==0 ? "Success" :($F{finalStatus})==2 ? "Error" :($F{finalStatus})==3 ? "Error" :" "]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+		
+	<columnFooter>
+		<band height="7" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="900" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

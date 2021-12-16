@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "../lib/struts-2.3.dtd">
+
+<struts>
+	<package name="skillservices" namespace="/" extends="struts-default,json-default">
+
+			<action name="skillmgmt" class="com.socialindiaservices.skillmgmt.SkillViewAll">
+			<result name="success" type="json"></result>
+		</action>
+			<action name="skillUpdateAll" class="com.socialindiaservices.skillmgmt.SkillUpdateAll">
+			<result name="success" type="json"></result>
+		</action>
+		
+	</package>
+</struts>

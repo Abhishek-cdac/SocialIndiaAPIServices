@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Sep 17, 2016 5:02:59 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.mobi.contents.MvpFaqMstTbl" table="mvp_faq_mst_tbl">
+        <id name="faqId" type="java.lang.Integer">
+            <column name="FAQ_ID" />
+            <generator class="identity" />
+        </id>
+        <property name="faqQuestion" type="string">
+            <column name="FAQ_QUESTION" />
+        </property>
+        <property name="faqAnswer" type="string">
+            <column name="FAQ_ANSWER"  />
+        </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="STATUS">
+                <comment>1 ACTIVE 0 DEACTIVE</comment>
+            </column>
+        </property>
+        <property name="entryDatetime" type="timestamp">
+            <column name="ENTRY_DATETIME" />
+        </property>
+        <property name="modifyDatetime" type="timestamp">
+            <column name="MODIFY_DATETIME"  />
+        </property>
+    </class>
+</hibernate-mapping>

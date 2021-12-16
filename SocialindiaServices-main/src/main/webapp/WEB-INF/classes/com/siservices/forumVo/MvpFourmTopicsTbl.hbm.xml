@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 21, 2016 6:06:04 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.siservices.forumVo.MvpFourmTopicsTbl" table="mvp_fourm_topics_tbl" >
+        <id name="topicsId" type="java.lang.Integer">
+            <column name="TOPICS_ID" />
+            <generator class="identity" />
+        </id>
+      
+        <property name="topicsName" type="string">
+            <column name="TOPICS_NAME" length="500" />
+        </property>
+        <property name="topicsDesc" type="string">
+            <column name="TOPICS_DESC" length="65535" />
+        </property>
+        <property name="keyForSearch" type="string">
+            <column name="KEY_FOR_SEARCH" length="65535" />
+        </property>
+        <property name="validOnDate" type="timestamp">
+            <column name="VALID_ON_DATE" length="19" />
+        </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="STATUS">
+                <comment>0- deactive, 1 - active</comment>
+            </column>
+        </property>
+        <property name="entryBy" type="java.lang.Integer">
+            <column name="ENTRY_BY" />
+        </property>
+        <property name="entryDatetime" type="timestamp">
+            <column name="ENTRY_DATETIME" length="19" />
+        </property>
+        <property name="modifyDatetime" type="timestamp">
+            <column name="MODIFY_DATETIME" length="19"  />
+        </property>
+       
+       <many-to-one name="userId" class="com.siservices.signup.persistense.UserMasterTblVo" lazy="false" fetch="select">
+            <column name="USR_ID" />
+        </many-to-one>
+        	<many-to-one name="groupCode" column="GROUP_ID" class="com.siservices.uam.persistense.GroupMasterTblVo" lazy="false">
+        	</many-to-one>
+    </class>
+</hibernate-mapping>

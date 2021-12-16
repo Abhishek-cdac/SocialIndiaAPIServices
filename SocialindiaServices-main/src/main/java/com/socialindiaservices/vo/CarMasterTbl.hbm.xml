@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Sep 17, 2016 5:02:59 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.socialindiaservices.vo.CarMasterTblVO" table="mvp_carpooling_car_tbl" >
+        <id name="carId" type="java.lang.Integer">
+            <column name="CAR_ID" />
+            <generator class="identity" />
+        </id>
+       
+        <property name="carModel" type="string">
+            <column name="CAR_MODEL" length="50"/>
+        </property>
+        <property name="carNumber" type="string">
+            <column name="CAR_NUMBER" length="20"/>
+        </property>
+        <property name="preference" type="string">
+            <column name="PREFERENCE" length="20"></column>
+        </property>
+         <property name="status" type="java.lang.Integer">
+            <column name="STATUS" />
+        </property>
+         <property name="entryDateTime" type="timestamp">
+            <column name="ENTRY_DATETIME"/>
+        </property>
+        <property name="modifyDateTime" type="timestamp">
+            <column name="MODIFY_DATETIME"/>
+        </property>
+        <many-to-one name="entryByGroup" class="com.siservices.uam.persistense.GroupMasterTblVo" lazy="false">
+            <column name="ENTRY_BY_GRP_ID" />
+        </many-to-one>
+         <many-to-one name="entryBy" class="com.siservices.signup.persistense.UserMasterTblVo" lazy="false">
+            <column name="ENTRY_BY" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

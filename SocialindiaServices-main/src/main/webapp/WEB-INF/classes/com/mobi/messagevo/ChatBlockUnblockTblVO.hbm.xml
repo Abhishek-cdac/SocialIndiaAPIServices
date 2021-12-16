@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.mobi.messagevo.ChatBlockUnblockTblVO" table="mvp_chat_block_unblock">
+		<id name="id" type="java.lang.Integer">
+			<column name="ID" />
+			<generator class="identity" />
+		</id>
+		<property name="fromUsrId" type="java.lang.Integer">
+			<column name="FROM_USR_ID" />
+		</property>
+		<property name="toUsrId" type="java.lang.Integer">
+			<column name="TO_USR_ID" />
+		</property>
+		<property name="blocked" type="boolean">
+			<column name="IS_BLOCKED" not-null="true" />
+		</property>
+		<property name="modifyDatetime" type="timestamp">
+			<column name="MODIFY_DATETIME" length="19" not-null="true" />
+		</property>
+	</class>
+</hibernate-mapping>

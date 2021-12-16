@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "../lib/struts-2.3.dtd">
+
+<struts>
+<package name="timelinemessage" namespace="/" extends="struts-default,json-default">
+	   
+	<action name="send_message" class="com.mobi.message.SendMsg">
+		<interceptor-ref name="fileUpload">
+			<param name="maximumSize">26214400</param>
+		</interceptor-ref>
+		<interceptor-ref name="defaultStack"></interceptor-ref>
+		<result name="success" type="json"></result>
+	</action>
+	<action name="create_rename_group" class="com.mobi.message.CreateGroup">
+		<result name="success" type="json"></result>
+	</action>
+	<action name="delete_group" class="com.mobi.message.DeleteGroup">
+		<result name="success" type="json"></result>
+	</action>	
+	<!-- <action name="update_group_pic" class="com.mobi.message.UpdateGroupPicture">
+		<interceptor-ref name="fileUpload">
+			<param name="maximumSize">26214400</param>
+		</interceptor-ref>
+		<interceptor-ref name="defaultStack"></interceptor-ref>
+		<result name="success" type="json"></result>
+		</action> -->
+	<action name="update_group_user" class="com.mobi.message.AddRemoveUserFrmGroup">
+		<result name="success" type="json"></result>
+	</action>
+	<action name="search_group_contact" class="com.mobi.message.ListContactGroupMsgSrch">
+		<result name="success" type="json"></result>
+	</action>
+	<action name="chat_history" class="com.mobi.message.ListGroupPrivateMsgHistroy">
+		<result name="success" type="json"></result>
+	</action>
+	<action name="searchContact" class="com.mobi.message.ChatContacts">
+		<result name="success" type="json"></result>
+	</action>
+	
+	<action name="blockChat" class="com.mobi.message.BlockChat">
+		<result name="success" type="json"></result>
+	</action>
+		
+</package>
+</struts>

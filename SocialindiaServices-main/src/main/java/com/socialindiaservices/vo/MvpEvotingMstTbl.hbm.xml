@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 8, 2016 4:01:42 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.socialindiaservices.vo.MvpEvotingMstTbl" table="mvp_evoting_mst_tbl">
+        <id name="evotingId" type="java.lang.Integer">
+            <column name="EVOTING_ID" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="usrRegTbl" class="com.siservices.signup.persistense.UserMasterTblVo" fetch="select" lazy="false">
+            <column name="ENTRY_BY" />
+        </many-to-one>
+        <property name="titile" type="string">
+            <column name="TITILE" length="200" />
+        </property>
+        <property name="description" type="string">
+            <column name="DESCRIPTION" length="65535" />
+        </property>
+        <property name="statusFlag" type="java.lang.Integer">
+            <column name="STATUS_FLAG">
+                <comment>1--&gt;ACTIVE,2--&gt;DEACTIVE,3--&gt;DELETED</comment>
+            </column>
+        </property>
+        <property name="publishFlag" type="java.lang.Integer">
+            <column name="PUBLISH_FLAG">
+                <comment>1--&gt;PUBLISHED,2--&gt;NOT PUBLISHED</comment>
+            </column>
+        </property>
+        <property name="entryDatetime" type="timestamp">
+            <column name="ENTRY_DATETIME" length="19" />
+        </property>
+        <property name="modifyDatetime" type="timestamp">
+            <column name="MODIFY_DATETIME" length="19" not-null="true" />
+        </property>
+         <many-to-one name="modifyBy" class="com.siservices.signup.persistense.UserMasterTblVo" fetch="select" lazy="false">
+            <column name="MODIFY_BY" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

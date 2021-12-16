@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.pack.feedbackvo.FeedbackTblVO" table="mvp_feedback_tbl">
+		<id name="ivrBnFEEDBK_ID" column="FEEDBK_ID" type="integer">
+			<generator class="native"></generator>
+		</id>
+		<!-- <property name="ivrBnUSR_ID" column="USR_ID" type="integer" length="11"></property> -->
+		<property name="email" column="EMAIL" type="string"></property>
+		<property name="ivrBnFEEDBK_TXT" column="FEEDBK_TXT" type="string"></property>
+		<property name="ivrBnFEEDBK_FOR_USR_ID" column="FEEDBK_FOR_USR_ID" type="integer" length="11"></property>
+		<property name="ivrBnFEEDBK_FOR_USR_TYP" column="FEEDBK_FOR_USR_TYP" type="integer" length="11"></property>
+		<property name="ivrBnRATING" column="RATING" type="integer" length="11"></property>
+		<property name="ivrBnFEEDBK_STATUS" column="FEEDBK_STATUS" type="integer" length="11"></property>		
+		<property name="ivrBnENTRY_DATETIME" column="ENTRY_DATETIME" type="timestamp"></property>				
+		<many-to-one name="ivrBnUarmsttbvoobj" column="USR_ID" class="com.siservices.signup.persistense.UserMasterTblVo" lazy="false"></many-to-one>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.pack.laborvo.LaborSkillTblVO" table="mvp_lbr_skill_tbl">
+		<id name="ivrBnLBR_SKILL_ID" column="LBR_SKILL_ID" type="integer">
+			<generator class="native"></generator>
+		</id>
+		<property name="ivrBnLBR_ID" column="LBR_ID" type="integer" length="11"></property>
+		
+		
+		<property name="ivrBnLBR_SKILL_STS" column="LBR_SKILL_STS" type="integer" length="11"></property>
+		<property name="ivrBnENTRY_DATETIME" column="ENTRY_DATETIME" type="timestamp"></property>		
+		<many-to-one name="iVOCATEGORY_ID" column="CATEGORY_ID" class="com.pack.commonvo.CategoryMasterTblVO" lazy="false"></many-to-one>
+	<many-to-one name="ivrBnSKILL_ID" column="SKILL_ID" class="com.pack.commonvo.SkillMasterTblVO" lazy="false"></many-to-one>
+	<!-- <property name="ivrBnLBR_CATEG_ID" column="CATEGORY_ID" type="integer" length="11"></property> -->
+	</class>
+</hibernate-mapping>

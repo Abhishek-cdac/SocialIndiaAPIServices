@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.pack.commonvo.DoctypMasterTblVO" table="mvp_docmstr_tbl">
+		<id name="ivrBnDOC_TYP_ID" column="DOC_TYP_ID" type="integer">
+			<generator class="native"></generator>
+		</id>
+		<property name="ivrBnDOC_TYP_NAME" column="DOC_TYP_NAME" type="string" length="50"></property>		
+		<property name="ivrBnDESCR" column="DESCR" type="string"></property>
+		<property name="ivrBnENTRY_BY" column="ENTRY_BY" type="integer" length="11"></property>
+		<property name="ivrBnACT_STS" column="ACT_STS" type="integer" length="11"></property>		
+		<property name="ivrBnENTRY_DATETIME" column="ENTRY_DATETIME" type="timestamp"></property>		
+	</class>
+</hibernate-mapping>

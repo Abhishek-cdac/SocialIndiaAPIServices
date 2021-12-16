@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 29, 2016 11:14:41 AM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.pack.residentvo.UsrUpldfrmExceTbl" table="usr_upldfrm_exce_tbl">
+        <id name="fileId" type="java.lang.Integer">
+            <column name="FILE_ID" />
+            <generator class="identity" />
+        </id>
+        <property name="usrId" type="java.lang.Integer">
+            <column name="USR_ID">
+                <comment>Uploaded by user id</comment>
+            </column>
+        </property>
+        <property name="fileName" type="string">
+            <column name="FILE_NAME" length="30">
+                <comment>Upload file name</comment>
+            </column>
+        </property>
+        <property name="folderName" type="string">
+            <column name="FOLDER_NAME" length="30" />
+        </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="STATUS">
+                <comment>0 -Not Inserted, 1- Inserterd</comment>
+            </column>
+        </property>
+        <property name="enrtyBy" type="java.lang.Integer">
+            <column name="ENRTY_BY" />
+        </property>
+        <property name="entryDate" type="timestamp">
+            <column name="ENTRY_DATE" length="19" />
+        </property>
+        <property name="modifyDate" type="timestamp">
+            <column name="MODIFY_DATE" length="19"  />
+        </property>
+    </class>
+</hibernate-mapping>

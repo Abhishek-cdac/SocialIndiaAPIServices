@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 20, 2016 4:29:08 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.siservices.societyMgmt.SocietyWingsDetailTbl" table="society_wings_detail_tbl" >
+        <id name="wingsId" type="java.lang.Integer">
+            <column name="WINGS_ID" />
+            <generator class="identity" />
+        </id>
+        <property name="wingsName" type="string">
+            <column name="WINGS_NAME" length="30" />
+        </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="STATUS">
+                <comment>0-INACTIVE,1-ACTIVE</comment>
+            </column>
+        </property>
+        <property name="enrtyBy" type="java.lang.Integer">
+            <column name="ENRTY_BY" />
+        </property>
+        <property name="entryDate" type="timestamp">
+            <column name="ENTRY_DATE" length="19" />
+        </property>
+        <property name="modifyDate" type="timestamp">
+            <column name="MODIFY_DATE" length="19"  />
+        </property>
+        
+         <many-to-one name="societyId" class="com.siservices.uam.persistense.SocietyMstTbl" lazy="false">
+            <column name="SOCIETY_ID" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

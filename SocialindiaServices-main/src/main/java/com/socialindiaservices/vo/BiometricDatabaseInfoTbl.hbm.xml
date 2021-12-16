@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 13, 2016 6:24:09 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+	<class name="com.socialindiaservices.vo.BiometricDatabaseInfoTblVO"
+		table="biometric_database_info" >
+
+		<id name="ID" type="java.lang.Integer">
+			<column name="id" />
+			<generator class="identity" />
+		</id>
+		<property name="socyteaId" type="java.lang.String" length="45">
+			<column name="SOCIETY_ID"></column>
+		</property>
+		<property name="bioHostname" type="java.lang.String" length="45">
+			<column name="bio_hostname"></column>
+		</property>
+		<property name="bioUsername" type="java.lang.String" length="45">
+			<column name="bio_username"></column>
+		</property>
+		<property name="bioPassword" type="java.lang.String" length="45">
+			<column name="bio_password"></column>
+		</property>
+		<property name="bioDatabase" type="java.lang.String" length="45">
+			<column name="bio_database"></column>
+		</property>
+		<property name="bioPort" type="java.lang.String" length="45">
+			<column name="bio_port"></column>
+		</property>
+	</class>
+</hibernate-mapping>

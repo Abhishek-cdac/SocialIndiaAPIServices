@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Sep 26, 2016 12:16:06 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.mobile.otpVo.MvpUserOtpTbl" table="mvp_user_otp_tbl" >
+        <id name="otpId" type="java.lang.Integer">
+            <column name="OTP_ID" />
+            <generator class="identity" />
+        </id>
+       
+        <property name="otp" type="string">
+            <column name="OTP" length="20" />
+        </property>
+        <property name="otpCount" type="java.lang.Integer">
+            <column name="OTP_COUNT" />
+        </property>
+        <property name="otpValidityFlag" type="java.lang.Integer">
+            <column name="OTP_VALIDITY_FLAG">
+                <comment>1-VALID 0-NOT VALID</comment>
+            </column>
+        </property>
+        <property name="otpStatusFlag" type="java.lang.Integer">
+            <column name="OTP_STATUS_FLAG">
+                <comment>1-LOCK 0-UNLOCK</comment>
+            </column>
+        </property>
+        <property name="otpGeneratedTime" type="timestamp">
+            <column name="OTP_GENERATED_TIME" length="19" />
+        </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="STATUS">
+                <comment>0- DEACTIVE 1- ACTIVE</comment>
+            </column>
+        </property>
+        <property name="entryBy" type="java.lang.Integer">
+            <column name="ENTRY_BY" />
+        </property>
+        <property name="entryDatetime" type="timestamp">
+            <column name="ENTRY_DATETIME" length="19" />
+        </property>
+        <property name="modifyDatetime" type="timestamp">
+            <column name="MODIFY_DATETIME" length="19"  />
+        </property>
+        
+        <property name="mobileNo" column="MOBILE_NO" type="string" length="25"></property>
+        
+         <many-to-one name="userId" class="com.siservices.signup.persistense.UserMasterTblVo" fetch="select" lazy="false">
+            <column name="USR_ID" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

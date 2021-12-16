@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"  "../lib/struts-2.3.dtd" >
+<struts>
+ <constant name="struts.enable.DynamicMethodInvocation" value="false" />
+ <constant name="struts.devMode" value="false" />
+ <constant name="struts.multipart.maxSize" value="100485760" />
+ <constant name="struts.custom.i18n.resources" value="applicationResources,aduit,responsestatusmsg,apiDetails,lengthrange,successErrorValues,apiversioninfo,inputfilespecify" />
+
+ <constant name="struts.devMode" value="false" />
+ <package name="default" extends="jasperreports-default,struts-default,json-default">
+  <result-types>
+   		<result-type name="jasper" class="org.apache.struts2.views.jasperreports.JasperReportsResult"></result-type>
+   		<result-type name="json" class="org.apache.struts2.json.JSONResult" />
+  </result-types>
+ </package>
+
+
+ <package name="loginprocess" extends="struts-default" namespace="/">
+  <action name="loginprocess" class="com.siservices.login.DefaultRedirectAction">
+   <result name="success">resources/jsp/home.jsp</result>
+  </action>
+  <!-- class="com.socialindiaservices.PGResponse.Pgresponse" -->
+   <action name="pgresponse" >
+   <result name="success">resources/jsp/paymentgateway/pgresponse.jsp</result>
+   <result name="input">resources/jsp/paymentgateway/pgresponse.jsp</result>
+   <result name="error">resources/jsp/paymentgateway/pgresponse.jsp</result>
+  </action>
+ </package>
+
+
+    <include file="signupservices.xml" />
+	<include file="uamServices.xml" />
+	<include file="commonservices.xml" />
+	<include file="passwordservices.xml" />
+	<include file="login.xml"></include>
+	<include file="laborservices.xml" />
+	<include file="feedbackservices.xml" />
+	<include file="eventservices.xml" />
+	<include file="enewsservices.xml" />
+	<include file="generalManagement.xml" />
+	<include file="socialmedia.xml" />
+	<include file="siTownShipMgmt.xml" />
+	<include file="siSocietyMgmt.xml" />
+	<include file="siCommitteeMgmt.xml"></include>
+ 	<include file="companyservices.xml"></include>
+	<include file="residentservices.xml"></include>
+	<include file="utilitymgmtservices.xml"></include>
+	<include file="siForumServices.xml"></include>
+	<include file="complaints.xml"></include>
+	<include file="merchantManagementServices.xml"></include>
+	<include file="simaterialServices.xml" />
+	<include file="tender.xml"></include>
+	<include file="expencesservice.xml"></include>
+	<include file="idcardmaster.xml"></include>
+	<include file="Categorylist.xml"></include>
+	<include file="siStaffcategorylist.xml"></include>
+	<include file="Committeelist.xml"></include>
+	<include file="Documentconfiglist.xml"></include>
+	<include file="reprotservices.xml"></include>
+	<include file="Sieducationlist.xml"></include>
+	<include file="Siworktypelist.xml"></include>
+	<include file="Simerchantcategorylist.xml"></include>
+	<include file="emailconfig.xml"></include>
+	<include file="smsconfig.xml"></include>
+	<include file="Sinotification.xml"></include>
+	<include file="DisputeMerchant.xml"></include>
+	<include file="DisputeLabor.xml"></include>
+	<include file="DisputeAdmin.xml"></include>
+
+	<!-- Mobile Use [Resident] -->
+	<include file="timelinefeedservices.xml"></include>
+	<include file="Simonitoring.xml"></include>
+
+	<!-- mobile servies -->
+	<include file="apiinitiate.xml"></include>
+	<include file="contactusreportissue.xml"></include>
+	<include file="skilledHelp.xml"></include>
+	<include file="timelineMessage.xml"></include>
+	<include file="mobiOtpServices.xml"></include>
+	<include file="mobiProfileServices.xml"></include>
+	<include file="familyMember.xml"></include>
+	<include file="wishlist.xml"></include>
+	<include file="network.xml"></include>
+	<include file="infoLibrary.xml"></include>
+	<include file="facilityBooking.xml"></include>
+		<include file="mobiCompliants.xml"></include>
+		<include file="carpoolServices.xml"></include>
+		<include file="sibloodgroup.xml"></include>
+		<include file="sititle.xml"></include>
+		<include file="merchantMobileServices.xml"></include>
+		<include file="siknownus.xml"></include>
+		<include file="functionmaster.xml"></include>
+		<include file="emailtempdesign.xml"></include>
+		<include file="mobiEvents.xml"></include>
+		<include file="function.xml"></include>
+		<include file="AddPost.xml"></include>
+		<include file="Siresponsecode.xml"></include>
+		<include file="publishSkill.xml"></include>
+		<include file="issuemgmt.xml"></include>
+		<include file="mobileNotification.xml"></include>
+		<include file="facilityservices.xml"></include>
+		<include file="mobileBroadcastService.xml"></include>
+		<include file="paymentGateway.xml"/>
+		<include file="whyshouldservices.xml"/>
+		<include file="skillservices.xml"/>
+		<include file="Sigatepass.xml"/>
+		<include file="MobileEvotingServices.xml"/>
+		<include file="MobileFavouriteServices.xml"/>
+		<include file="SiDonation.xml"/>
+		<include file="documentBill.xml"/>
+		<include file="EasyPay.xml"></include>
+		<include file="reportExport.xml"></include>
+		<include file="reconcileServices.xml"/>
+		<include file="searchResults.xml"/>
+		<include file="generalcontentService.xml"/>
+		<include file="flashnewservices.xml"/>
+		<include file="compaign.xml"/>
+		<include file="validityutility.xml"/>
+		
+		
+</struts>

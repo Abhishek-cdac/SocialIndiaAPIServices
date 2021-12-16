@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.pack.commonvo.StaffCategoryMasterTblVO" table="staff_category_tbl">
+		<id name="iVOstaffcategid" column="STAFF_CATEGORY_ID" type="integer">
+			<generator class="native"></generator>
+		</id>
+		<property name="iVOstaffcategory" column="STAFF_CATEGORY" type="string" length="60"></property>		
+		<property name="iVOstaffcategsts" column="STATUS" type="integer" length="11"></property>		
+	</class>
+</hibernate-mapping>

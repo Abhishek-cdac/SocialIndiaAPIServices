@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "../lib/struts-2.3.dtd">
+
+<struts>
+<package name="Gatepasslist" namespace="/" extends="struts-default,json-default">
+	  <action name="issuegatepassmgmttbl" class="com.pack.Gatepassissuelist.Gatepassissuelistviewall">
+		<result name="success" type="json"></result>
+	</action>
+	<action name="Gatepass_Post" class="com.pack.Gatepassissuelist.GatepassPost">
+		<result name="success" type="json"></result>
+	</action>
+	<action name="deleteGatepass" class="com.pack.Gatepassissuelist.GatepassDelete">
+		<result name="success" type="json"></result>
+	</action>
+	<action name="confirmgatepassEntry" class="com.pack.Gatepassissuelist.ConfirmgatepassEntry">
+		<result name="success" type="json"></result>
+	</action>
+	<action name="gatepassEntry" class="com.pack.Gatepassissuelist.GatepassEntry">
+		<result name="success" type="json"></result>
+	</action>
+	 <action name="issuegatepasshistorymgmttbl" class="com.pack.Gatepassissuelist.Gatepassissuehistorylistviewall">
+		<result name="success" type="json"></result>
+	</action>
+</package>
+</struts>

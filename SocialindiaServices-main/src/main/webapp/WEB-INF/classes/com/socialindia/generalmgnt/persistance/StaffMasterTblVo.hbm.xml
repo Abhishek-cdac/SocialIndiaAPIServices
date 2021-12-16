@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 10, 2016 4:05:26 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+	<class name="com.socialindia.generalmgnt.persistance.StaffMasterTblVo"
+		table="mvp_staff_prof_tbl">
+		<id name="staffID" type="int">
+			<column name="STAFF_ID" />
+			<generator class="native"></generator>
+		</id>
+		<!-- <property name="companyid" type="java.lang.Integer"> <column name="COMPANY_ID" 
+			/> </property> -->			
+			
+		<property name="staffName" type="java.lang.String" length="50">
+			<column name="STAFF_NAME" />
+		</property>
+
+		<property name="staffEmail" type="java.lang.String" length="50">
+			<column name="STAFF_EMAIL" />
+		</property>
+		<property name="staffGender" type="java.lang.String" length="50">
+			<column name="STAFF_GENDER" />
+		</property>
+		<!-- <property name="staffCategory" type="int" > <column name="STAFF_CATEGORY_ID" 
+			/> </property> -->
+		<property name="staffage" type="java.lang.String" length="50">
+			<column name="STAFF_AGE" />
+		</property>
+		<property name="staffMobno" type="java.lang.String" length="50">
+			<column name="STAFF_MOBILE_NO" />
+		</property>
+		<property name="ISDcode" type="java.lang.String" length="50">
+			<column name="STAFF_ISD_CODE" />
+		</property>
+		<property name="staffAddr" type="java.lang.String" length="50">
+			<column name="STAFF_ADDRSS" />
+		</property>
+		<property name="Workinghours" type="int">
+			<column name="NO_WORKING_HOURS" />
+		</property>
+		<property name="staffCountry" type="int">
+			<column name="COUNTRY_ID" />
+		</property>
+		<property name="staffState" type="int">
+			<column name="STATE_ID" />
+		</property>
+		<!-- -->
+		<property name="staffCity" type="int">
+			<column name="CITY_ID" />
+		</property>
+		<!-- <property name="staffIdcardtype" type="int"> <column name="CARD_ID" 
+			/> </property> -->
+		<property name="staffIdcardno" type="java.lang.String">
+			<column name="STAFF_ID_NO" />
+		</property>
+		<property name="status" type="int">
+			<column name="STATUS" />
+		</property>
+		<!-- <property name="Postalcode" type="int"> <column name="PSTL_ID" /> 
+			</property> -->
+		<property name="entryDatetime" column="ENTRY_DATETIME" type="timestamp"></property>
+		<property name="modifyDatetime" column="MODIFY_DATETIME"
+			type="timestamp"></property>
+			<many-to-one name="entryby" column="ENTRY_BY"
+			class="com.siservices.signup.persistense.UserMasterTblVo" lazy="false"></many-to-one>
+			
+		<property name="imageNameWeb" column="IMAGE_NAME_WEB" type="string"
+			length="100"></property>
+		<property name="imageNameMobile" column="IMAGE_NAME_MOBILE"
+			type="string" length="100"></property>
+		<many-to-one name="iVOcradid" column="CARD_ID"
+			class="com.pack.commonvo.IDCardMasterTblVO" lazy="false"></many-to-one>
+		<many-to-one name="iVOstaffcategid" column="STAFF_CATEGORY_ID"
+			class="com.pack.commonvo.StaffCategoryMasterTblVO" lazy="false"></many-to-one>
+		<many-to-one name="pstlId" column="PSTL_ID"
+			class="com.pack.commonvo.PostalCodeMasterTblVO" lazy="false"></many-to-one>
+		<many-to-one name="cityId" column="CITY_ID"
+			class="com.pack.commonvo.CityMasterTblVO" lazy="false" insert="false"
+			update="false"></many-to-one>
+		<many-to-one name="companyId" column="COMPANY_ID"
+			class="com.pack.commonvo.CompanyMstTblVO" lazy="false"></many-to-one>
+
+
+	</class>
+</hibernate-mapping>

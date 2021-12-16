@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.siservices.signup.persistense.ActivationKeyVO" table="activation_key_tbl">
+		<id name="uniId" type="integer" column="UNIQ_ID">
+			<generator class="native"></generator>
+		</id>
+		<property name="activationKey" type="string" column="ACTIVATION_KEY" length="100"></property>
+		<property name="statusFlag" type="integer" column="STATUS_FLAG" length="10"></property>
+		<property name="entryBy" type="integer" column="ENRTRY_BY" length="5"></property>
+		<property name="fromDate" type="date" column="FROM_DATE"></property>
+		<property name="toDate" type="date" column="TO_DATE"></property>
+		<property name="entryDate" type="date" column="ENTRY_DATETIME"></property>
+		<property name="updateDate" type="date" column="MODY_DATETIME"></property>
+	</class>
+</hibernate-mapping>

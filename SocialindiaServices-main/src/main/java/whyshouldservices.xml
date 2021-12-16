@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "../lib/struts-2.3.dtd">
+
+<struts>
+	<package name="whyshouldservices" namespace="/" extends="struts-default,json-default">
+
+			<action name="whyshouldmgmt" class="com.socialindiaservices.whyshould.WhyshouldViewAll">
+			<result name="success" type="json"></result>
+		</action>
+		<action name="whyshouldUpdate" class="com.socialindiaservices.whyshould.WhyshouldUpdate">
+			<result name="success" type="json"></result>
+		</action>
+	</package>
+</struts>

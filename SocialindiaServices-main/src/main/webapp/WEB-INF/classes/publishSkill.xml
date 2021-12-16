@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "../lib/struts-2.3.dtd">
+
+<struts>
+	<package name="publishSkill" namespace="/" extends="struts-default,json-default">
+		<action name="publish_add_edit" class="com.mobi.publishskill.AddEdit">
+			<result name="success" type="json"></result>
+		</action>
+
+		<action name="search_list" class="com.mobi.publishskill.ListSearch">
+			<result name="success" type="json"></result>
+		</action>
+
+		<action name="publish_delete" class="com.mobi.publishskill.DeletePublish">
+			<result name="success" type="json"></result>
+		</action>
+	</package>
+</struts>

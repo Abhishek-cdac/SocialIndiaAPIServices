@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Sep 17, 2016 5:02:59 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.socialindiaservices.vo.DisputeRiseTbl" table="dispute_rise_tbl" >
+        <id name="disputeId" type="java.lang.Integer">
+            <column name="DISPUTE_ID" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="usrRegTbl" class="com.siservices.signup.persistense.UserMasterTblVo" fetch="select">
+            <column name="USR_ID" />
+        </many-to-one>
+        <property name="disputeTitle" type="string">
+            <column name="DISPUTE_TITLE" length="200" />
+        </property>
+        <property name="disputeDesc" type="string">
+            <column name="DISPUTE_DESC" length="65535" />
+        </property>
+        <property name="disputeT0Id" type="java.lang.Integer">
+            <column name="DISPUTE_T0_ID">
+                <comment>MERCHANT ID,LABOUR ID,ADMIN ID</comment>
+            </column>
+        </property>
+        <property name="disputeT0Groupid" type="java.lang.Integer">
+            <column name="DISPUTE_T0_GROUPID">
+                <comment>8,7,1</comment>
+            </column>
+        </property>
+        <property name="disputeclosereason" type="string">
+            <column name="DISPUTE_CLOSE_REASON" length="50" />
+        </property>
+        <property name="comments" type="string">
+            <column name="COMMENTS" length="100" />
+        </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="STATUS">
+                <comment>1-ACTIVE,0-DEACTIVE</comment>
+            </column>
+        </property>
+        <property name="entryDatetime" type="timestamp">
+            <column name="ENTRY_DATETIME" length="19" />
+        </property>
+        
+    </class>
+</hibernate-mapping>

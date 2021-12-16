@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "../lib/struts-2.3.dtd">
+
+<struts>
+	<package name="loginservices" namespace="/" extends="struts-default,json-default">
+
+		<action name="loginAction" class="com.siservices.login.loginAction">
+			<result name="success" type="json"></result>
+		</action>
+		
+		
+		<action name="loginUserCheckSociety" class="com.social.login.loginUserCheckSociety">
+			<result name="success" type="json"></result>
+		</action>
+		<action name="userofflineupdate" class="com.social.login.UserOfflineUpdate">
+			<result name="success" type="json"></result>
+		</action>
+		
+		<action name="loginPrevent" class="com.siservices.login.loginPrevent">
+			<result name="success" type="json"></result>
+		</action>
+		
+		<action name="getresetdatetime" class="com.siservices.login.loginPrevent" method="getResetDatetime">
+			<result name="success" type="json"></result>
+		</action>
+		
+	</package>
+</struts>

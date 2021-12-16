@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping >
+
+<class name="com.social.sms.persistense.SmsInpojo" table="sms_in_tbl">
+
+<id name="smsId" column="SMS_ID">
+<generator class="native"></generator>
+</id>
+
+<property name="smsMobNumber" column="MOB_NO" type="string" length="250"></property>
+<property name="smsCardNo" column="CARD_NO" type="string" length="20"></property>
+<property name="smsMessage" column="MESSAGE" type="string" length="350"></property>
+<property name="smsTmpltId" column="TMPLT_ID" type="string" length="20"></property>
+<property name="smsTmpltVal" column="TMPLT_VAL" type="string" length="100"></property>
+<property name="smspollFlag" column="POLL_FLAG" type="string" length="5"></property>
+<property name="smsTempId" column="SMS_TEMP_ID" type="string" length="30"></property>
+<property name="smsEntryTime" column="ENTRY_DATETIME" type="timestamp" ></property>
+<property name="trycount" column="TRY_COUNT" type="integer" ></property>
+
+</class>
+
+</hibernate-mapping>

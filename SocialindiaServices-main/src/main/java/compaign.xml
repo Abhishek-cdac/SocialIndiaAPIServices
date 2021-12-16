@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "../lib/struts-2.3.dtd">
+
+<struts>
+	<package name="donateservices" namespace="/" extends="struts-default,json-default">
+
+		<action name="donateMgmt" class="com.pack.compaign.DonateViewAll">
+			<result name="success" type="json"></result>
+		</action>
+		
+		<action name="createdonation" class="com.pack.compaign.DonateUpdate">
+			<result name="success" type="json"></result>
+		</action>
+	</package>
+</struts>

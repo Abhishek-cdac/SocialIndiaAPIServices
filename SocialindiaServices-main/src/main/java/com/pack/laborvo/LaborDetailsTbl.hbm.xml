@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.pack.laborvo.LaborDetailsTblVO" table="mvp_lbr_reg_tbl">
+		<id name="ivrBnLBR_ID" column="LBR_ID" type="integer">
+			<generator class="native"></generator>
+		</id>
+		<property name="ivrBnLBR_SERVICE_ID" column="LBR_SERVICE_ID" type="string" length="50"></property>
+		<property name="ivrBnLBR_NAME" column="LBR_NAME" type="string" length="50"></property>
+		<property name="ivrBnLBR_EMAIL" column="LBR_EMAIL" type="string" length="50"></property>
+		<property name="ivrBnLBR_PH_NO" column="LBR_PH_NO" type="string" length="50"></property>
+		
+		<property name="ivrBnLBR_ISD_CODE" column="LBR_ISD_CODE" type="string" length="20"></property>
+		
+		<!-- <property name="ivrBnID_CARD_TYP" column="ID_CARD_TYP" type="integer" length="11"></property>-->
+		<property name="ivrBnID_CARD_NO" column="ID_CARD_NO" type="string" length="50"></property>
+		<property name="ivrBnLBR_ADD_1" column="LBR_ADD_1" type="string" length="100"></property>
+		<property name="ivrBnLBR_ADD_2" column="LBR_ADD_2" type="string" length="100"></property>
+		
+						
+		<property name="ivrBnLBR_STS" column="LBR_STS" type="integer" length="11"></property>
+		<property name="ivrBnLBR_KYC_NAME" column="LBR_KYC_NAME" type="string" length="100"></property>
+		<property name="ivrBnLBR_RATING" column="LBR_RATING" type="java.lang.Double" length="11"></property>
+		
+		<property name="ivrBnLBR_VERIFIED_STATUS" column="VERIFIED_STATUS" type="integer" length="11"></property>
+		<property name="ivrBnLBR_KEY_FOR_SEARCH" column="KEY_FOR_SEARCH" type="string"></property>
+		<property name="ivrBnLBR_DESCP" column="LBR_DESCP" type="string"></property>
+		
+		<property name="ivrBnIMAGE_NAME_WEB" column="IMAGE_NAME_WEB" type="string" length="100"></property>
+		<property name="ivrBnIMAGE_NAME_MOBILE" column="IMAGE_NAME_MOBILE" type="string" length="100"></property>
+		
+		
+		<property name="ivrBnENTRY_BY" column="ENTRY_BY" type="integer" length="11"></property>
+		<property name="ivrBnLBR_EXPERIENCE" column="EXPERIENCE"  type="java.lang.Float" precision="12" scale="0"></property>
+		<property name="ivrBnLBR_COST" column="COST" type="java.lang.Float" precision="12" scale="0" ></property>
+		<property name="ivrBnLBR_COSTPER" column="COST_PER_TIME" type="integer" length="11" ></property>
+		<property name="ivrBnENTRY_DATETIME" column="ENTRY_DATETIME" type="timestamp"></property>	
+		<property name="modifyDatetime" column="MODIFY_DATETIME" type="timestamp"></property>		
+		<property name="ivrBnGRP_CODE" column="GROUP_ID" type="integer" length="11"></property>
+		<many-to-one name="ivrBnIdrcardObj" column="CARD_ID" class="com.pack.commonvo.IDCardMasterTblVO" lazy="false"></many-to-one>
+<!-- 		<many-to-one name="pstlId" column="PSTL_ID" class="com.pack.commonvo.PostalCodeMasterTblVO" lazy="false"></many-to-one> -->
+ <property name="pstlId" type="integer">
+            <column name="PSTL_ID"  />
+        </property>
+		<many-to-one name="wrktypId" column="WORK_TYPE_ID" class="com.pack.commonvo.LaborWrkTypMasterTblVO" lazy="false"></many-to-one>	
+		<many-to-one name="company" column="COMPANY_ID" class="com.pack.commonvo.CompanyMstTblVO" lazy="false"></many-to-one>		
+		
+		<many-to-one name="stateId" class="com.pack.commonvo.StateMasterTblVO"  lazy="false">
+            <column name="STATE_ID" />
+     </many-to-one>
+        
+        <many-to-one name="cityId" class="com.pack.commonvo.CityMasterTblVO"  lazy="false">
+            <column name="CITY_ID" /> </many-to-one>
+        
+        <many-to-one name="countryId" class="com.pack.commonvo.CountryMasterTblVO"  lazy="false">
+            <column name="COUNTRY_ID" /></many-to-one>
+            
+		<!-- <property name="ivrBnLBR_WORK_TYPE_ID" column="WORK_TYPE_ID" type="integer" length="11"></property> -->
+		<!--<many-to-one name="cityId" column="CITY_ID" class="com.pack.commonvo.CityMasterTblVO" lazy="false"></many-to-one> -->
+		<!-- <many-to-one name="ivrBNLbrSkilObj" column="LBR_ID" class="com.pack.laborvo.LaborSkillTblVO" lazy="false" insert="false" update="false"></many-to-one> -->
+	</class>
+</hibernate-mapping>

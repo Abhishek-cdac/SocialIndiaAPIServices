@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Aug 17, 2016 11:27:35 AM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.socialindiaservices.vo.MerchantStockDetailTblVO" table="mvp_mrch_stock_details_tbl" >
+        <id name="uniqId" type="java.lang.Integer">
+            <column name="UNIQ_ID" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="mrchntId" class="com.socialindiaservices.vo.MerchantTblVO" lazy="false" fetch="select">
+            <column name="MRCHNT_ID" />
+        </many-to-one>
+        <many-to-one name="mrchCategoryId" class="com.socialindiaservices.vo.MerchantCategoryTblVO" lazy="false" fetch="select">
+            <column name="MRCH_CATEGORY_ID" />
+        </many-to-one>
+        <property name="quantity" type="java.lang.Integer">
+            <column name="QUANTITY" />
+        </property>
+        <property name="typeName" type="string">
+            <column name="TYPE_NAME" length="200">
+                <comment>Features/Accessories name/medicine name</comment>
+            </column>
+        </property>
+        <property name="cuisines" type="string">
+            <column name="CUISINES" length="50" />
+        </property>
+        <property name="power" type="java.lang.Float">
+            <column name="POWER" precision="12" scale="0" />
+        </property>
+        <property name="companyName" type="string">
+            <column name="COMPANY_NAME" length="100" />
+        </property>
+         <many-to-one name="entryBy" class="com.siservices.signup.persistense.UserMasterTblVo" lazy="false" fetch="select">
+            <column name="ENTRY_BY" />
+        </many-to-one>
+        <property name="entryDatetime" type="timestamp">
+            <column name="ENTRY_DATETIME" length="19" />
+        </property>
+        <property name="modifyDatetime" type="timestamp">
+            <column name="MODIFY_DATETIME" length="19" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

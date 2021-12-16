@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping >
+
+<class name="com.social.sms.persistense.SmsTemplatepojo"  table="sms_temp_mst_tbl">
+
+<id name="templateId" column="TEMPLATE_ID">
+<generator class="native"></generator>
+</id>
+
+<property name="templateName" column="TEMPLATE_NAME" type="string" length="50"/>
+<property name="templateContent" column="TEMPLATE_CONTENT" type="text" />
+<property name="status" column="STATUS" type="integer" />
+<property name="entryDateTime" column="ENTRY_DATETIME" type="timestamp" />
+<property name="updateDateTime" column="UPDATE_DATETIME" type="timestamp" />
+<property name="entryPerson" column="ENTRY_PERSON" type="integer" />
+
+</class>
+
+</hibernate-mapping>

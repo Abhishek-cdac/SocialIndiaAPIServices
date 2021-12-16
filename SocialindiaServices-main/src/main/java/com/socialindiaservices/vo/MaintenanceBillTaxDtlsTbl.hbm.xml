@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 13, 2016 6:24:09 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+	<class name="com.socialindiaservices.vo.MaintenanceBillTaxDtlsTblVO"
+		table="maintenance_bill_tax_dtls" >
+
+		<id name="ID" type="java.lang.Integer">
+			<column name="id" />
+			<generator class="identity" />
+		</id>
+		<property name="modOfPayment" type="java.lang.String" length="50">
+			<column name="mod_of_payment"></column>
+		</property>
+		<property name="fixedCharges" type="java.lang.Integer">
+			<column name="fixed_charges"/>
+		</property>
+		<property name="percentageVO" type="java.lang.Integer">
+			<column name="percentage"/>
+		</property>
+		<property name="amntGt1000" type="java.lang.Integer">
+			<column name="amnt_gt_1000"/>
+		</property>
+		<property name="amntLt1000" type="java.lang.Integer">
+			<column name="amnt_lt_1000"/>
+		</property>
+		<property name="calcLogic" type="java.lang.String" length="50">
+			<column name="calc_logic"></column>
+		</property>
+		<property name="convCharge" type="java.lang.Integer">
+			<column name="conv_charge"/>
+		</property>
+		<property name="gstVO" type="java.lang.Integer">
+			<column name="gst"/>
+		</property>
+	</class>
+</hibernate-mapping>

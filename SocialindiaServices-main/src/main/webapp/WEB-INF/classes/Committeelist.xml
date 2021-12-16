@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "../lib/struts-2.3.dtd">
+
+<struts>
+<package name="Committeelist" namespace="/" extends="struts-default,json-default">
+	  <action name="comitteerolelistviewall" class="com.pack.Committeelist.Committeeviewall">
+		<result name="success" type="json"></result>
+	</action> 
+	 <action name="Committeelistupdates" class="com.pack.Committeelist.Committeeupdates">
+		<result name="success" type="json"></result>
+	</action> 
+</package>
+</struts>

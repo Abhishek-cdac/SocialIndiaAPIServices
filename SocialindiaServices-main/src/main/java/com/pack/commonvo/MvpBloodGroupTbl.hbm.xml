@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Sep 30, 2016 11:47:33 AM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.pack.commonvo.MvpBloodGroupTbl" table="mvp_blood_group_tbl">
+        <id name="bloodGroupId" type="java.lang.Integer">
+            <column name="BLOOD_GROUP_ID" />
+            <generator class="identity" />
+        </id>
+        <property name="bloodGroupName" type="string">
+            <column name="BLOOD_GROUP_NAME" length="10" />
+        </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="STATUS">
+                <comment>1-ACTIVE 0-DEACTIVE</comment>
+            </column>
+        </property>
+        <property name="entryBy" type="int">
+            <column name="ENTRY_BY" not-null="true" />
+        </property>
+        <property name="entryDatetime" type="timestamp">
+            <column name="ENTRY_DATETIME" length="19" />
+        </property>
+        <property name="modyDatetime" type="timestamp">
+            <column name="MODY_DATETIME" length="19" />
+        </property>
+    </class>
+</hibernate-mapping>

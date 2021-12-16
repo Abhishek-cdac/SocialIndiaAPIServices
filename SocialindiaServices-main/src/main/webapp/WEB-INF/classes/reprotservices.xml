@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "../lib/struts-2.3.dtd">
+
+<struts>
+	<package name="reportservices" extends="default">
+
+			<action name="merchantReportTable" class="com.socialindiaservices.reports.LoadMerchantreportTableData">
+		<result name="success" type="json"></result>
+		</action>
+		<action name="merchantReportPDF" class="com.socialindiaservices.reports.LoadMerchantreportExportData" >
+			<result name="success" type="jasper">
+				<param name="location">/resources/jsp/PDFCreation/reports/merchantreport/merchantreportPDF.jasper</param>
+				<param name="dataSource">merchantList</param>
+				<param name="reportParameters">reportParams</param>
+				<param name="format">PDF</param>
+				<param name="contentDisposition">attachment;filename="merchantReport.pdf"</param>
+			</result>
+		</action>
+		<action name="merchantReportXLS" class="com.socialindiaservices.reports.LoadMerchantreportExportData" method="getMerchantXLS">
+			<result name="success" type="jasper">
+				<param name="location">/resources/jsp/PDFCreation/reports/merchantreport/merchantreportXLS.jasper</param>
+				<param name="dataSource">merchantList</param>
+				<param name="reportParameters">reportParams</param>
+				<param name="format">XLS</param>
+				<param name="contentDisposition">attachment;filename="merchantReport.XLS"</param>
+			</result>
+		</action>
+		<action name="staffMgmtReportTbl" class="com.socialindiaservices.reports.StaffMgmtReportTbl">
+		<result name="success" type="json"></result>
+		</action>
+		<action name="staffReportPDF" class="com.socialindiaservices.reports.LoadStaffreportExportData" >
+			<result name="success" type="jasper">
+				<param name="location">/resources/jsp/PDFCreation/reports/staffreport/staffreportPDF.jasper</param>
+				<param name="dataSource">staffList</param>
+				<param name="reportParameters">reportParams</param>
+				<param name="format">PDF</param>
+				<param name="contentDisposition">attachment;filename="staffReport.pdf"</param>
+			</result>
+		</action>
+		<action name="staffReportXLS" class="com.socialindiaservices.reports.LoadStaffreportExportData" method="getStaffXLS">
+			<result name="success" type="jasper">
+				<param name="location">/resources/jsp/PDFCreation/reports/staffreport/staffreportXLS.jasper</param>
+				<param name="dataSource">staffList</param>
+				<param name="reportParameters">reportParams</param>
+				<param name="format">XLS</param>
+				<param name="contentDisposition">attachment;filename="staffReport.XLS"</param>
+			</result>
+		</action>
+		<action name="loadresidenttabledetails" class="com.socialindiaservices.reports.LoadResidentReportTableData">
+		<result name="success" type="json"></result>
+		</action>
+		<action name="residentReportPDF" class="com.socialindiaservices.reports.LoadResidentreportExportData" >
+			<result name="success" type="jasper">
+				<param name="location">/resources/jsp/PDFCreation/reports/residentreport/residentreportPDF.jasper</param>
+				<param name="dataSource">userList</param>
+				<param name="reportParameters">reportParams</param>
+				<param name="format">PDF</param>
+				<param name="contentDisposition">attachment;filename="residentReport.pdf"</param>
+			</result>
+		</action>
+		<action name="residentReportXLS" class="com.socialindiaservices.reports.LoadResidentreportExportData" method="getUsertXLS">
+			<result name="success" type="jasper">
+				<param name="location">/resources/jsp/PDFCreation/reports/residentreport/residentreportXLS.jasper</param>
+				<param name="dataSource">userList</param>
+				<param name="reportParameters">reportParams</param>
+				<param name="format">XLS</param>
+				<param name="contentDisposition">attachment;filename="residentReport.XLS"</param>
+			</result>
+		</action>
+		<action name="loadLabourReportTableDetails" class="com.socialindiaservices.reports.LoadLabourReportTableData">
+		<result name="success" type="json"></result>
+		</action>
+		<action name="labourReportPDF" class="com.socialindiaservices.reports.LoadLabourReportExportData" >
+			<result name="success" type="jasper">
+				<param name="location">/resources/jsp/PDFCreation/reports/labourreport/labourreportPDF.jasper</param>
+				<param name="dataSource">labourList</param>
+				<param name="reportParameters">reportParams</param>
+				<param name="format">PDF</param>
+				<param name="contentDisposition">attachment;filename="labourReport.pdf"</param>
+			</result>
+		</action>
+		<action name="labourReportXLS" class="com.socialindiaservices.reports.LoadLabourReportExportData" method="getLabourXLS">
+			<result name="success" type="jasper">
+				<param name="location">/resources/jsp/PDFCreation/reports/labourreport/labourreportXLS.jasper</param>
+				<param name="dataSource">labourList</param>
+				<param name="reportParameters">reportParams</param>
+				<param name="format">XLS</param>
+				<param name="contentDisposition">attachment;filename="labourReport.XLS"</param>
+			</result>
+		</action>
+		<action name="loadtownshiptabledetails" class="com.socialindiaservices.reports.LoadTownshipReportTableData">
+		<result name="success" type="json"></result>
+		</action>
+		<action name="townshipReportPDF" class="com.socialindiaservices.reports.LoadTownshipreportExportData" >
+			<result name="success" type="jasper">
+				<param name="location">/resources/jsp/PDFCreation/reports/townshipreport/townshipreportPDF.jasper</param>
+				<param name="dataSource">userList</param>
+				<param name="reportParameters">reportParams</param>
+				<param name="format">PDF</param>
+				<param name="contentDisposition">attachment;filename="townshipReport.pdf"</param>
+			</result>
+		</action>
+		<action name="townshipReportXLS" class="com.socialindiaservices.reports.LoadTownshipreportExportData" method="getUsertXLS">
+			<result name="success" type="jasper">
+				<param name="location">/resources/jsp/PDFCreation/reports/townshipreport/townshipreportXLS.jasper</param>
+				<param name="dataSource">userList</param>
+				<param name="reportParameters">reportParams</param>
+				<param name="format">XLS</param>
+				<param name="contentDisposition">attachment;filename="townshipReport.XLS"</param>
+			</result>
+		</action>
+		<action name="loadsocietytabledetails" class="com.socialindiaservices.reports.LoadSocietyReportTableData">
+		<result name="success" type="json"></result>
+		</action>
+		<action name="societyReportPDF" class="com.socialindiaservices.reports.LoadSocietyreportExportData" >
+			<result name="success" type="jasper">
+				<param name="location">/resources/jsp/PDFCreation/reports/societyreport/societyreportPDF.jasper</param>
+				<param name="dataSource">userList</param>
+				<param name="reportParameters">reportParams</param>
+				<param name="format">PDF</param>
+				<param name="contentDisposition">attachment;filename="societyReport.pdf"</param>
+			</result>
+		</action>
+		<action name="societyReportXLS" class="com.socialindiaservices.reports.LoadSocietyreportExportData" method="getUsertXLS">
+			<result name="success" type="jasper">
+				<param name="location">/resources/jsp/PDFCreation/reports/societyreport/societyreportXLS.jasper</param>
+				<param name="dataSource">userList</param>
+				<param name="reportParameters">reportParams</param>
+				<param name="format">XLS</param>
+				<param name="contentDisposition">attachment;filename="societyReport.XLS"</param>
+			</result>
+		</action>
+		<action name="loadauditTrialtabledetails" class="com.socialindiaservices.reports.LoadAuditTrialReportTableData">
+		<result name="success" type="json"></result>
+		</action>
+		<action name="auditTrialReportPDF" class="com.socialindiaservices.reports.LoadAuditTrialreportExportData" >
+			<result name="success" type="jasper">
+				<param name="location">/resources/jsp/PDFCreation/reports/auditTrialreport/auditTrialreportPDF.jasper</param>
+				<param name="dataSource">userList</param>
+				<param name="reportParameters">reportParams</param>
+				<param name="format">PDF</param>
+				<param name="contentDisposition">attachment;filename="auditTrialReport.pdf"</param>
+			</result>
+		</action>
+		<action name="auditTrialReportXLS" class="com.socialindiaservices.reports.LoadAuditTrialreportExportData" method="getUsertXLS">
+			<result name="success" type="jasper">
+				<param name="location">/resources/jsp/PDFCreation/reports/auditTrialreport/auditTrialreportXLS.jasper</param>
+				<param name="dataSource">userList</param>
+				<param name="reportParameters">reportParams</param>
+				<param name="format">XLS</param>
+				<param name="contentDisposition">attachment;filename="auditTrialReport.XLS"</param>
+			</result>
+		</action>
+		<action name="loadcommitteetabledetails" class="com.socialindiaservices.reports.LoadCommitteeReportTableData">
+		<result name="success" type="json"></result>
+		</action>
+		<action name="committeeReportPDF" class="com.socialindiaservices.reports.LoadCommitteereportExportData" >
+			<result name="success" type="jasper">
+				<param name="location">/resources/jsp/PDFCreation/reports/committeereport/committeereportPDF.jasper</param>
+				<param name="dataSource">userList</param>
+				<param name="reportParameters">reportParams</param>
+				<param name="format">PDF</param>
+				<param name="contentDisposition">attachment;filename="committeeReport.pdf"</param>
+			</result>
+		</action>
+		<action name="committeeReportXLS" class="com.socialindiaservices.reports.LoadCommitteereportExportData" method="getUsertXLS">
+			<result name="success" type="jasper">
+				<param name="location">/resources/jsp/PDFCreation/reports/committeereport/committeereportXLS.jasper</param>
+				<param name="dataSource">userList</param>
+				<param name="reportParameters">reportParams</param>
+				<param name="format">XLS</param>
+				<param name="contentDisposition">attachment;filename="committeeReport.XLS"</param>
+			</result>
+		</action>
+		<action name="loaduploaderrortabledetails" class="com.socialindiaservices.reports.UploaderrorMgmtReportTbl">
+		<result name="success" type="json"></result>
+		</action>
+		<action name="loadreportissuetabledetails" class="com.socialindiaservices.reports.ReportissuesDataTbl">
+		<result name="success" type="json"></result>
+		</action>
+		<action name="solvedreportissueaction" class="com.socialindiaservices.reports.Solvedreportandotptable">
+		<result name="success" type="json"></result>
+		</action>
+		<action name="viewreportissueaction" class="com.socialindiaservices.reports.Viewreportissuetable">
+		<result name="success" type="json"></result>
+		</action>
+		<action name="maintenancebillreport" class="com.socialindiaservices.reports.MaintenancebillReport">
+		<result name="success" type="json"></result>
+		</action>
+			<action name="maintenanceBillReportPDF" class="com.socialindiaservices.reports.LoadMaintenanceExportData" >
+			<result name="success" type="jasper">
+				<param name="location">/resources/jsp/PDFCreation/reports/maintenanceBill/maintenancereportPDF.jasper</param>
+				<param name="dataSource">userList</param>
+				<param name="reportParameters">reportParams</param>
+				<param name="format">PDF</param>
+				<param name="contentDisposition">attachment;filename="maintenanceBill.pdf"</param>
+			</result>
+		</action>
+		<action name="maintenanceBillReportXLS" class="com.socialindiaservices.reports.LoadMaintenanceExportData" method="getUsertXLS">
+			<result name="success" type="jasper">
+				<param name="location">/resources/jsp/PDFCreation/reports/maintenanceBill/maintenancereportXLS.jasper</param>
+				<param name="dataSource">userList</param>
+				<param name="reportParameters">reportParams</param>
+				<param name="format">XLS</param>
+				<param name="contentDisposition">attachment;filename="maintenanceBill.XLS"</param>
+			</result>
+		</action>
+		<action name="reconicileResultReportPDF" class="com.socialindiaservices.reports.LoadReconicileExportData" >
+			<result name="success" type="jasper">
+				<param name="location">/resources/jsp/PDFCreation/reports/reconicile/reconicileReportPDF.jasper</param>
+				<param name="dataSource">reconicile</param>
+				<param name="reportParameters">reportParams</param>
+				<param name="format">PDF</param>
+				<param name="contentDisposition">attachment;filename="reconicileReport.pdf"</param>
+			</result>
+		</action>
+			<action name="reconicileResultReportXLS" class="com.socialindiaservices.reports.LoadReconicileExportData" method="getReconXLS">
+			<result name="success" type="jasper">
+				<param name="location">/resources/jsp/PDFCreation/reports/reconicile/reconicileReportXLS.jasper</param>
+				<param name="dataSource">reconicile</param>
+				<param name="reportParameters">reportParams</param>
+				<param name="format">XLS</param>
+				<param name="contentDisposition">attachment;filename="reconicileReport.XLS"</param>
+			</result>
+		</action>
+		
+		
+	</package>
+</struts>

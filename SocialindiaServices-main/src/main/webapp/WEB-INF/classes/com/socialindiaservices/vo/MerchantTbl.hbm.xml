@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Aug 17, 2016 11:27:35 AM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.socialindiaservices.vo.MerchantTblVO" table="mvp_mrch_tbl" >
+        <id name="mrchntId" type="java.lang.Integer">
+            <column name="MRCHNT_ID" />
+            <generator class="identity" />
+        </id>
+        <property name="mrchntName" type="string">
+            <column name="MRCHNT_NAME" length="50" />
+        </property>
+        <property name="mrchntFname" type="string">
+            <column name="MRCHNT_FNAME" length="30" />
+        </property>
+        <property name="mrchntLname" type="string">
+            <column name="MRCHNT_LNAME" length="30" />
+        </property>
+        <property name="mrchntEmail" type="string">
+            <column name="MRCHNT_EMAIL" length="50" />
+        </property>
+        <property name="mrchntPswd" type="string">
+            <column name="MRCHNT_PSWD" length="16" />
+        </property>
+        <property name="mrchntPhNo" type="string">
+            <column name="MRCHNT_PH_NO" length="20" />
+        </property>
+        <property name="mrchntIsdCode" type="string">
+            <column name="MRCHNT_ISD_CODE" length="20" />
+        </property>
+        <property name="mrchntAdd1" type="string">
+            <column name="MRCHNT_ADD_1" length="100" />
+        </property>
+        <property name="mrchntAdd2" type="string">
+            <column name="MRCHNT_ADD_2" length="100" />
+        </property>
+        <property name="keyForSearch" type="string">
+            <column name="KEY_FOR_SEARCH"/>
+        </property>
+        <property name="storeLocation" type="string">
+            <column name="STORE_LOCATION" length="200" />
+        </property>
+        <property name="storeOpentime" type="string">
+            <column name="STORE_OPENTIME" length="50" />
+        </property>
+        <property name="merchDescription" type="string">
+            <column name="MERCH_DESCRIPTION" />
+        </property>
+        <property name="storeClosetime" type="string">
+            <column name="STORE_CLOSETIME" length="50" />
+        </property>
+        <property name="website" type="string">
+            <column name="WEBSITE" length="100" />
+        </property>
+        <property name="shopName" type="string">
+            <column name="SHOP_NAME" length="200" />
+        </property>
+         <property name="storeimage" type="string">
+            <column name="STORE_IMAGE" length="150" />
+        </property>
+         <property name="rating" type="float">
+            <column name="RATING" />
+        </property>
+        <property name="mrchntActSts" type="java.lang.Integer">
+            <column name="MRCHNT_ACT_STS">
+                <comment>0- DeActive, 1 - Active, 2- Block</comment>
+            </column>
+        </property>
+        <property name="entryDatetime" type="timestamp">
+            <column name="ENTRY_DATETIME" length="19" />
+        </property>
+        <property name="modifyDatetime" type="timestamp">
+            <column name="MODIFY_DATETIME" length="19"  />
+        </property>
+              <many-to-one name="cityId" class="com.pack.commonvo.CityMasterTblVO" lazy="false">
+            <column name="CITY_ID" />
+        </many-to-one>
+         <many-to-one name="stateId" class="com.pack.commonvo.StateMasterTblVO" lazy="false">
+            <column name="STATE_ID" />
+        </many-to-one>
+         <many-to-one name="countryId" class="com.pack.commonvo.CountryMasterTblVO" lazy="false">
+            <column name="COUNTRY_ID" />
+        </many-to-one>
+           <many-to-one name="entryBy" class="com.siservices.signup.persistense.UserMasterTblVo" lazy="false">
+            <column name="ENTRY_BY" />
+        </many-to-one>
+          <many-to-one name="groupCode" class="com.siservices.uam.persistense.GroupMasterTblVo" lazy="false">
+            <column name="GROUP_ID" />
+        </many-to-one>
+        <many-to-one name="pstlId" class="com.pack.commonvo.PostalCodeMasterTblVO" lazy="false">
+            <column name="PSTL_ID" />
+        </many-to-one>
+        <many-to-one name="mrchCategoryId" class="com.socialindiaservices.vo.MerchantCategoryTblVO" lazy="false">
+            <column name="MRCH_CATEGORY_ID" />
+        </many-to-one>
+        
+    </class>
+</hibernate-mapping>

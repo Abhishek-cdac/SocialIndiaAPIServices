@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "../lib/struts-2.3.dtd">
+
+<struts>
+	<package name="mobiFamilyMemberServices" namespace="/" extends="struts-default,json-default">
+
+		
+			<action name="delete_familymember" class="com.mobile.familymember.familyMemberDelete">
+			<result name="success" type="json"></result>
+		</action>
+		
+		<action name="added_familymember_list" class="com.mobile.familymember.familyMemberList">
+			<result name="success" type="json"></result>
+		</action>
+		
+		<action name="addedit_familymember" class="com.mobile.familymember.familyMemberAddEdit">
+			<result name="success" type="json"></result>
+		</action>
+		
+		<action name="update_relationship" class="com.mobile.familymember.updateFamilyRelationship">
+			<result name="success" type="json"></result>
+		</action>
+		
+		<action name="login_invite_familymember" class="com.mobile.familymember.familyMemberLoginInvite">
+			<result name="success" type="json"></result>
+		</action>
+		
+		
+		
+	</package>
+</struts>

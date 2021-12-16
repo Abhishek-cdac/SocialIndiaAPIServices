@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 13, 2016 6:24:09 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+	<class name="com.socialindiaservices.vo.OneWayCommunicationTblVO"
+		table="one_way_communication">
+
+		<id name="pk" type="java.lang.Integer">
+			<column name="id" />
+			<generator class="identity" />
+		</id>
+		<property name="sid" type="java.lang.String" length="50">
+			<column name="s_id"></column>
+		</property>
+		<property name="buysell" type="java.lang.Integer">
+			<column name="buy_sell" />
+		</property>
+		<property name="sharecare" type="java.lang.Integer">
+			<column name="share_care" />
+		</property>
+		<property name="skillhelp" type="java.lang.Integer">
+			<column name="skill_help" />
+		</property>
+		<property name="mydocuments" type="java.lang.Integer">
+			<column name="my_documents" />
+		</property>
+		<property name="facilitybooking" type="java.lang.Integer">
+			<column name="facility_booking" />
+		</property>
+		<property name="personalevents" type="java.lang.Integer">
+			<column name="personal_events" />
+		</property>
+		<property name="gatepass" type="java.lang.Integer">
+			<column name="gate_pass" />
+		</property>
+		<property name="profileinfo" type="java.lang.Integer">
+			<column name="profile_info" />
+		</property>
+		<property name="timelinefeeds" type="java.lang.Integer">
+			<column name="timeline_feeds" />
+		</property>
+		<property name="onlineusers" type="java.lang.Integer">
+			<column name="online_users" />
+		</property>
+		<property name="shophome" type="java.lang.Integer">
+			<column name="shop_home" />
+		</property>
+		<property name="easypay" type="java.lang.Integer">
+			<column name="easy_pay" />
+		</property>
+		<property name="complaints" type="java.lang.Integer">
+			<column name="complaints" />
+		</property>
+
+		<property name="publishasbuyerorseller" type="java.lang.Integer">
+			<column name="publish_as_buyer_or_seller" />
+		</property>
+		<property name="whatsonstore" type="java.lang.Integer">
+			<column name="whats_on_store" />
+		</property>
+		<property name="carpooling" type="java.lang.Integer">
+			<column name="carpooling" />
+		</property>
+		<property name="donate" type="java.lang.Integer">
+			<column name="donate" />
+		</property>
+		<property name="publishskils" type="java.lang.Integer">
+			<column name="publish_skils" />
+		</property>
+		<property name="skilldirctory" type="java.lang.Integer">
+			<column name="skill_dirctory" />
+		</property>
+		<property name="myservicebooking" type="java.lang.Integer">
+			<column name="my_service_booking" />
+		</property>
+		<property name="knowledgebase" type="java.lang.Integer">
+			<column name="knowledge_base" />
+		</property>
+		<property name="personalbriefcase" type="java.lang.Integer">
+			<column name="personal_briefcase" />
+		</property>
+		<property name="societyinfo" type="java.lang.Integer">
+			<column name="society_info" />
+		</property>
+		<property name="searchdocument" type="java.lang.Integer">
+			<column name="search_document" />
+		</property>
+		<property name="newbooking" type="java.lang.Integer">
+			<column name="new_booking" />
+		</property>
+		<property name="createinvitation" type="java.lang.Integer">
+			<column name="create_invitation" />
+		</property>
+		<property name="issuegatepass" type="java.lang.Integer">
+			<column name="issue_gate_pass" />
+		</property>
+		<property name="feeds" type="java.lang.Integer">
+			<column name="feeds" />
+		</property>
+		<property name="onlineuser" type="java.lang.Integer">
+			<column name="online_user" />
+		</property>
+		<property name="browsebycategory" type="java.lang.Integer">
+			<column name="browse_by_category" />
+		</property>
+		<property name="searchwithkeywords" type="java.lang.Integer">
+			<column name="search_with_key_words" />
+		</property>
+		<property name="rateyourexperience" type="java.lang.Integer">
+			<column name="rate_your_experience" />
+		</property>
+		<property name="reportproblem" type="java.lang.Integer">
+			<column name="report_problem" />
+		</property>
+		<property name="mypassport" type="java.lang.Integer">
+			<column name="my_passport" />
+		</property>
+		<property name="utilitypayments" type="java.lang.Integer">
+			<column name="utility_payments" />
+		</property>
+		<property name="postcomplaint" type="java.lang.Integer">
+			<column name="post_complaint" />
+		</property>
+	<property name="rights" type="java.lang.String" length="30">
+			<column name="rights" />
+		</property>
+	</class>
+</hibernate-mapping>

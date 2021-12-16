@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "../lib/struts-2.3.dtd">
+
+<struts>
+	<package name="residentservices" namespace="/" extends="struts-default,json-default">
+
+		<action name="restupdates" class="com.pack.resident.ResidentUpdate">
+			<result name="success" type="json"></result>
+		</action>
+		
+		<action name="residentselectall" class="com.pack.resident.ResidentDetailsview">
+			<result name="success" type="json"></result>
+		</action>
+		<action name="xlsfileupload" class="com.pack.resident.Xlsupload">
+			<result name="success" type="json"></result>
+		</action>
+	</package>
+</struts>

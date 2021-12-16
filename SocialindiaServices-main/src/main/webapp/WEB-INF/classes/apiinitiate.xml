@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "../lib/struts-2.3.dtd">
+
+<struts>
+	<package name="apiinitiate" namespace="/"
+		extends="struts-default,json-default">
+		<action name="testconnection" class="com.mobi.apiinitiate.Testconnection">
+			<result name="success" type="json"></result>
+		</action>
+		<action name="deviceinfo" class="com.mobi.apiinitiate.Deviceinfo">
+			<result name="success" type="json"></result>
+		</action>
+		<action name="rangemsgfiledownload" class="com.mobi.apiinitiate.Apifiledownload">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">downloadStream</param>
+				<param name="contentDisposition">attachment;filename=${filename}</param> 
+				<param name="bufferSize">4096</param>
+			</result>
+			<result name="error" type="json"></result>
+		</action>
+		<action name="apipostfileuploadsingle" class="com.mobi.feed.FeedFileUpload">
+			<interceptor-ref name="fileUpload">
+				<param name="maximumSize">2097152</param>
+
+				<param name="allowedTypes">
+					image/png,image/gif,image/jpeg,image/pjpeg
+				</param>
+			</interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<result name="success" type="json"></result>
+		</action>
+		<action name="apipostfileupload" class="com.mobi.feed.FeedMultiFileUpload">
+			<interceptor-ref name="fileUpload">
+				<param name="maximumSize">2097152</param>
+
+				<param name="allowedTypes">
+					image/png,image/gif,image/jpeg,image/pjpeg
+				</param>
+			</interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<result name="success" type="json"></result>
+		</action>
+	</package>
+</struts>

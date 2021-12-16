@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "../lib/struts-2.3.dtd">
+
+<struts>
+<package name="complaintservices" namespace="/" extends="struts-default,json-default">
+	 <action name="complaintviewall" class="com.pack.complaints.Complaintsviewall">
+		<result name="success" type="json"></result>
+	</action>
+	<action name="complaintupdates" class="com.pack.complaints.Complaintsupdates">
+		<result name="success" type="json"></result>
+	</action>
+	<action name="siLab_MercSendEmail" class="com.pack.complaints.siLaborMerchantSendEmail">
+			<result name="success" type="json"></result>
+		</action>
+		<action name="siLab_MercSendSMS" class="com.pack.complaints.siLaborMerchantSendSMS">
+			<result name="success" type="json"></result>
+		</action>
+		
+		<action name="uploadcomplaintsimage" class="com.pack.complaints.Complaintsimageupdate">
+			<result name="success" type="json"></result>
+		</action>
+</package>
+</struts>
