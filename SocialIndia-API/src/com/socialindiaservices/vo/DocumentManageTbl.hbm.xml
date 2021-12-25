@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 13, 2016 6:24:09 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+	<class name="com.socialindiaservices.vo.DocumentManageTblVO"
+		table="mvp_docmng_tbl" >
+
+		<id name="documentId" type="java.lang.Integer">
+			<column name="DOCMNT_ID" />
+			<generator class="identity" />
+		</id>
+		<property name="docFolder" type="java.lang.Integer">
+			<column name="DOC_FLDRC"></column>
+		</property>
+		<property name="docSubFolder" type="java.lang.Integer">
+			<column name="DOC_SUB_FLDR"></column>
+		</property>
+		<property name="docDateFolderName" type="string">
+			<column name="DOC_DATE_FLDR" length="30" />
+		</property>
+		<property name="docFileName" type="string">
+			<column name="DOC_FILE_NAME" length="100" />
+		</property>
+		<property name="subject" type="string">
+			<column name="SUBJECT" length="200" />
+		</property>
+		<property name="descr" type="string">
+			<column name="DESCR" length="65535" />
+		</property>
+		<property name="emailStatus" type="java.lang.Integer">
+			<column name="EMAIL_STATUS"></column>
+		</property>
+		<property name="statusFlag" type="java.lang.Integer">
+			<column name="STATUS"></column>
+		</property>
+		<property name="entryDatetime" type="timestamp">
+			<column name="ENTRY_DATETIME" length="19" />
+		</property>
+		<property name="modifyDatetime" type="timestamp">
+			<column name="MODIFY_DATETIME" length="19" />
+		</property>
+		
+		
+		<many-to-one name="maintenanceId" column="MAINTENANCE_ID"
+			class="com.socialindiaservices.vo.MaintenanceFeeTblVO" lazy="false"></many-to-one>
+			<many-to-one name="eventId" column="EVENT_ID"
+			class="com.pack.eventvo.EventTblVO" lazy="false"></many-to-one>
+		<many-to-one name="userId" column="USR_ID"
+			class="com.siservices.signup.persistense.UserMasterTblVo" lazy="false"></many-to-one>
+		<many-to-one name="docTypId" column="DOC_TYP_ID"
+			class="com.pack.commonvo.DoctypMasterTblVO" lazy="false"></many-to-one>
+		<many-to-one name="usrTyp" column="USR_TYP"
+			class="com.siservices.uam.persistense.GroupMasterTblVo" lazy="false"></many-to-one>
+		<!-- <many-to-one name="maintenanceId" column="MAINTENANCE_ID" class="com.siservices.uam.persistense.GroupMasterTblVo" 
+			lazy="false"></many-to-one> -->
+			<many-to-one name="entryBy" column="ENTRY_BY"
+			class="com.siservices.signup.persistense.UserMasterTblVo" lazy="false"></many-to-one>
+	</class>
+</hibernate-mapping>
+

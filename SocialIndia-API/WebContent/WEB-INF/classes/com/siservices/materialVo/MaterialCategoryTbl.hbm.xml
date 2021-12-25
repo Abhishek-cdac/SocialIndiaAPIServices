@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Aug 16, 2016 3:19:39 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.siservices.materialVo.MaterialCategoryTbl" table="material_category_tbl" >
+       
+        <id name="materialCategoryId" type="java.lang.Integer">
+            <column name="MATERIAL_CATEGORY_ID" />
+            <generator class="identity" />
+        </id>
+        <property name="materialName" type="string">
+            <column name="MATERIAL_NAME" length="50" />
+        </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="STATUS">
+                <comment>1-ACTIVE 0-INACTIVE</comment>
+            </column>
+        </property>
+        <property name="entryBy" type="java.lang.Integer">
+            <column name="ENTRY_BY" />
+        </property>
+        <property name="entryDatetime" type="timestamp">
+            <column name="ENTRY_DATETIME" length="19" />
+        </property>
+        <property name="modifyDatetime" type="timestamp">
+            <column name="MODIFY_DATETIME" length="19"  />
+        </property>
+        
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 29, 2016 11:14:41 AM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.mobi.messagevo.GrpChatAttachTblVO" table="mvp_grp_chat_attch_tbl">
+		<id name="uniqId" column="UNIQ_ID" type="integer">
+			<generator class="native"></generator>
+		</id>	
+		<many-to-one name="chatId" column="CHAT_ID" class="com.mobi.messagevo.GroupChatTblVO" lazy="false"></many-to-one>		
+		<property name="attachName" column="ATTACH_NAME" type="string" ></property>	
+		<property name="thumpImage" column="THUMP_IMAGE" type="string" ></property>	
+		<property name="fileType" column="FILE_TYPE" type="integer" length="11"></property>		
+		<property name="status" column="STATUS" type="integer" length="11"></property>	
+		<property name="entryDatetime" column="ENTRY_DATETIME" type="timestamp"></property>	
+		<property name="modifyDatetime" column="MODIFY_DATETIME" type="timestamp"></property>	
+	</class>
+</hibernate-mapping>

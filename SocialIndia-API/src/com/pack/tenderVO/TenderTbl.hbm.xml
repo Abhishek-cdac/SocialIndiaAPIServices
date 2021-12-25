@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Aug 17, 2016 5:12:09 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.pack.tenderVO.TenderTblVO" table="mvp_tender_tbl">
+        <id name="tenderId" type="java.lang.Integer">
+            <column name="TENDER_ID" />
+            <generator class="native" />
+        </id>
+        <many-to-one name="usrRegTbl" class="com.siservices.signup.persistense.UserMasterTblVo" fetch="select">
+            <column name="USR_ID" />
+        </many-to-one>
+        <many-to-one name="groupMstTbl" class="com.siservices.uam.persistense.GroupMasterTblVo" fetch="select">
+            <column name="GROUP_ID" />
+        </many-to-one>
+        <property name="tenderName" type="string">
+            <column name="TENDER_NAME" length="250" />
+        </property>
+        <property name="tenderDate" type="string" length="50">
+            <column name="TENDER_DATE" length="19" />
+        </property>
+        <property name="tenderAmount" type="java.lang.Float">
+            <column name="TENDER_AMOUNT" precision="12" scale="0" />
+        </property>
+        <property name="tenderDetails" type="string">
+            <column name="TENDER_DETAILS" length="65535" />
+        </property>
+        <property name="entryBy" type="java.lang.Integer">
+            <column name="ENTRY_BY" />
+        </property>
+        <property name="entryDatetime" type="timestamp">
+            <column name="ENTRY_DATETIME" length="19" />
+        </property>
+         <property name="ivrBnSTATUS" type="java.lang.Integer">
+            <column name="STATUS" />
+        </property>
+        
+    </class>
+</hibernate-mapping>

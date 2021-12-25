@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.siservices.uam.persistense.GroupMasterTblVo" table="group_mst_tbl">
+	<id name="groupCode" column="GROUP_ID" type="integer">
+	<generator class="native"></generator>
+	</id>
+	<property name="groupName" column="GROUP_NAME" type="string" length="50"></property>
+	<property name="groupAliasName" column="GROUP_ALIAS" type="string" length="50"></property>
+	<property name="statusFlag" column="STATUS_FLAG" type="string" length="2"></property>
+	<property name="accessMedia" column="ACCESS_MEDIA" type="integer"></property>
+	<property name="updateBy" column="UPDATE_BY" type="integer"></property>
+	<property name="entryDatetime" column="ENTRY_DATETIME" type="timestamp"></property>
+	<property name="modifyDatetime" column="MODY_DATETIME" type="timestamp"></property>
+	<many-to-one name="entryBy" column="ENTRY_BY" class="com.siservices.signup.persistense.UserMasterTblVo" lazy="false"></many-to-one>
+	</class>
+</hibernate-mapping>

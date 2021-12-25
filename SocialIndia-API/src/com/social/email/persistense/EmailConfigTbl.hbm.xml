@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping >
+
+<class name="com.social.email.persistense.EmailConfigTblVo" table="email_conf_tbl">
+
+<id name="sid" column="ID">
+<generator class="native"></generator>
+</id>
+
+<property name="userName" column="USR_NAME" type="string" length="40"/>
+<property name="passWord" type="string" column="PASSWD" length="20"></property>
+<property name="hostName" type="string" length="30" column="HOST_NAME"></property>
+<property name="portNo" type="string" length="10" column="PORT_NO"></property>
+<property name="fromId" type="string" length="30" column="FRM_ID"></property>
+<property name="protoCol" type="string" length="10" column="PROTCL"></property>
+<property name="fetchConf" type="integer" column="FETCH_CONF"></property>
+<property name="bodcontFileIp" type="string" length="90" column="BODYCONT_FILE_IP"></property>
+<property name="imgHostIp" type="string" length="100" column="IMG_HOST_IPV"></property>
+<property name="logFilePath" type="string" length="100" column="LOGFILE_PATH"></property>
+<property name="tempPath" type="string" length="100" column="TEMPLATES_PATH"></property>
+<property name="actStatus" type="integer" column="ACT_STAT"></property>
+<property name="maxThread" type="integer" column="MAX_THREAD_ALIVE"></property>
+</class>
+
+</hibernate-mapping>

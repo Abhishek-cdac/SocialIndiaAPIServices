@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "../lib/struts-2.3.dtd">
+
+<struts>
+<package name="mobileventservices" namespace="/" extends="struts-default,json-default">
+	  <action name="createNewEvent" class="com.mobi.event.CreateEvent">
+		<result name="success" type="json"></result>
+	</action> 	 
+	<action name="eventContributorList" class="com.mobi.event.EventContributorList">
+		<result name="success" type="json"></result>
+	</action> 
+	<action name="make_event_contribution" class="com.mobi.event.MakeEventContribution">
+		<result name="success" type="json"></result>
+	</action>
+	<action name="make_event_rsvp" class="com.mobi.event.MakeRSVP">
+		<result name="success" type="json"></result>
+	</action>
+	<action name="event_search_list" class="com.mobi.event.EventSearchList">
+		<result name="success" type="json"></result>
+	</action>
+	<action name="event_delete" class="com.mobi.event.EventDelete">
+		<result name="success" type="json"></result>
+	</action>
+</package>
+</struts>

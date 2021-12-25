@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 8, 2016 4:01:42 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.socialindiaservices.vo.MvpEvotePoolingTbl" table="mvp_evote_pooling_tbl">
+        <id name="votingId" type="java.lang.Integer">
+            <column name="VOTING_ID" />
+            <generator class="identity" />
+        </id>
+         <many-to-one name="evotingMstId" class="com.socialindiaservices.vo.MvpEvotingMstTbl" fetch="select">
+            <column name="EVOTING_MST_ID" />
+        </many-to-one>
+        <many-to-one name="usrRegTbl" class="com.siservices.signup.persistense.UserMasterTblVo" fetch="select">
+            <column name="VOTING_BY" />
+        </many-to-one>
+        <property name="votingDate" type="timestamp">
+            <column name="VOTING_DATE" length="19" />
+        </property>
+        <property name="statusflag" type="java.lang.Integer">
+            <column name="STATUSFLAG">
+                <comment>1--&gt;ACTIVE,2--&gt;DEACTIVE,3--&gt;DELETED</comment>
+            </column>
+        </property>
+        <property name="votingStatus" type="java.lang.Integer">
+            <column name="VOTING_STATUS">
+                <comment>1--&gt;AGREE,2--&gt;DISAGREE,3--&gt;NEED MEETING,4--&gt;NO VOTE</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

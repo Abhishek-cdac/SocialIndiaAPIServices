@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 21, 2016 6:06:04 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.siservices.forumVo.MvpFourmDiscussTbl" table="mvp_fourm_discuss_tbl" >
+        <id name="discussId" type="java.lang.Integer">
+            <column name="DISCUSS_ID" />
+            <generator class="identity" />
+        </id>
+       
+        <property name="discussionDesc" type="string">
+            <column name="DISCUSSION_DESC" length="65535" />
+        </property>
+       
+        <property name="status" type="java.lang.Integer">
+            <column name="STATUS">
+                <comment>0- deactive, 1 - active</comment>
+            </column>
+        </property>
+        <property name="entryBy" type="java.lang.Integer">
+            <column name="ENTRY_BY" />
+        </property>
+        <property name="entryDatetime" type="timestamp">
+            <column name="ENTRY_DATETIME" length="19" />
+        </property>
+        <property name="modifyDatetime" type="timestamp">
+            <column name="MODIFY_DATETIME" length="19"  />
+        </property>
+        
+         <many-to-one name="topicsId" class="com.siservices.forumVo.MvpFourmTopicsTbl" lazy="false" fetch="select">
+            <column name="TOPICS_ID" />
+        </many-to-one>
+        
+         <many-to-one name="userId" class="com.siservices.signup.persistense.UserMasterTblVo" lazy="false" fetch="select">
+            <column name="USR_ID" />
+        </many-to-one>
+        
+    </class>
+</hibernate-mapping>

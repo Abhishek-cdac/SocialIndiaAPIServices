@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "../lib/struts-2.3.dtd">
+
+<struts>
+<package name="enewsservices" namespace="/" extends="struts-default,json-default">
+	  <action name="enewsviewall" class="com.pack.enews.EeNewsviewall">
+		<result name="success" type="json"></result>
+	</action> 
+	<action name="enewsupdates" class="com.pack.enews.EeNewsupdates">
+		<result name="success" type="json"></result>
+	</action>
+</package>
+</struts>

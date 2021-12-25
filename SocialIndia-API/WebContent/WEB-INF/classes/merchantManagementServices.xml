@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "../lib/struts-2.3.dtd">
+
+<struts>
+	<package name="merchantmgmtservices" namespace="/" extends="struts-default,json-default">
+
+	<action name="getMerchantCategory" class="com.socialindiaservices.merchantmgmt.GetMerchantCategory">
+			<result name="success" type="json"></result>
+		</action>
+		<action name="createMerchant" class="com.socialindiaservices.merchantmgmt.CreateNewMerchant">
+		<result name="success" type="json"></result>
+		</action>
+		<action name="loadmrchtabledetails" class="com.socialindiaservices.merchantmgmt.LoadMerchantTableData">
+		<result name="success" type="json"></result>
+		</action>
+		<action name="getmerchantviewdetails" class="com.socialindiaservices.merchantmgmt.Getmerchantviewdetails">
+		<result name="success" type="json"></result>
+		</action>
+		<action name="editMerchant" class="com.socialindiaservices.merchantmgmt.EditNewMerchants">
+		<result name="success" type="json"></result>
+		</action>
+		<action name="deleteMerchant" class="com.socialindiaservices.merchantmgmt.DeleteExistingMerchant">
+		<result name="success" type="json"></result>
+		</action>
+		<action name="createNewMerchantOffer" class="com.socialindiaservices.merchantmgmt.CreateNewMerchantOffer">
+		<result name="success" type="json"></result>
+		</action>
+		<action name="addNewMerchantOfferImages" class="com.socialindiaservices.merchantmgmt.AddNewMerchantOfferImages">
+		<result name="success" type="json"></result>
+		</action>
+		<action name="loadmrchoffertabledetails" class="com.socialindiaservices.merchantmgmt.LoadMerchantOfferTableData">
+		<result name="success" type="json"></result>
+		</action>
+		<action name="getmerchantutilviewdetails" class="com.socialindiaservices.merchantmgmt.Getmerchantlutiviewdetails">
+		<result name="success" type="json"></result>
+		</action>
+		<action name="editNewMerchantOffer" class="com.socialindiaservices.merchantmgmt.EditNewMerchantOffer">
+		<result name="success" type="json"></result>
+		</action>
+		<action name="deleteNewMerchantOffer" class="com.socialindiaservices.merchantmgmt.DeleteNewMerchantOffer">
+		<result name="success" type="json"></result>
+		</action>
+			
+	</package>
+</struts>

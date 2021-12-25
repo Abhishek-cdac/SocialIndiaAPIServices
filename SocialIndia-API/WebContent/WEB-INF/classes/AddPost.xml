@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "../lib/struts-2.3.dtd">
+
+<struts>
+	<package name="addpostmobservices" namespace="/" extends="struts-default,json-default">
+
+		<action name="ads_post_delete" class="com.mobi.addpost.AddPostDelete">
+			<result name="success" type="json"></result>
+		</action>
+		
+		<action name="ads_post_detail" class="com.mobi.addpost.AddPostDetail">
+			<result name="success" type="json"></result>
+		</action>
+		
+		<action name="ads_post_list" class="com.mobi.addpost.AddPostList">
+			<result name="success" type="json"></result>
+		</action>
+		
+		<action name="ads_post" class="com.mobi.addpost.ads_post">
+			<result name="success" type="json"></result>
+		</action>
+		
+	</package>
+</struts>

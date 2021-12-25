@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "../lib/struts-2.3.dtd">
+
+<struts>
+	<package name="siSocietymgmt" namespace="/" extends="struts-default,json-default">
+
+		
+		<action name="siSocietymgmt" class="com.siservices.societyMgmt.siSocietymgmt">
+			<result name="success" type="json"></result>
+		</action>
+		
+		<action name="siSocietyMgmtCreate" class="com.siservices.societyMgmt.siSocietyMgmtCreate">
+			<result name="success" type="json"></result>
+		</action>
+		
+			<action name="siSocietyMgmtView" class="com.siservices.societyMgmt.siSocietyMgmtView">
+			<result name="success" type="json"></result>
+		</action>
+		
+			<action name="siSocietyEditAction" class="com.siservices.societyMgmt.siSocietyEditAction">
+			<result name="success" type="json"></result>
+		</action>
+		
+			<action name="siSocietyUpdateAction" class="com.siservices.societyMgmt.siSocietyUpdateAction">
+			<result name="success" type="json"></result>
+		</action>
+		
+		<action name="siTownshipMasterTblAction" class="com.siservices.societyMgmt.siTownshipMasterTblAction">
+			<result name="success" type="json"></result>
+		</action>
+		
+		<action name="siSocietyGenerateNewKey" class="com.siservices.societyMgmt.siSocietyGenerateNewKey">
+			<result name="success" type="json"></result>
+		</action>
+		
+		<action name="siSocietyPrintReport" class="com.siservices.society.reports.siSocietyPrintReport">
+			<result name="success" type="json"></result>
+		</action>
+		
+		<action name="siSocietySendEmail" class="com.siservices.societyMgmt.siSocietySendEmail">
+			<result name="success" type="json"></result>
+		</action>
+		<action name="addnewsocietyProfileImages" class="com.siservices.societyMgmt.AddNewsocietyProfileImages">
+			<result name="success" type="json"></result>
+		</action>
+		
+		<action name="soctywingsblocklist" class="com.siservices.societyMgmt.GetWingsBlocksList">
+			<result name="success" type="json"></result>
+		</action>
+		
+		<action name="socyteadelete" class="com.siservices.societyMgmt.siSocietyDeleteAction">
+			<result name="success" type="json"></result>
+		</action>
+		
+	</package>
+</struts>

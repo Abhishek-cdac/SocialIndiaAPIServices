@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "../lib/struts-2.3.dtd">
+
+<struts>
+	<package name="mobiOtpServices" namespace="/" extends="struts-default,json-default">
+
+		 <action name="requestotp" class="com.mobile.otp.mobRequestOtp">
+			<result name="success" type="json"></result>
+		</action>
+		
+			<action name="validateotp" class="com.mobile.otp.mobValidateOtp">
+			<result name="success" type="json"></result>
+		</action>
+		
+		<action name="signupmobile" class="com.mobile.signup.signUpMobile">
+			<result name="success" type="json"></result>
+		</action>
+		
+	<!-- 	<action name="profilepicupdate" class="com.mobile.profile.profileDetails">
+			<result name="success" type="json"></result>
+		</action> -->
+	</package>
+</struts>

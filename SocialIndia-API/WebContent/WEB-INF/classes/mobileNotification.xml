@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "../lib/struts-2.3.dtd">
+
+<struts>
+	<package name="mobilenotification" namespace="/" extends="struts-default,json-default">
+		<action name="publish_add_edit" class="com.mobi.publishskill.AddEdit">
+			<result name="success" type="json"></result>
+		</action>
+		
+		<action name="get_notification" class="com.mobi.notification.NotificationList">
+			<result name="success" type="json"></result>
+		</action>
+		<action name="notification_read" class="com.mobi.notification.MarkNotificationRead">
+			<result name="success" type="json"></result>
+		</action>
+		<action name="notification_send_list" class="com.mobi.notification.NotificationSendList">
+			<result name="success" type="json"></result>
+		</action>
+	</package>
+</struts>

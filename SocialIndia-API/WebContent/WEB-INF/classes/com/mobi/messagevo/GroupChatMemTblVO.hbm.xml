@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.mobi.messagevo.GroupChatMemTblVO" table="mvp_grpchat_mem_tbl">
+		<id name="memberId" type="java.lang.Integer">
+			<column name="MEMBER_ID" />
+			<generator class="identity" />
+		</id>	
+		<property name="createrId" type="java.lang.Integer">
+			<column name="CREATER_ID"/>			
+		</property>
+		<property name="status" type="java.lang.Integer">
+			<column name="STATUS"/>			
+		</property>
+		<property name="entryDatetime" type="timestamp">
+			<column name="ENTRY_DATETIME" length="19" />
+		</property>
+		<property name="modifyDatetime" type="timestamp">
+			<column name="MODIFY_DATETIME" length="19" not-null="true" />
+		</property>
+		<many-to-one name="grpChatId" column="GRP_CHAT_ID" class="com.mobi.messagevo.GroupChatMstrTblVO" lazy="false"></many-to-one>
+		<many-to-one name="usrId" column="USR_ID" class="com.siservices.signup.persistense.UserMasterTblVo" lazy="false"></many-to-one>
+		<!-- <many-to-one name="createrId" column="CREATER_ID" class="com.siservices.signup.persistense.UserMasterTblVo" lazy="false"></many-to-one> -->		
+	</class>
+</hibernate-mapping>

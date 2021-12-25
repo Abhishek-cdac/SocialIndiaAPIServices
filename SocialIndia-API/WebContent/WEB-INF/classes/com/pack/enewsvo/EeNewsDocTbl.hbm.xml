@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Aug 17, 2016 5:12:09 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.pack.enewsvo.EeNewsDocTblVO" table="mvp_enews_image_tbl">
+        <id name="EnewuniqId" type="java.lang.Integer">
+            <column name="ENEWS_UNIQUE_ID" />
+            <generator class="native" />
+        </id>
+       
+        <many-to-one name="Enewid" class="com.pack.enewsvo.EeNewsTblVO" fetch="select">
+            <column name="ENEWS_ID" />
+        </many-to-one>
+        <property name="imgname" type="string">
+            <column name="IMAGE_NAME" length="200" />
+        </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="STATUS" />
+        </property>
+        <property name="entryBy" type="java.lang.Integer">
+            <column name="ENTRY_BY" />
+        </property>
+        <property name="entryDatetime" type="timestamp">
+            <column name="ENTRY_DATETIME" length="19" />
+        </property>
+       
+    </class>
+</hibernate-mapping>

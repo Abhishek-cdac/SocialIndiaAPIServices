@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 2, 2016 4:59:51 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.siservices.committeeMgmt.persistense.CommittteeRoleMstTbl" table="committtee_role_mst_tbl">
+        <id name="roleId" type="java.lang.Integer">
+            <column name="ROLE_ID" />
+            <generator class="identity" />
+        </id>
+        <property name="roleName" type="string">
+            <column name="ROLE_NAME" length="50" />
+        </property>
+        <property name="roleDescp" type="string">
+            <column name="ROLE_DESCP" length="200" />
+        </property>
+        <property name="entryBy" type="java.lang.Integer">
+            <column name="ENTRY_BY" />
+        </property>
+        <property name="status" column="STATUS" type="integer" length="11">
+        </property>
+        <property name="entryDatetime" type="timestamp">
+            <column name="ENTRY_DATETIME" length="19" />
+        </property>
+       
+    </class>
+</hibernate-mapping>

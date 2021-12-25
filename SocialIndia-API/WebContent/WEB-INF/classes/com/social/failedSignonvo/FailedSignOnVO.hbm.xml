@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 27, 2016 3:52:18 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.social.failedSignonvo.FailedSignOnTbl" table="failed_signon_tbl">      
+             <id name="id" type="java.lang.Integer">
+            <column name="LOGIN_ID" />
+            <generator class="native" />
+        </id>
+           <property name="failUsername" type="string">
+                <column name="LOGIN_USERNAME" length="100" />
+            </property>
+            <property name="failPassword" type="string">
+                <column name="LOGIN_PASSWORD" length="100" />
+            </property>
+            <property name="status" type="int">
+                <column name="STATUS" />
+              </property>
+              <property name="failcount" type="java.lang.Integer">
+                <column name="LOGIN_COUNT" length="11" />
+              </property>
+               <property name="entryDate" type="timestamp">
+            <column name="ENTRY_TIME" length="19" />
+        </property>
+            <property name="modifyDatetime" type="timestamp">
+            <column name="MODIFY_DATETIME" length="19" />
+        </property>
+        <many-to-one name="ivrBnENTRY_BY" column="ENTRY_BY" class="com.siservices.signup.persistense.UserMasterTblVo" lazy="false"></many-to-one>
+    </class>
+</hibernate-mapping>

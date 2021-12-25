@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 5, 2017 11:25:37 AM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.socialindiaservices.vo.MvpDonationCategoryMstTbl" table="mvp_donation_category_mst_tbl">
+        <id name="categoryId" type="java.lang.Integer">
+            <column name="CATEGORY_ID" />
+            <generator class="identity" />
+        </id>
+        <property name="categoryName" type="string">
+            <column name="CATEGORY_NAME" length="200" />
+        </property>
+        <property name="categoryShrtForm" type="string">
+            <column name="CTG_SHTFORM" length="50" />
+        </property>
+        <property name="categoryDesc" type="string">
+            <column name="CATEGORY_DESCP" length="50000" />
+        </property>
+         <property name="categoryFlag" type="java.lang.Integer">
+            <column name="CREATOR_FLAG" />
+        </property>
+        <property name="categoryType" type="java.lang.Integer">
+            <column name="CATEGORY_TYPE" />
+        </property>
+         <property name="categoryImage" type="string">
+            <column name="CATEGORY_IMAGE_NAME" length="50" />
+        </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="STATUS">
+                <comment>0- DEACTIVE, 1 - ACTIVE</comment>
+            </column>
+        </property>
+        <property name="entryBy" type="java.lang.Integer">
+            <column name="ENTRY_BY" />
+        </property>
+        <property name="entryDate" type="timestamp">
+            <column name="ENTRY_DATE" length="19" />
+        </property>
+        <property name="modifyDate" type="timestamp">
+            <column name="MODIFY_DATE" length="19"  />
+        </property>
+
+
+    </class>
+</hibernate-mapping>

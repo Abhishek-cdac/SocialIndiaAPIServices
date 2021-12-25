@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.mobi.contactusreportissuevo.ReportIssueTblVO" table="mvp_report_issue_tbl" >
+		<id name="repId" type="java.lang.Integer">
+			<column name="REP_ID" />
+			<generator class="identity" />
+		</id>
+		<property name="userId" type="java.lang.Integer">
+			<column name="USR_ID"  />
+		</property>
+		<property name="parentId" type="java.lang.Integer">
+			<column name="PARENT_ID" />
+		</property>
+		<property name="emailId" type="string">
+			<column name="EMAIL_ID" length="100" />
+		</property>
+		<property name="mobileNo" type="string">
+			<column name="MOBILE_NO" length="100" />
+		</property>
+		<property name="name" type="string">
+			<column name="NAME" length="100" />
+		</property>
+		<property name="descr" type="string">
+			<column name="DESCR" length="100" />
+		</property>
+		<property name="reportTo" type="java.lang.Integer">
+			<column name="REPORT_TO" />
+		</property>
+		<property name="reportToType" type="java.lang.Integer">
+			<column name="REPORT_TO_TYPE" />
+		</property>
+		<property name="issueContactus" type="java.lang.Integer">
+			<column name="ISSUE_CONTACTUS">
+				<comment>1-issue, 2-contactus</comment>
+			</column>
+		</property>		
+		<property name="entryBy" type="java.lang.Integer">
+			<column name="ENTRY_BY" />
+		</property>
+		<property name="status" type="java.lang.Integer">
+			<column name="STATUS" />
+		</property>
+		<property name="entryDatetime" type="timestamp">
+			<column name="ENTRY_DATETIME" length="19" />
+		</property>
+		<property name="modyDatetime" type="timestamp">
+			<column name="MODY_DATETIME" length="19" />
+		</property>
+	</class>
+</hibernate-mapping>

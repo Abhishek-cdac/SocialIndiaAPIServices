@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.siservices.uam.persistense.RightsMasterTblVo" table="rights_mst_tbl">
+		<id name="rightsId" type="integer" column="RIGHTS_ID">
+			<generator class="native"></generator>
+		</id>
+		<property name="rightsAdd" type="integer" column="RADD"></property>
+		<property name="rightsEdit" type="integer" column="REDIT"></property>
+		<property name="rightsDelete" type="integer" column="RDEL"></property>
+		<property name="rightsView" type="integer" column="RVIEW"></property>
+		<property name="updateBy" type="integer" column="UPDATE_BY"></property>
+		<property name="entryDatetime" type="timestamp" column="ENTRY_DATETIME"></property>
+		<property name="modifyDatetime" type="timestamp" column="MODY_DATETIME"></property>
+		<property name="entryBy" column="ENTRY_BY" type="integer"></property>
+		
+		<many-to-one name="groupCode" column="GROUP_ID" class="com.siservices.uam.persistense.GroupMasterTblVo" lazy="false"></many-to-one>
+		<many-to-one name="menuId" column="MENU_ID"  class="com.siservices.uam.persistense.MenuMasterTblVo" lazy="false"></many-to-one>
+	</class>
+</hibernate-mapping>

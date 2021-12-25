@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 29, 2016 11:14:41 AM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.pack.residentvo.UsrUpldfrmExceFailedTbl" table="usr_upldfrm_exce_failed_tbl">
+        <id name="uniqueId" type="java.lang.Integer">
+            <column name="Unique_id" />
+            <generator class="identity" />
+        </id>
+       
+        <!-- <property name="usrId" type="java.lang.Integer">
+            <column name="USR_ID">
+                <comment>Uploaded by user id</comment>
+            </column>
+        </property> -->
+        <property name="excelErrRowId" type="string">
+            <column name="EXCEL_ERR_ROW_ID" />
+        </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="STATUS">
+                <comment>0 -DeActive, 1-Active</comment>
+            </column>
+        </property>
+        <property name="enrtyBy" type="java.lang.Integer">
+            <column name="ENRTY_BY" />
+        </property>
+        <property name="entryDate" type="timestamp">
+            <column name="ENTRY_DATE" length="19" />
+        </property>
+        <property name="modifyDate" type="timestamp">
+            <column name="MODIFY_DATE" length="19"/>
+        </property>
+        
+         <many-to-one name="fileId" class="com.pack.residentvo.UsrUpldfrmExceTbl" fetch="select" lazy="false"> 
+            <column name="FILE_ID" />
+        </many-to-one>
+         <many-to-one name="usrId" class="com.siservices.signup.persistense.UserMasterTblVo" fetch="select" lazy="false"> 
+            <column name="USR_ID" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Sep 30, 2016 11:47:33 AM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.pack.commonvo.MvpTitleMstTbl" table="mvp_title_mst_tbl">
+        <id name="titleId" type="java.lang.Integer">
+            <column name="TITLE_ID" />
+            <generator class="identity" />
+        </id>
+        <property name="description" type="string">
+            <column name="DESCRIPTION" length="50" />
+        </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="STATUS" />
+        </property>
+        <property name="entryBy" type="int">
+            <column name="ENTRY_BY" not-null="true" />
+        </property>
+        <property name="entryDatetime" type="timestamp">
+            <column name="ENTRY_DATETIME" length="19" />
+        </property>
+        <property name="modyDatetime" type="timestamp">
+            <column name="MODY_DATETIME" length="19" />
+        </property>
+    </class>
+</hibernate-mapping>

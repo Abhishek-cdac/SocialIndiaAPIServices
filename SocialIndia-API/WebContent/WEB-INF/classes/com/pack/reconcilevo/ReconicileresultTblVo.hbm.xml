@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.pack.reconcilevo.ReconicileresultTblVo" table="mvp_tran_recon_rst_tbl">
+		<id name="ivrRECONID" column="RECON_RAST_ID" type="integer">
+			<generator class="native"></generator>
+		</id>	
+		<property name="ivrORDERNO" column="ORDER_NO" type="string" length="100"></property>
+		<property name="ivrTXNAMOUNT" column="TXN_AMOUNT" type="float" length="200"></property>
+		<property name="ivrGMT_DATE" column="GMT_DATE" type="timestamp"></property>
+		<property name="ivrTRANS_DATE" column="TRANS_DATE" type="timestamp"></property>
+		<property name="ivrTRANRECONSTATUS" column="TRAN_RECON_STATUS" type="integer" length="11"></property>
+		<property name="ivrTRANMATCHSTATUS" column="TRAN_MATCH_STATUS" type="integer" length="11"></property>	
+		<property name="ivrSTATUS_COMMENT" column="STATUS_COMMENT" type="string" length="500"></property>
+		<property name="ivrCOMMENTS" column="COMMENTS" type="string"></property>
+		<property name="ivrSTATUS" column="STATUS" type="integer" length="11"></property>	
+		<property name="entryDateTime" column="ENTRY_DATE" type="timestamp"></property>
+		
+		<many-to-one name="ivrTRANSID" column="TRAN_ID" class="com.mobi.easypayvo.MvpTransactionTbl" lazy="false"></many-to-one>
+		<many-to-one name="ivrPAYGATEID" column="PAYGATE_ID" class="com.mobi.easypayvo.MvpPaygateTbl" lazy="false"></many-to-one>	
+		<many-to-one name="ivrUTILITYPAYID" column="UTILITY_PAY_ID" class="com.mobi.easypayvo.MvpUtilityPayTbl" lazy="false"></many-to-one>	
+		<many-to-one name="ivrUamobj" column="ENTRY_BY" class="com.siservices.signup.persistense.UserMasterTblVo" lazy="false"></many-to-one>				
+	</class>
+</hibernate-mapping>

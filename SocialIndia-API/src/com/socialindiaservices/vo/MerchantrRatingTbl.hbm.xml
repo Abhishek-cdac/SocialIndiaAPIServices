@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Aug 17, 2016 11:27:35 AM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.socialindiaservices.vo.MerchantrRatingTblVO" table="mvp_mrch_rating_tbl"  >
+        <id name="ratingId" type="java.lang.Integer">
+            <column name="RATING_ID" />
+            <generator class="identity" />
+        </id>
+        <property name="mrchRating" type="string">
+            <column name="MERCHANT_RATING" length="5" />
+        </property>
+         <property name="comments" type="string">
+            <column name="COMMENTS" length="500"/>
+        </property>
+         <property name="emailId" type="string">
+            <column name="EMAIL_ID" length="100"/>
+        </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="STATUS">
+                <comment>1-ACTIVE 2-INACTIVE</comment>
+            </column>
+        </property>
+        <property name="entryDatetime" type="timestamp">
+            <column name="ENTRY_DATETIME" length="19" />
+        </property>
+        <property name="modifyDatetime" type="timestamp">
+            <column name="MODIFY_DATETIME" length="19"  />
+        </property>
+         <many-to-one name="ratedBy" column="RATE_BY"
+			class="com.siservices.signup.persistense.UserMasterTblVo" lazy="false">
+			</many-to-one>
+			 <many-to-one name="entryBy" column="ENTRY_BY"
+			class="com.siservices.signup.persistense.UserMasterTblVo" lazy="false">
+			</many-to-one>
+			  <many-to-one name="mrchntId" column="MRCHNT_ID"
+			class="com.socialindiaservices.vo.MerchantTblVO" lazy="false">
+			</many-to-one>
+    </class>
+</hibernate-mapping>

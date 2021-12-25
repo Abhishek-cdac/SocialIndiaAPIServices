@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.pack.timelinefeedvo.FeedsTblVO" table="mvp_timeline_feed">
+		<id name="feedId" column="FEED_ID" type="integer">
+			<generator class="native"></generator>
+		</id>	
+		
+		<many-to-one name="usrId" column="USR_ID" class="com.siservices.signup.persistense.UserMasterTblVo" lazy="false"></many-to-one>
+		<many-to-one name="societyId" column="SOCIETY_ID" class="com.siservices.uam.persistense.SocietyMstTbl" lazy="false"></many-to-one>
+		<property name="feedType" column="FEED_TYP" type="integer"></property>
+		<property name="feedTypeId" column="FEED_TYP_ID" type="integer"></property>
+		<property name="feedMsg" column="FEED_MSG" type="string" ></property>	
+        <property name="urlsThumbImg" column="URLS_THUMB_IMG" type="string"></property>
+        <property name="urlsTitle" column="URLS_TITLE" type="string"></property>
+        <property name="urlsPageurl" column="URLS_PAGEURL" type="string"></property>
+        <property name="feedCategory" column="FEED_CATEGORY" type="string"></property>
+        <property name="feedTitle" column="FEED_TITLE" type="string"></property>
+		<property name="feedStitle" column="FEED_STITLE" type="string"></property>
+		<property name="feedDesc" column="FEED_DESC" type="string"></property>
+		<property name="feedTime" column="FEED_TIME" type="timestamp"></property>
+		<property name="amount" column="AMOUNT" type="java.lang.Float" ></property>
+		<property name="postAs" column="POST_AS" type="string" length="100"></property>
+		<property name="postBy" column="POST_BY" type="integer" length="11"></property>
+		<property name="feedLocation" column="FEED_LOCATION" type="string" length="1000"></property>
+		<property name="isMyfeed" column="IS_MYFEED" type="integer" length="11"></property>
+		<property name="isShared" column="IS_SHARED" type="integer" length="11"></property>
+		<property name="originatorName" column="ORIGINATOR_NAME" type="string" length="500"></property>
+		<property name="originatorId" column="ORIGINATOR_ID" type="integer" length="11"></property>
+		
+		<property name="likeCount" column="LIKE_COUNT" type="long" length="20"></property>
+		<property name="shareCount" column="SHARE_COUNT" type="long" length="20"></property>
+		<property name="commentCount" column="COMMENT_COUNT" type="long" length="20"></property>
+		<property name="feedPrivacyFlg" column="FEED_PRIVACY_FLG" type="integer" length="11"></property>
+		
+		<property name="feedStatus" column="FEED_STATUS" type="integer" length="11"></property>
+		<property name="entryBy" column="ENTRY_BY" type="integer" length="11"></property>
+		<property name="entryDatetime" column="ENTRY_DATETIME" type="timestamp"></property>
+		<property name="modifyDatetime" column="MODIFY_DATETIME" type="timestamp"></property>
+		<property name="additionalData" column="ADDITIONAL_DATA" type="string"></property>			
+	</class>
+</hibernate-mapping>

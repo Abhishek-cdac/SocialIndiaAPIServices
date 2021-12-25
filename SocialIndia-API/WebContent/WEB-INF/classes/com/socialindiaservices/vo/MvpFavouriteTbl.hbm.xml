@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 29, 2016 12:05:16 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.socialindiaservices.vo.MvpFavouriteTbl" table="mvp_favourite_tbl" catalog="social_india">
+        <id name="favouriteId" type="java.lang.Integer">
+            <column name="FAVOURITE_ID" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="usrRegTbl" class="com.siservices.signup.persistense.UserMasterTblVo" fetch="select" lazy="false">
+            <column name="USER_ID" />
+        </many-to-one>
+        <property name="favouriteType" type="java.lang.Integer">
+            <column name="FAVOURITE_TYPE">
+                <comment>1-skilled help,</comment>
+            </column>
+        </property>
+        <property name="favouriteTypeId" type="java.lang.Integer">
+            <column name="FAVOURITE_TYPE_ID" />
+        </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="STATUS" />
+        </property>
+        <property name="entryDatetime" type="timestamp">
+            <column name="ENTRY_DATETIME" length="19" />
+        </property>
+        <property name="modifyDatetime" type="timestamp">
+            <column name="MODIFY_DATETIME" length="19" />
+        </property>
+    </class>
+</hibernate-mapping>

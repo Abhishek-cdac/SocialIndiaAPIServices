@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 5, 2017 11:25:37 AM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.socialindiaservices.vo.MvpDonationTbl" table="mvp_donation_tbl" >
+        <id name="donateId" type="java.lang.Integer">
+            <column name="DONATE_ID" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="mvpDonationSubcategoryMstTbl" class="com.pack.commonvo.SkillMasterTblVO" fetch="select" lazy="false">
+            <column name="SUBCATEGORY_ID" />
+        </many-to-one>
+        <many-to-one name="mvpDonationCategoryMstTbl" class="com.pack.commonvo.CategoryMasterTblVO" fetch="select" lazy="false">
+            <column name="CATEGORY_ID" />
+        </many-to-one>
+        <property name="title" type="string">
+            <column name="TITLE" length="200" />
+        </property>
+        <property name="quantity" type="java.lang.Integer">
+            <column name="QUANTITY" />
+        </property>
+        <property name="itemType" type="java.lang.Integer">
+            <column name="ITEM_TYPE" />
+        </property>
+        <property name="description" type="string">
+            <column name="DESCRIPTION" length="200" />
+        </property>
+        <property name="otherDescription" type="string">
+            <column name="OTHER_DESCRIPTION" length="50000" />
+        </property>
+        <property name="imageName" type="string">
+            <column name="IMAGE_NAME" length="200" />
+        </property>
+
+        <many-to-one name="donateTo" column="DONATE_TO"
+			class="com.socialindiaservices.vo.MvpDonationInstitutionTbl" lazy="false"></many-to-one>
+
+        <property name="amount" type="java.lang.Float">
+            <column name="AMOUNT" precision="12" scale="3" />
+        </property>
+        <property name="paymentmode" type="string">
+            <column name="PAYMENTMODE" length="200" />
+        </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="STATUS">
+                <comment>0- DEACTIVE, 1 - ACTIVE</comment>
+            </column>
+        </property>
+        <many-to-one name="entryBy" column="ENTRY_BY"
+			class="com.siservices.signup.persistense.UserMasterTblVo" lazy="false"></many-to-one>
+		
+		<many-to-one name="userId" class="com.siservices.signup.persistense.UserMasterTblVo" fetch="select" lazy="false">
+            <column name="USR_ID" /></many-to-one>
+        <many-to-one name="feedId" class="com.pack.timelinefeedvo.FeedsTblVO" fetch="select" lazy="false">
+            <column name="FEED_ID" /></many-to-one>
+
+        <property name="entryDate" type="timestamp">
+            <column name="ENTRY_DATE" length="19" />
+        </property>
+        <property name="modifyDate" type="timestamp">
+            <column name="MODIFY_DATE" length="19" />
+        </property>
+    </class>
+</hibernate-mapping>

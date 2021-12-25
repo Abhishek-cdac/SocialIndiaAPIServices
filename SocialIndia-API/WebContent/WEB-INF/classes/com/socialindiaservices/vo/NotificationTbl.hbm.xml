@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 13, 2016 6:24:09 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+	<class name="com.socialindiaservices.vo.NotificationTblVO" table="mvp_notification_tbl">
+
+		<id name="notificationId" type="java.lang.Integer">
+			<column name="NOTIFICATION_ID" />
+			<generator class="identity" />
+		</id>
+		<property name="uniqueId" type="java.lang.String" length="30">
+			<column name="UNIQ_ID" />
+		</property>
+		<property name="sentStatus" type="java.lang.Integer">
+			<column name="SENT_STATUS" />
+		</property>
+		<property name="readStatus" type="java.lang.Integer">
+			<column name="READ_STATUS" />
+		</property>
+		<property name="statusFlag" type="java.lang.Integer">
+		<column name="STATUS_FLAG"></column>
+		</property>
+		
+		<property name="descr" type="java.lang.String">
+		<column name="DESCR"></column>
+		</property>
+		<property name="tblrefFlag" type="java.lang.Integer"> <column name="TBL_REF_FLAG"></column> </property>
+		<property name="tblrefFlagType" type="java.lang.Integer"> <column name="TBL_REF_FLAG_TYPE"></column> </property>
+		<property name="tblrefID" type="java.lang.Integer"> <column name="TBL_REF_ID"></column> </property>
+		<property name="entryDatetime" type="timestamp">
+			<column name="ENTRY_DATETIME" />
+		</property>
+		<property name="modifyDatetime" type="timestamp">
+			<column name="MODIFY_DATETIME" length="19" />
+		</property>
+		<many-to-one name="userId" column="USR_ID"
+			class="com.siservices.signup.persistense.UserMasterTblVo" lazy="false"></many-to-one>
+			<many-to-one name="entryBy" column="ENTRY_BY"
+			class="com.siservices.signup.persistense.UserMasterTblVo" lazy="false"></many-to-one>
+			
+			<property name="additionalData" type="java.lang.String">
+			<column name="ADDITIONAL_DATA"  />
+		</property>
+	</class>
+</hibernate-mapping>
+

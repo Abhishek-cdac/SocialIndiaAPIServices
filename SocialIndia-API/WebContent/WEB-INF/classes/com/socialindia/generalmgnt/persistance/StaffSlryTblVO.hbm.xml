@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 13, 2016 10:10:39 AM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.socialindia.generalmgnt.persistance.StaffSlryTblVO" table="mvp_staff_slry_tbl" >
+        <id name="staffSlryId" type="java.lang.Integer">
+            <column name="STAFF_SLRY_ID" />
+            <generator class="identity" />
+        </id>
+       
+        <property name="monthlySalary" type="java.lang.Double">
+            <column name="MONTHLY_SALARY" precision="12" scale="0" />
+        </property>
+        <property name="extraWages" type="java.lang.Double">
+            <column name="EXTRA_WAGES" precision="12" scale="0" />
+        </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="STATUS">
+                <comment>0- deactive, 1 - active</comment>
+            </column>
+        </property>
+        <property name="entryDatetime" type="timestamp">
+            <column name="ENTRY_DATETIME" length="19" />
+        </property>
+        <property name="modifyDatetime" type="timestamp">
+            <column name="MODIFY_DATETIME" length="19" not-null="true" />
+        </property>
+        <property name="entryby" type="java.lang.Integer">
+            <column name="ENTRY_BY" />
+        </property>
+      <!--    <many-to-one name="entryBy" class="com.siservices.signup.persistense.UserMasterTblVo" fetch="select" lazy="false">
+            <column name="ENTRY_BY" />
+        </many-to-one> -->
+        <many-to-one name="staffID" class="com.socialindia.generalmgnt.persistance.StaffMasterTblVo" fetch="select" lazy="false"> 
+            <column name="STAFF_ID" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

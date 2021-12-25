@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "../lib/struts-2.3.dtd">
+
+<struts>
+<package name="idcardmaster" namespace="/" extends="struts-default,json-default">
+	  <action name="idcardmasterviewall" class="com.pack.idcardmaster.Idcardviewall">
+		<result name="success" type="json"></result>
+	</action> 
+	 <action name="idcardmasterupdates" class="com.pack.idcardmaster.Idcardupdates">
+		<result name="success" type="json"></result>
+	</action> 
+</package>
+</struts>

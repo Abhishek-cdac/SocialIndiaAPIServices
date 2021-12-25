@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping >
+
+<class name="com.social.sms.persistense.SmsTemplateParserpojo" table="sms_template_parser" >
+
+<id name="parserid" column="PARSER_ID">
+<generator class="native"></generator>
+</id>
+
+<property name="sno" column="SNO" type="integer"/>
+<property name="templateName" column="TEMP_NAME" type="string" length="50"/>
+<property name="templateParser" column="TEMP_PARSER" type="string" length="50"/>
+<property name="columnName" column="COL_NAME" type="string" length="50"/>
+<property name="status" column="STATUS" type="integer"/>
+<property name="updateDate" column="UPDATE_DATETIME" type="timestamp"/>
+
+</class>
+
+</hibernate-mapping>

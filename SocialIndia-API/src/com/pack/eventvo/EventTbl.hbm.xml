@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.pack.eventvo.EventTblVO" table="mvp_event_tbl">
+		<id name="ivrBnEVENT_ID" column="EVENT_ID" type="integer">
+			<generator class="native"></generator>
+		</id>	
+		<property name="ivrBnEVENT_TITLE" column="EVENT_TITLE" type="string" length="500"></property>
+		<property name="ivrBnSHORT_DESC" column="SHORT_DESC" type="string" length="200"></property>
+		<property name="ivrBnEVENT_DESC" column="EVENT_DESC" type="string"></property>
+		<!-- <property name="ivrBnEVENT_CRT_USR_ID" column="EVENT_CRT_USR_ID" type="integer" length="11"></property> -->
+		<property name="ivrBnEVENT_CRT_GROUP_ID" column="EVENT_CRT_GROUP_ID" type="integer" length="11"></property>
+		<property name="ivrBnEVENT_FILE_NAME" column="EVENT_FILE_NAME" type="string" length="150"></property>
+		<property name="ivrBnVIDEO_PATH" column="VIDEO_PATH" type="string" length="250"></property>
+		<property name="ivrBnSTARTDATE" column="STARTDATE" type="string" length="50"></property>
+		<property name="ivrBnENDDATE" column="ENDDATE" type="string" length="50"></property>
+		<property name="ivrBnSTARTTIME" column="STARTTIME" type="string" length="50"></property>
+		<property name="ivrBnENDTIME" column="ENDTIME" type="string" length="50"></property>	
+		<property name="ivrBnEVENT_LOCATION" column="EVENT_LOCATION" type="string" length="200"></property>			
+		<property name="ivrBnEVENTSTATUS" column="STATUS" type="integer" length="11"></property>
+		<property name="ivrBnENTRY_BY" column="ENTRY_BY" type="integer" length="11"></property>		
+		<property name="ivrBnENTRY_DATETIME" column="ENTRY_DATETIME" type="timestamp"></property>	
+		<property name="modifyDate" column="MODIFY_DATETIME" type="timestamp"></property>	
+		<property name="ivrBnLAT_LONG" column="LAT_LONG" type="string" length="100"></property>	
+		<property name="ivrBnISRSVP" column="ISRSVP" type="integer" length="11"></property>	
+		<property name="ivrBnEVENTT_TYPE" column="EVENT_TYPE" type="java.lang.Integer" length="11"></property>
+		
+		  <many-to-one name="ivrBnFUNCTION_ID" class="com.socialindiaservices.vo.FunctionMasterTblVO" lazy="false">
+            <column name="FUNCTION_ID" />
+        </many-to-one>	
+          <many-to-one name="functionTemplateId" class="com.socialindiaservices.vo.FunctionTemplateTblVO" lazy="false">
+            <column name="FUNCTION_TEMPLATE_ID" />
+        </many-to-one>
+        
+         <many-to-one name="faciltyTemplateId" class="com.socialindiaservices.vo.FacilityMstTblVO" lazy="false">
+            <column name="FACILITY_ID" />
+        </many-to-one>
+         <many-to-one name="faciltyBookingId" class="com.socialindiaservices.vo.FacilityBookingTblVO" lazy="false">
+            <column name="BOOKING_ID" />
+        </many-to-one>
+		 
+		 <many-to-one name="ivrBnEVENT_CRT_USR_ID" class="com.siservices.signup.persistense.UserMasterTblVo" lazy="false">
+            <column name="EVENT_CRT_USR_ID" />
+        </many-to-one>		
+	</class>
+</hibernate-mapping>

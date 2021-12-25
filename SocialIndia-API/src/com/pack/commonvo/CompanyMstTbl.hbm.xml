@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 13, 2016 6:24:09 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.pack.commonvo.CompanyMstTblVO" table="company_mst_tbl" >
+        <id name="companyId" type="integer">
+            <column name="COMPANY_ID" />
+            <generator class="native" ></generator>
+        </id>
+       <property name="companyName" type="string">
+            <column name="COMPANY_NAME" length="50" />
+        </property>
+        <property name="companyUniqId" type="string">
+            <column name="COMPANY_UNIQ_ID" length="50" unique="true" />
+        </property>
+        <property name="companyEmail" type="string">
+            <column name="COMPANY_EMAIL" length="200" />
+        </property>
+        <property name="address1" type="string">
+            <column name="ADDRESS_1" length="100" />
+        </property>
+        <property name="address2" type="string">
+            <column name="ADDRESS_2" length="100" />
+        </property>
+        <property name="isdCode" type="string">
+            <column name="ISD_CODE" length="20" />
+        </property>
+        <property name="mobileNo" type="string">
+            <column name="MOBILE_NO" length="20" />
+        </property>
+        <property name="cmpnyRegno" type="string">
+            <column name="CMPNY_REGNO" length="20" />
+        </property>
+        <property name="keyforSrch" type="string">
+            <column name="KEYFOR_SRCH"/>
+        </property>
+        <property name="verifyStatus" type="java.lang.Integer">
+            <column name="VERIFY_STATUS" />
+        </property>
+        <property name="descr" type="string">
+            <column name="DESCR" />
+        </property>
+        <property name="imageNameMob" type="string">
+            <column name="IMAGE_NAME_MOB" length="50" />
+        </property>
+        <property name="imageNameWeb" type="string">
+            <column name="IMAGE_NAME_WEB" length="50" />
+        </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="STATUS" />
+        </property>
+        <property name="entryBy" type="java.lang.Integer">
+            <column name="ENTRY_BY" />
+        </property>
+        <property name="entryDatetime" type="timestamp">
+            <column name="ENTRY_DATETIME" />
+        </property>
+        <property name="modifyDatetime" type="timestamp">
+            <column name="MODIFY_DATETIME"  />
+        </property>
+          <many-to-one name="stateId" class="com.pack.commonvo.StateMasterTblVO" lazy="false">
+            <column name="STATE_ID" />
+        </many-to-one>
+<!--         <many-to-one name="pstlId" class="com.pack.commonvo.PostalCodeMasterTblVO" lazy="false"> -->
+<!--             <column name="PSTL_ID" /> -->
+<!--         </many-to-one> -->
+<property name="pstlId" type="java.lang.Integer">
+            <column name="PSTL_ID" />
+        </property>
+        <many-to-one name="cityId" class="com.pack.commonvo.CityMasterTblVO" lazy="false">
+            <column name="CITY_ID" />
+        </many-to-one>
+        <many-to-one name="countryId" class="com.pack.commonvo.CountryMasterTblVO" lazy="false">
+            <column name="COUNTRY_ID" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

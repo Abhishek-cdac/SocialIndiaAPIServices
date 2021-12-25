@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Sep 30, 2016 11:47:33 AM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.mobi.networkUserListVO.MvpNetworkTbl" table="mvp_network_tbl" >
+        <id name="networkId" type="java.lang.Integer">
+            <column name="NETWORK_ID" />
+            <generator class="identity" />
+        </id>
+       
+        <property name="descr" type="string">
+            <column name="DESCR" length="65535" />
+        </property>
+        <property name="connStsFlg" type="java.lang.Integer">
+            <column name="CONN_STS_FLG">
+                <comment>1- connected, 2- Not conneccted, 3- decline, 4-report spam</comment>
+            </column>
+        </property>
+        <property name="entryDatetime" type="timestamp">
+            <column name="ENTRY_DATETIME" length="19" />
+        </property>
+        <property name="modifyDatetime" type="timestamp">
+            <column name="MODIFY_DATETIME" length="19"/>
+        </property>
+        
+          <many-to-one name="usrParentUsrId" class="com.siservices.signup.persistense.UserMasterTblVo" fetch="select" lazy="false">
+            <column name="PARENT_USR_ID" /></many-to-one>
+            
+              <many-to-one name="usrConnectedUsrId" class="com.siservices.signup.persistense.UserMasterTblVo" fetch="select" lazy="false">
+            <column name="CONNECTED_USR_ID" /></many-to-one>
+             <many-to-one name="iVOKNOWN_US_ID" class="com.pack.commonvo.KnownusTblVO" lazy="false" fetch="select">
+            <column name="KNOWN_US_ID" />
+        </many-to-one>
+            
+    </class>
+</hibernate-mapping>

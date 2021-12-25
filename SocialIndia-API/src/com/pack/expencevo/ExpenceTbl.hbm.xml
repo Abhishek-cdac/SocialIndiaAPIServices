@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Aug 17, 2016 5:12:09 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.pack.expencevo.ExpenceTblVO" table="mvp_expence_tbl">
+        <id name="expnId" type="java.lang.Integer">
+            <column name="EXPN_ID" />
+            <generator class="native" />
+        </id>
+        <property name="expenceFor" type="string">
+            <column name="EXPENCE_FOR" length="100" />
+        </property>
+        <property name="noOfProduct" type="java.lang.Integer">
+            <column name="NO_OF_PRODUCT">
+                <comment>product or work or any other purchase</comment>
+            </column>
+        </property>
+        <property name="productPerAmt" type="double">
+            <column name="PRODUCT_PER_AMT" />
+        </property>
+        <property name="expenceTotAmt" type="double">
+            <column name="EXPENCE_TOT_AMT"  />
+        </property>
+        <property name="descr" type="string">
+            <column name="DESCR" length="65535" />
+        </property>
+        <property name="expenceStatus" type="java.lang.Integer">
+            <column name="EXPENCE_STATUS">
+                <comment>0- deactive, 1- active</comment>
+            </column>
+        </property>
+        <property name="entryByGrp" type="java.lang.Integer">
+            <column name="ENTRY_BY_GRP">
+                <comment>admin, merchant group, labour group</comment>
+            </column>
+        </property>
+         <property name="entryBy" type="java.lang.Integer">
+            <column name="ENTRY_BY"  />
+        </property>
+        <property name="entryDatetime" type="timestamp">
+            <column name="ENTRY_DATETIME" length="19" />
+        </property>
+        <many-to-one name="usrid" column="USR_ID" class="com.siservices.signup.persistense.UserMasterTblVo" lazy="false"></many-to-one>
+        <!-- <many-to-one name="usrid" class="com.siservices.signup.persistense.UserMasterTblVo" fetch="select">
+            <column name="USR_ID" />
+        </many-to-one> -->
+    </class>
+</hibernate-mapping>

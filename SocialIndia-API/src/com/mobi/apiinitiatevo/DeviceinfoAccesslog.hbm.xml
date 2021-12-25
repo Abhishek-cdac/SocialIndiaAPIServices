@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 27, 2016 3:52:18 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+	<class name="com.mobi.apiinitiatevo.DeviceinfoAccesslogVO" table="access_device_log_tbl" >
+		<id name="uniqid" type="java.lang.Integer">
+			<column name="ACCESS_DEVICE_ID" />
+			<generator class="identity" />
+		</id>
+		<property name="userid" type="java.lang.Integer">
+			<column name="USR_ID" />
+		</property>
+		<property name="devicekey" type="string">
+			<column name="DEVICE_KEY" length="100" />
+		</property>
+		<property name="imeino" type="string">
+			<column name="IMEI_NO" length="100" />
+		</property>
+		<property name="deviceid" type="string">
+			<column name="DEVICE_ID" length="100" />
+		</property>
+		<property name="macaddr" type="string">
+			<column name="MAC_ADDR" length="100" />
+		</property>
+		<property name="serialno" type="string">
+			<column name="SERIAL_NO" length="100" />
+		</property>
+		<property name="androidversion" type="string">
+			<column name="ANDROID_VERSION" length="100" />
+		</property>
+		<property name="displayinfo" type="string">
+			<column name="DISPLAY_INFO" length="100" />
+		</property>
+		<property name="ipaddress" type="string">
+			<column name="IP_ADDRESS" length="100" />
+		</property>
+		<property name="latlogitude" type="string">
+			<column name="LAT_LOGITUDE" length="100" />
+		</property>
+		<property name="additionalinfoone" type="string">
+			<column name="ADD_INFOONE" length="100" />
+		</property>
+		<property name="additionalinfotwo" type="string">
+			<column name="ADD_INFOTWO" length="100" />
+		</property>
+		<property name="entryby" type="java.lang.Integer">
+			<column name="ENTRY_BY" />
+		</property>
+		<property name="status" type="java.lang.Integer">
+			<column name="STATUS" />
+		</property>
+		<property name="entryDate" type="timestamp">
+			<column name="ENTRY_DATETIME" length="19" />
+		</property>
+		<property name="modifyDate" type="timestamp">
+			<column name="MODY_DATETIME" length="19" />
+		</property>
+	</class>
+</hibernate-mapping>

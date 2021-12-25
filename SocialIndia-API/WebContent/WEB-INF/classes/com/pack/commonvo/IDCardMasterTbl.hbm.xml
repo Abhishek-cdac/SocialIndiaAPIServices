@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.pack.commonvo.IDCardMasterTblVO" table="mvp_idcard_tbl">
+		<id name="iVOcradid" column="CARD_ID" type="integer">
+			<generator class="native"></generator>
+		</id>
+		<property name="iVOcradname" column="CARD_NAME" type="string" length="60"></property>
+		<property name="iVOcardstatus" column="ACT_STS" type="integer" length="11"></property>
+		
+	</class>
+</hibernate-mapping>

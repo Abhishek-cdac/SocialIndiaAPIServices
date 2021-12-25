@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping >
+
+<class name="com.social.email.persistense.EmailErrorTblVo" table="email_error_tbl">
+
+<id name="emailId" column="SNO">
+<generator class="native"></generator>
+</id>
+
+<property name="fromId" column="FROM_ID" type="string" length="50"></property>
+<property name="toId" column="TO_ID" type="string" length="2500"></property>
+<property name="ccId" column="CC_ID" type="string" length="2500"></property>
+<property name="bccId" column="BCC_ID" type="string" length="2500"></property>
+<property name="subId" column="SUBJ_ID" type="string" length="100"></property>
+<property name="statFlag" column="STAT_FLAG" type="string" length="5"></property>
+<property name="contFormat" column="CONTNT_FORMT" type="string" length="15"></property>
+<property name="bodyContent" column="BODY_CONTNT" type="string" ></property>
+<property name="attTempId" column="ATTACH_TEMP_ID" type="string" length="30"></property>
+<property name="outDate" column="OUT_DATE" type="timestamp"></property>
+<property name="fileName" column="FILE_NAME" type="string" length="80"></property>
+<property name="pdfPass" column="PDF_PASSWD" type="string" length="15"></property>
+</class>
+
+</hibernate-mapping>

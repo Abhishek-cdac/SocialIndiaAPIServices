@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "../lib/struts-2.3.dtd">
+
+<struts>
+	<package name="carPoolServices" namespace="/" extends="struts-default,json-default">
+
+		
+		<action name="search_carpool" class="com.mobi.carpooling.SearchCarPoolList">
+			<result name="success" type="json"></result>
+		</action>
+		
+		<action name="offer_carpool" class="com.mobi.carpooling.OfferCarPoolingAddEdit">
+			<result name="success" type="json"></result>
+		</action>
+		<action name="offer_carbooking" class="com.mobi.carpooling.CarPoolBooking">
+			<result name="success" type="json"></result>
+		</action>
+		<action name="delete_carbooking" class="com.mobi.carpooling.CarPoolDelete">
+			<result name="success" type="json"></result>
+		</action>
+		<action name="search_carlist" class="com.mobi.carpooling.CarMasterSearch">
+			<result name="success" type="json"></result>
+		</action>
+	</package>
+</struts>

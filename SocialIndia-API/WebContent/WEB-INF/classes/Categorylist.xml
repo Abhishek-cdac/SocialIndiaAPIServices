@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "../lib/struts-2.3.dtd">
+
+<struts>
+<package name="Categorylist" namespace="/" extends="struts-default,json-default">
+	  <action name="categorylistviewall" class="com.pack.categorylist.Categoryviewall">
+		<result name="success" type="json"></result>
+	</action> 
+	 <action name="categorylistupdates" class="com.pack.categorylist.Categoryupdates">
+		<result name="success" type="json"></result>
+	</action> 
+</package>
+</struts>

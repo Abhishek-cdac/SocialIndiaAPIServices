@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "../lib/struts-2.3.dtd">
+
+<struts>
+<package name="monitoringmgmt" namespace="/" extends="struts-default,json-default">
+	 
+	 <action name="siSystemtracking" class="com.pack.monitoringmgmt.Systemtracking">
+		<result name="success" type="json"></result>
+	</action> 
+<!-- 	<action name="contentmonitoringviewall" class="com.pack.monitoringmgmt.Contentmonitoring">
+		<result name="success" type="json"></result>
+	</action> --> 
+		<action name="contentmonitoringviewall" class="com.pack.monitoringmgmt.ContentmonitoringViewall">
+		<result name="success" type="json"></result>
+	</action>
+	<action name="contentmonitoringupdates" class="com.pack.monitoringmgmt.Contentmonitoringupdates">
+		<result name="success" type="json"></result>
+	</action>
+	<!--<action name="imagemonitoringviewall" class="com.pack.monitoringmgmt.Imagemonitoring">
+		<result name="success" type="json"></result>
+	</action> -->
+	<action name="imagemonitoringviewall" class="com.pack.monitoringmgmt.ImagemonitoringViewall">
+		<result name="success" type="json"></result>
+	</action> 
+	<action name="imagemonitoringupdates" class="com.pack.monitoringmgmt.Imagemonitoringupdates">
+		<result name="success" type="json"></result>
+	</action>
+	<action name="singonfailrepviewall" class="com.pack.monitoringmgmt.SignonFailureViewall">
+		<result name="success" type="json"></result>
+	</action>
+	<action name="singonfailrepdelete" class="com.pack.monitoringmgmt.Contentmonitoringupdates">
+		<result name="success" type="json"></result>
+	</action>
+	
+</package>
+</struts>

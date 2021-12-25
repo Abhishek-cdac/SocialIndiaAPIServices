@@ -1,0 +1,1048 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Chargeback" pageWidth="842"  pageHeight="595" orientation="Landscape" whenNoDataType="AllSectionsNoDetail" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+        <property name="ireport.zoom" value="1.0"/>
+        <property name="ireport.x" value="0"/>
+        <property name="ireport.y" value="0"/>
+        <style name="Title" isDefault="false" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
+        <style name="SubTitle" isDefault="false" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
+        <style name="Column header" isDefault="false" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Roman"/>
+        <style name="Detail" isDefault="false" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman"/>
+        <style name="Row" isDefault="false" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+                <conditionalStyle>
+                        <conditionExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue() % 2 == 0)]]></conditionExpression>
+                        <style isDefault="false" style="Row" mode="Opaque" backcolor="#F0EFEF"/>
+                </conditionalStyle>
+        </style>
+
+    <parameter name = "ReportTitle" class="java.lang.String"/>
+   <parameter name = "RegNo" class = "java.lang.String"/>
+   <parameter name = "Addr1" class = "java.lang.String"/>
+   <parameter name="Addr2" class="java.lang.String"/>
+   <parameter name="Name" class="java.lang.String"/>
+   <parameter name="BillNo" class="java.lang.String"/>
+    <parameter name="BillDate" class="java.lang.String"/>
+    <parameter name="BillDateFirst" class="java.lang.String"/>
+	<parameter name="BillAmt" class="java.lang.String"/>
+
+	<parameter name="SerCharAmt" class="java.lang.String"/>
+	<parameter name="MunicpalTax" class="java.lang.String"/>
+	<parameter name="PenaltyOthers" class="java.lang.String"/>
+	<parameter name="watChar" class="java.lang.String"/>
+	<parameter name="nonOccpachCha" class="java.lang.String"/>
+	<parameter name="fedCul" class="java.lang.String"/>
+	<parameter name="sinkinFund" class="java.lang.String"/>
+	<parameter name="repairFund" class="java.lang.String"/>
+	<parameter name="insCharge" class="java.lang.String"/>
+	<parameter name="majorRepairFund" class="java.lang.String"/>
+	<parameter name="playZone" class="java.lang.String"/>
+	<parameter name="interest" class="java.lang.String"/>
+
+	<parameter name="latefee" class="java.lang.String"/>
+	<parameter name="carpark1" class="java.lang.String"/>
+	<parameter name="carpark2" class="java.lang.String"/>
+	<parameter name="twowheeler1" class="java.lang.String"/>
+	<parameter name="twowheeler2" class="java.lang.String"/>
+	<parameter name="sundayadjust" class="java.lang.String"/>
+	<parameter name="protax" class="java.lang.String"/>
+	<parameter name="exceespay" class="java.lang.String"/>
+	<parameter name="clubhouse" class="java.lang.String"/>
+
+	<parameter name="totAmt" class="java.lang.String"/>
+	<parameter name="ArrearsAmt" class="java.lang.String"/>
+	<parameter name="AmtDue" class="java.lang.String"/>
+	<parameter name="rupeess" class="java.lang.String"/>
+
+	<parameter name="NOTES" class="java.lang.String"/>
+	<parameter name="NOTES1" class="java.lang.String"/>
+	<parameter name="NOTES2" class="java.lang.String"/>
+	<parameter name="NOTES3" class="java.lang.String"/>
+	<parameter name="NOTES4" class="java.lang.String"/>
+	<parameter name="NOTES5" class="java.lang.String"/>
+	<parameter name="NOTES6" class="java.lang.String"/>
+	
+	<parameter name="previousDues" class="java.lang.String"/>
+	<parameter name="appSubscriptionFee" class="java.lang.String"/>
+
+        <background>
+                <band splitType="Stretch"/>
+        </background>
+                <title>
+                <band height="1" splitType="Stretch">
+        </band>
+        </title>
+ <pageHeader>
+        <band height="95">
+     <textField isBlankWhenNull = "true">
+   <reportElement  x = "10" y = "10" width = "800" height = "20"/>
+
+   <textElement textAlignment = "Center">
+      <font size = "11" isBold="true"/>
+   </textElement>
+
+   <textFieldExpression class = "java.lang.String">
+      <![CDATA[$P{ReportTitle}]]>
+   </textFieldExpression>
+</textField>
+            <textField>
+                <reportElement x="10" y="30" width="800" height="20" />
+                <textElement textAlignment = "Center">
+                    <font size="11" isBold="false"/>
+                </textElement>
+                <textFieldExpression class = "java.lang.String">
+      <![CDATA[$P{RegNo}]]>
+   </textFieldExpression>
+   </textField>
+   <textField>
+                <reportElement x="10" y="50" width="800" height="20" />
+                <textElement textAlignment = "Center">
+                    <font size="11" isBold="false"/>
+                </textElement>
+                <textFieldExpression class = "java.lang.String">
+      <![CDATA[$P{Addr1}]]>
+   </textFieldExpression>
+   </textField>
+     <textField>
+                <reportElement x="10" y="70" width="800" height="20" />
+                <textElement textAlignment = "Center">
+                    <font size="11" isBold="false"/>
+                </textElement>
+                <textFieldExpression class = "java.lang.String">
+      <![CDATA[$P{Addr2}]]>
+   </textFieldExpression>
+   </textField>
+
+
+        </band>
+    </pageHeader>
+    <columnHeader>
+<band height="450">
+<staticText>
+                <reportElement x="0" y="0" width="1000" height="20" />
+                <textElement textAlignment="Left">
+                    <font size="10" isBold="false"/>
+                </textElement>
+                <text><![CDATA[------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------]]></text>
+            </staticText>
+	    <staticText>
+                <reportElement x="10" y="30" width="100" height="20" />
+                <textElement textAlignment="Left">
+                    <font size="10" isBold="false"/>
+                </textElement>
+                <text><![CDATA[Name :]]></text>
+            </staticText>
+	        <textField>
+                <reportElement x="50" y="30" width="90" height="20" />
+                <textElement textAlignment = "Left">
+                    <font size="11" isBold="false"/>
+                </textElement>
+                <textFieldExpression class = "java.lang.String">
+      <![CDATA[$P{Name}]]>
+   </textFieldExpression>
+   </textField>
+    <staticText>
+                <reportElement x="600" y="30" width="40" height="20" />
+                <textElement textAlignment="Left">
+                    <font size="10" isBold="false"/>
+                </textElement>
+                <text><![CDATA[Bill No. : ]]></text>
+            </staticText>
+
+	    <textField>
+                <reportElement x="650" y="30" width="80" height="20" />
+                <textElement textAlignment = "Left">
+                    <font size="11" isBold="false"/>
+                </textElement>
+                <textFieldExpression class = "java.lang.String">
+      <![CDATA[$P{BillNo}]]>
+   </textFieldExpression>
+   </textField>
+
+
+ <staticText>
+                <reportElement x="10" y="50" width="100" height="20" />
+                <textElement textAlignment="Left">
+                    <font size="10" isBold="false"/>
+                </textElement>
+                <text><![CDATA[Particulars : Bill *  ]]></text>
+            </staticText>
+
+	    <textField>
+                <reportElement x="90" y="50" width="80" height="20" />
+                <textElement textAlignment = "Left">
+                    <font size="11" isBold="false"/>
+                </textElement>
+                <textFieldExpression class = "java.lang.String">
+      <![CDATA[$P{BillDate}]]>
+   </textFieldExpression>
+   </textField>
+
+     <staticText>
+                <reportElement x="600" y="50" width="40" height="20" />
+                <textElement textAlignment="Left">
+                    <font size="10" isBold="false"/>
+                </textElement>
+                <text><![CDATA[Date     :]]></text>
+            </staticText>
+
+	    <textField>
+                <reportElement x="650" y="50" width="80" height="20" />
+                <textElement textAlignment = "Left">
+                    <font size="11" isBold="false"/>
+                </textElement>
+                <textFieldExpression class = "java.lang.String">
+      <![CDATA[$P{BillDateFirst}]]>
+   </textFieldExpression>
+   </textField>
+
+   <staticText>
+                <reportElement x="0" y="60" width="1000" height="20" />
+                <textElement textAlignment="Left">
+                    <font size="10" isBold="false"/>
+                </textElement>
+                <text><![CDATA[------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------]]></text>
+            </staticText>
+
+	    <staticText>
+                <reportElement x="20" y="70" width="40" height="20" />
+                <textElement textAlignment="Left">
+                    <font size="10" isBold="false"/>
+                </textElement>
+                <text><![CDATA[SrNo]]></text>
+            </staticText>
+
+	    <staticText>
+                <reportElement x="50" y="70" width="100" height="20" />
+                <textElement textAlignment="Left">
+                    <font size="10" isBold="false"/>
+                </textElement>
+                <text><![CDATA[Nature of Charges]]></text>
+            </staticText>
+
+	    <staticText>
+                <reportElement x="250" y="70" width="100" height="20" />
+                <textElement textAlignment="Right">
+                    <font size="10" isBold="false"/>
+                </textElement>
+                <text><![CDATA[Amount]]></text>
+            </staticText>
+
+	     <staticText>
+                <reportElement x="360" y="70" width="30" height="20" />
+                <textElement textAlignment="Left">
+                    <font size="10" isBold="false"/>
+                </textElement>
+                <text><![CDATA[SrNo]]></text>
+            </staticText>
+
+	    <staticText>
+                <reportElement x="390" y="70" width="100" height="20" />
+                <textElement textAlignment="Left">
+                    <font size="10" isBold="false"/>
+                </textElement>
+                <text><![CDATA[Nature of Charges]]></text>
+            </staticText>
+
+	    <staticText>
+                <reportElement x="630" y="70" width="100" height="20" />
+                <textElement textAlignment="Right">
+                    <font size="10" isBold="false"/>
+                </textElement>
+                <text><![CDATA[Amount]]></text>
+            </staticText>
+
+
+    <staticText>
+                <reportElement x="0" y="80" width="1000" height="20" />
+                <textElement textAlignment="Left">
+                    <font size="10" isBold="false"/>
+                </textElement>
+                <text><![CDATA[------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------]]></text>
+            </staticText>
+
+
+	      <staticText>
+                <reportElement x="20" y="90" width="20" height="20" />
+                <textElement textAlignment="Right">
+                    <font size="10" isBold="false"/>
+                </textElement>
+                <text><![CDATA[1 .]]></text>
+            </staticText>
+
+	     <staticText>
+                <reportElement x="50" y="90" width="80" height="20" />
+                <textElement textAlignment="Left">
+                    <font size="10" isBold="false"/>
+                </textElement>
+                <text><![CDATA[Service Charges]]></text>
+            </staticText>
+
+	    <textField>
+                <reportElement x="250" y="90" width="100" height="20" />
+                <textElement textAlignment = "Right">
+                    <font size="11" isBold="false"/>
+                </textElement>
+                <textFieldExpression class = "java.lang.String">
+      <![CDATA[$P{SerCharAmt}]]>
+   </textFieldExpression>
+   </textField>
+
+
+    <staticText>
+                <reportElement x="360" y="90" width="20" height="20" />
+                <textElement textAlignment="Right">
+                    <font size="10" isBold="false"/>
+                </textElement>
+                <text><![CDATA[2 .]]></text>
+            </staticText>
+
+	     <staticText>
+                <reportElement x="390" y="90" width="150" height="20" />
+                <textElement textAlignment="Left">
+                    <font size="10" isBold="false"/>
+                </textElement>
+                <text><![CDATA[Municipal Taxes]]></text>
+            </staticText>
+
+	    <textField>
+                <reportElement x="630" y="90" width="100" height="20" />
+                <textElement textAlignment = "Right">
+                    <font size="11" isBold="false"/>
+                </textElement>
+                <textFieldExpression class = "java.lang.String">
+      <![CDATA[$P{MunicpalTax}]]>
+   </textFieldExpression>
+   </textField>
+
+
+   <staticText>
+                <reportElement x="20" y="105" width="20" height="15" />
+                <textElement textAlignment="Right">
+                    <font size="10" isBold="false"/>
+                </textElement>
+                <text><![CDATA[3 .]]></text>
+            </staticText>
+
+	     <staticText>
+                <reportElement x="50" y="105" width="80" height="15" />
+                <textElement textAlignment="Left">
+                    <font size="10" isBold="false"/>
+                </textElement>
+                <text><![CDATA[Penalties/Others]]></text>
+            </staticText>
+
+	    <textField>
+                <reportElement x="250" y="105" width="100" height="15" />
+                <textElement textAlignment = "Right">
+                    <font size="11" isBold="false"/>
+                </textElement>
+                <textFieldExpression class = "java.lang.String">
+      <![CDATA[$P{PenaltyOthers}]]>
+   </textFieldExpression>
+   </textField>
+
+
+    <staticText>
+                <reportElement x="360" y="105" width="20" height="15" />
+                <textElement textAlignment="Right">
+                    <font size="10" isBold="false"/>
+                </textElement>
+                <text><![CDATA[4 .]]></text>
+            </staticText>
+
+	     <staticText>
+                <reportElement x="390" y="105" width="150" height="15" />
+                <textElement textAlignment="Left">
+                    <font size="10" isBold="false"/>
+                </textElement>
+                <text><![CDATA[Water Charges]]></text>
+            </staticText>
+
+	    <textField>
+                <reportElement x="630" y="105" width="100" height="15" />
+                <textElement textAlignment = "Right">
+                    <font size="11" isBold="false"/>
+                </textElement>
+                <textFieldExpression class = "java.lang.String">
+      <![CDATA[$P{watChar}]]>
+   </textFieldExpression>
+   </textField>
+
+
+    <staticText>
+                <reportElement x="20" y="120" width="20" height="15" />
+                <textElement textAlignment="Right">
+                    <font size="10" isBold="false"/>
+                </textElement>
+                <text><![CDATA[5 .]]></text>
+            </staticText>
+
+	     <staticText>
+                <reportElement x="50" y="120" width="80" height="15" />
+                <textElement textAlignment="Left">
+                    <font size="10" isBold="false"/>
+                </textElement>
+                <text><![CDATA[Non Occupancy Charge]]></text>
+            </staticText>
+
+	    <textField>
+                <reportElement x="250" y="120" width="100" height="15" />
+                <textElement textAlignment = "Right">
+                    <font size="11" isBold="false"/>
+                </textElement>
+                <textFieldExpression class = "java.lang.String">
+      <![CDATA[$P{nonOccpachCha}]]>
+   </textFieldExpression>
+   </textField>
+
+
+    <staticText>
+                <reportElement x="360" y="120" width="20" height="15" />
+                <textElement textAlignment="Right">
+                    <font size="10" isBold="false"/>
+                </textElement>
+                <text><![CDATA[6 .]]></text>
+            </staticText>
+
+	     <staticText>
+                <reportElement x="390" y="120" width="150" height="15" />
+                <textElement textAlignment="Left">
+                    <font size="10" isBold="false"/>
+                </textElement>
+                <text><![CDATA[Federation/Cultural]]></text>
+            </staticText>
+
+	    <textField>
+                <reportElement x="630" y="120" width="100" height="15" />
+                <textElement textAlignment = "Right">
+                    <font size="11" isBold="false"/>
+                </textElement>
+                <textFieldExpression class = "java.lang.String">
+      <![CDATA[$P{fedCul}]]>
+   </textFieldExpression>
+   </textField>
+
+
+<staticText>
+                <reportElement x="20" y="135" width="20" height="15" />
+                <textElement textAlignment="Right">
+                    <font size="10" isBold="false"/>
+                </textElement>
+                <text><![CDATA[7 .]]></text>
+            </staticText>
+
+	     <staticText>
+                <reportElement x="50" y="135" width="80" height="15" />
+                <textElement textAlignment="Left">
+                    <font size="10" isBold="false"/>
+                </textElement>
+                <text><![CDATA[Sinking Fund]]></text>
+            </staticText>
+
+	    <textField>
+                <reportElement x="250" y="135" width="100" height="15" />
+                <textElement textAlignment = "Right">
+                    <font size="11" isBold="false"/>
+                </textElement>
+                <textFieldExpression class = "java.lang.String">
+      <![CDATA[$P{sinkinFund}]]>
+   </textFieldExpression>
+   </textField>
+
+
+    <staticText>
+                <reportElement x="360" y="135" width="20" height="15" />
+                <textElement textAlignment="Right">
+                    <font size="10" isBold="false"/>
+                </textElement>
+                <text><![CDATA[8 .]]></text>
+            </staticText>
+
+	     <staticText>
+                <reportElement x="390" y="135" width="150" height="15" />
+                <textElement textAlignment="Left">
+                    <font size="10" isBold="false"/>
+                </textElement>
+                <text><![CDATA[Repair Fund]]></text>
+            </staticText>
+
+	    <textField>
+                <reportElement x="630" y="135" width="100" height="15" />
+                <textElement textAlignment = "Right">
+                    <font size="11" isBold="false"/>
+                </textElement>
+                <textFieldExpression class = "java.lang.String">
+      <![CDATA[$P{repairFund}]]>
+   </textFieldExpression>
+   </textField>
+
+
+   <staticText>
+                <reportElement x="20" y="150" width="20" height="15" />
+                <textElement textAlignment="Right">
+                    <font size="10" isBold="false"/>
+                </textElement>
+                <text><![CDATA[9 .]]></text>
+            </staticText>
+
+	     <staticText>
+                <reportElement x="50" y="150" width="80" height="15" />
+                <textElement textAlignment="Left">
+                    <font size="10" isBold="false"/>
+                </textElement>
+                <text><![CDATA[Insurance Charges]]></text>
+            </staticText>
+
+	    <textField>
+                <reportElement x="250" y="150" width="100" height="15" />
+                <textElement textAlignment = "Right">
+                    <font size="11" isBold="false"/>
+                </textElement>
+                <textFieldExpression class = "java.lang.String">
+      <![CDATA[$P{insCharge}]]>
+   </textFieldExpression>
+   </textField>
+
+
+    <staticText>
+                <reportElement x="360" y="150" width="20" height="15" />
+                <textElement textAlignment="Right">
+                    <font size="10" isBold="false"/>
+                </textElement>
+                <text><![CDATA[10 .]]></text>
+            </staticText>
+
+	     <staticText>
+                <reportElement x="390" y="150" width="150" height="15" />
+                <textElement textAlignment="Left">
+                    <font size="10" isBold="false"/>
+                </textElement>
+                <text><![CDATA[Play Zones]]></text>
+            </staticText>
+
+	    <textField>
+                <reportElement x="630" y="150" width="100" height="15" />
+                <textElement textAlignment = "Right">
+                    <font size="11" isBold="false"/>
+                </textElement>
+                <textFieldExpression class = "java.lang.String">
+      <![CDATA[$P{playZone}]]>
+   </textFieldExpression>
+   </textField>
+     <staticText>
+                <reportElement x="20" y="165" width="20" height="15" />
+                <textElement textAlignment="Right">
+                    <font size="10" isBold="false"/>
+                </textElement>
+                <text><![CDATA[11 .]]></text>
+            </staticText>
+
+	     <staticText>
+                <reportElement x="50" y="165" width="80" height="15" />
+                <textElement textAlignment="Left">
+                    <font size="10" isBold="false"/>
+                </textElement>
+                <text><![CDATA[Major Repair Fund]]></text>
+            </staticText>
+
+	    <textField>
+                <reportElement x="250" y="165" width="100" height="15" />
+                <textElement textAlignment = "Right">
+                    <font size="11" isBold="false"/>
+                </textElement>
+                <textFieldExpression class = "java.lang.String">
+      <![CDATA[$P{majorRepairFund}]]>
+   </textFieldExpression>
+   </textField>
+
+
+    <staticText>
+                <reportElement x="360" y="165" width="20" height="15" />
+                <textElement textAlignment="Right">
+                    <font size="10" isBold="false"/>
+                </textElement>
+                <text><![CDATA[12 .]]></text>
+            </staticText>
+
+	     <staticText>
+                <reportElement x="390" y="165" width="150" height="15" />
+                <textElement textAlignment="Left">
+                    <font size="10" isBold="false"/>
+                </textElement>
+                <text><![CDATA[Interest]]></text>
+            </staticText>
+
+	    <textField>
+                <reportElement x="630" y="165" width="100" height="15" />
+                <textElement textAlignment = "Right">
+                    <font size="11" isBold="false"/>
+                </textElement>
+                <textFieldExpression class = "java.lang.String">
+      <![CDATA[$P{interest}]]>
+   </textFieldExpression>
+   </textField>
+
+    <staticText>
+                <reportElement x="20" y="180" width="20" height="15" />
+                <textElement textAlignment="Right">
+                    <font size="10" isBold="false"/>
+                </textElement>
+                <text><![CDATA[13 .]]></text>
+            </staticText>
+
+	     <staticText>
+                <reportElement x="50" y="180" width="80" height="15" />
+                <textElement textAlignment="Left">
+                    <font size="10" isBold="false"/>
+                </textElement>
+                <text><![CDATA[Late Fee]]></text>
+            </staticText>
+
+	    <textField>
+                <reportElement x="250" y="180" width="100" height="15" />
+                <textElement textAlignment = "Right">
+                    <font size="11" isBold="false"/>
+                </textElement>
+                <textFieldExpression class = "java.lang.String">
+      <![CDATA[$P{latefee}]]>
+   </textFieldExpression>
+   </textField>
+
+    <staticText>
+                <reportElement x="360" y="180" width="20" height="15" />
+                <textElement textAlignment="Right">
+                    <font size="10" isBold="false"/>
+                </textElement>
+                <text><![CDATA[14 .]]></text>
+            </staticText>
+
+	     <staticText>
+                <reportElement x="390" y="180" width="150" height="15" />
+                <textElement textAlignment="Left">
+                    <font size="10" isBold="false"/>
+                </textElement>
+                <text><![CDATA[Car Parking1]]></text>
+            </staticText>
+
+	    <textField>
+                <reportElement x="630" y="180" width="100" height="15" />
+                <textElement textAlignment = "Right">
+                    <font size="11" isBold="false"/>
+                </textElement>
+                <textFieldExpression class = "java.lang.String">
+      <![CDATA[$P{carpark1}]]>
+   </textFieldExpression>
+   </textField>
+
+
+
+    <staticText>
+                <reportElement x="20" y="195" width="20" height="15" />
+                <textElement textAlignment="Right">
+                    <font size="10" isBold="false"/>
+                </textElement>
+                <text><![CDATA[15 .]]></text>
+            </staticText>
+
+	     <staticText>
+                <reportElement x="50" y="195" width="80" height="15" />
+                <textElement textAlignment="Left">
+                    <font size="10" isBold="false"/>
+                </textElement>
+                <text><![CDATA[Car Parking2]]></text>
+            </staticText>
+
+	    <textField>
+                <reportElement x="250" y="195" width="100" height="15" />
+                <textElement textAlignment = "Right">
+                    <font size="11" isBold="false"/>
+                </textElement>
+                <textFieldExpression class = "java.lang.String">
+      <![CDATA[$P{carpark2}]]>
+   </textFieldExpression>
+   </textField>
+
+    <staticText>
+                <reportElement x="360" y="195" width="20" height="15" />
+                <textElement textAlignment="Right">
+                    <font size="10" isBold="false"/>
+                </textElement>
+                <text><![CDATA[16 .]]></text>
+            </staticText>
+
+	     <staticText>
+                <reportElement x="390" y="195" width="150" height="15" />
+                <textElement textAlignment="Left">
+                    <font size="10" isBold="false"/>
+                </textElement>
+                <text><![CDATA[Two Wheeler1 ]]></text>
+            </staticText>
+
+	    <textField>
+                <reportElement x="630" y="195" width="100" height="15" />
+                <textElement textAlignment = "Right">
+                    <font size="11" isBold="false"/>
+                </textElement>
+                <textFieldExpression class = "java.lang.String">
+      <![CDATA[$P{twowheeler1}]]>
+   </textFieldExpression>
+   </textField>
+
+
+    <staticText>
+                <reportElement x="20" y="210" width="20" height="15" />
+                <textElement textAlignment="Right">
+                    <font size="10" isBold="false"/>
+                </textElement>
+                <text><![CDATA[17 .]]></text>
+            </staticText>
+
+	     <staticText>
+                <reportElement x="50" y="210" width="80" height="15" />
+                <textElement textAlignment="Left">
+                    <font size="10" isBold="false"/>
+                </textElement>
+                <text><![CDATA[Two Wheeler2]]></text>
+            </staticText>
+
+	    <textField>
+                <reportElement x="250" y="210" width="100" height="15" />
+                <textElement textAlignment = "Right">
+                    <font size="11" isBold="false"/>
+                </textElement>
+                <textFieldExpression class = "java.lang.String">
+      <![CDATA[$P{twowheeler2}]]>
+   </textFieldExpression>
+   </textField>
+
+    <staticText>
+                <reportElement x="360" y="210" width="20" height="15" />
+                <textElement textAlignment="Right">
+                    <font size="10" isBold="false"/>
+                </textElement>
+                <text><![CDATA[18 .]]></text>
+            </staticText>
+
+	     <staticText>
+                <reportElement x="390" y="210" width="150" height="15" />
+                <textElement textAlignment="Left">
+                    <font size="10" isBold="false"/>
+                </textElement>
+                <text><![CDATA[Sundry adjustment]]></text>
+            </staticText>
+
+	    <textField>
+                <reportElement x="630" y="210" width="100" height="15" />
+                <textElement textAlignment = "Right">
+                    <font size="11" isBold="false"/>
+                </textElement>
+                <textFieldExpression class = "java.lang.String">
+      <![CDATA[$P{sundayadjust}]]>
+   </textFieldExpression>
+   </textField>
+
+
+    <staticText>
+                <reportElement x="20" y="225" width="20" height="15" />
+                <textElement textAlignment="Right">
+                    <font size="10" isBold="false"/>
+                </textElement>
+                <text><![CDATA[19 .]]></text>
+            </staticText>
+
+	     <staticText>
+                <reportElement x="50" y="225" width="80" height="15" />
+                <textElement textAlignment="Left">
+                    <font size="10" isBold="false"/>
+                </textElement>
+                <text><![CDATA[Property tax]]></text>
+            </staticText>
+
+	    <textField>
+                <reportElement x="250" y="225" width="100" height="15" />
+                <textElement textAlignment = "Right">
+                    <font size="11" isBold="false"/>
+                </textElement>
+                <textFieldExpression class = "java.lang.String">
+      <![CDATA[$P{protax}]]>
+   </textFieldExpression>
+   </textField>
+
+    <staticText>
+                <reportElement x="360" y="225" width="20" height="15" />
+                <textElement textAlignment="Right">
+                    <font size="10" isBold="false"/>
+                </textElement>
+                <text><![CDATA[20 .]]></text>
+            </staticText>
+
+	     <staticText>
+                <reportElement x="390" y="225" width="150" height="15" />
+                <textElement textAlignment="Left">
+                    <font size="10" isBold="false"/>
+                </textElement>
+                <text><![CDATA[Excees Pay]]></text>
+            </staticText>
+
+	    <textField>
+                <reportElement x="630" y="225" width="100" height="15" />
+                <textElement textAlignment = "Right">
+                    <font size="11" isBold="false"/>
+                </textElement>
+                <textFieldExpression class = "java.lang.String">
+      <![CDATA[$P{exceespay}]]>
+   </textFieldExpression>
+   </textField>
+
+
+   <staticText>
+                <reportElement x="20" y="240" width="20" height="15" />
+                <textElement textAlignment="Right">
+                    <font size="10" isBold="false"/>
+                </textElement>
+                <text><![CDATA[21 .]]></text>
+            </staticText>
+
+	     <staticText>
+                <reportElement x="50" y="240" width="80" height="15" />
+                <textElement textAlignment="Left">
+                    <font size="10" isBold="false"/>
+                </textElement>
+                <text><![CDATA[Club House]]></text>
+            </staticText>
+
+	    <textField>
+                <reportElement x="250" y="240" width="100" height="15" />
+                <textElement textAlignment = "Right">
+                    <font size="11" isBold="false"/>
+                </textElement>
+                <textFieldExpression class = "java.lang.String">
+      <![CDATA[$P{clubhouse}]]>
+   </textFieldExpression>
+   </textField>
+   
+   <staticText>
+                <reportElement x="360" y="240" width="20" height="15" />
+                <textElement textAlignment="Right">
+                    <font size="10" isBold="false"/>
+                </textElement>
+                <text><![CDATA[22 .]]></text>
+            </staticText>
+
+	     <staticText>
+                <reportElement x="390" y="240" width="150" height="15" />
+                <textElement textAlignment="Left">
+                    <font size="10" isBold="false"/>
+                </textElement>
+                <text><![CDATA[Previous Dues]]></text>
+            </staticText>
+
+	    <textField>
+                <reportElement x="630" y="240" width="100" height="15" />
+                <textElement textAlignment = "Right">
+                    <font size="11" isBold="false"/>
+                </textElement>
+                <textFieldExpression class = "java.lang.String">
+      <![CDATA[$P{previousDues}]]>
+   </textFieldExpression>
+   </textField>
+   
+      <staticText>
+                <reportElement x="20" y="255" width="20" height="15" />
+                <textElement textAlignment="Right">
+                    <font size="10" isBold="false"/>
+                </textElement>
+                <text><![CDATA[23 .]]></text>
+            </staticText>
+
+	     <staticText>
+                <reportElement x="50" y="255" width="80" height="15" />
+                <textElement textAlignment="Left">
+                    <font size="10" isBold="false"/>
+                </textElement>
+                <text><![CDATA[App Subscription Fee]]></text>
+            </staticText>
+
+	    <textField>
+                <reportElement x="250" y="255" width="100" height="15" />
+                <textElement textAlignment = "Right">
+                    <font size="11" isBold="false"/>
+                </textElement>
+                <textFieldExpression class = "java.lang.String">
+      <![CDATA[$P{appSubscriptionFee}]]>
+   </textFieldExpression>
+   </textField>
+   
+    <staticText>
+                <reportElement x="0" y="270" width="1000" height="20" />
+                <textElement textAlignment="Left">
+                    <font size="10" isBold="false"/>
+                </textElement>
+                <text><![CDATA[------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------]]></text>
+            </staticText>
+
+	     <staticText>
+                <reportElement x="410" y="290" width="150" height="15" />
+                <textElement textAlignment="Left">
+                    <font size="10" isBold="false"/>
+                </textElement>
+                <text><![CDATA[Total  Rs.  ]]></text>
+            </staticText>
+
+	    <textField>
+                <reportElement x="630" y="290" width="100" height="15" />
+                <textElement textAlignment = "Right">
+                    <font size="11" isBold="false"/>
+                </textElement>
+                <textFieldExpression class = "java.lang.String">
+      <![CDATA[$P{totAmt}]]>
+   </textFieldExpression>
+   </textField>
+
+   <staticText>
+                <reportElement x="410" y="305" width="150" height="15" />
+                <textElement textAlignment="Left">
+                    <font size="10" isBold="false"/>
+                </textElement>
+                <text><![CDATA[Arrears  Rs.  ]]></text>
+            </staticText>
+
+	    <textField>
+                <reportElement x="630" y="305" width="100" height="15" />
+                <textElement textAlignment = "Right">
+                    <font size="11" isBold="false"/>
+                </textElement>
+                <textFieldExpression class = "java.lang.String">
+      <![CDATA[$P{ArrearsAmt}]]>
+   </textFieldExpression>
+   </textField>
+
+   <staticText>
+                <reportElement x="410" y="320" width="150" height="15" />
+                <textElement textAlignment="Left">
+                    <font size="10" isBold="false"/>
+                </textElement>
+                <text><![CDATA[Amount Due  Rs.  ]]></text>
+            </staticText>
+
+	    <textField>
+                <reportElement x="630" y="320" width="100" height="15" />
+                <textElement textAlignment = "Right">
+                    <font size="11" isBold="false"/>
+                </textElement>
+                <textFieldExpression class = "java.lang.String">
+      <![CDATA[$P{AmtDue}]]>
+   </textFieldExpression>
+   </textField>
+
+
+
+ <staticText>
+                <reportElement x="20" y="310" width="150" height="15" />
+                <textElement textAlignment="Left">
+                    <font size="10" isBold="false"/>
+                </textElement>
+                <text><![CDATA[Rupees :]]></text>
+            </staticText>
+             <textField>
+                <reportElement x="70" y="310" width="325" height="15" />
+                <textElement textAlignment="Left">
+                    <font size="10" isBold="false"/>
+                </textElement>
+               <textFieldExpression class = "java.lang.String">
+      			<![CDATA[$P{rupeess}]]>
+   				</textFieldExpression>
+   			</textField>
+           <staticText>
+                <reportElement x="0" y="325" width="1000" height="20" />
+                <textElement textAlignment="Left">
+                    <font size="10" isBold="false"/>
+                </textElement>
+                <text><![CDATA[-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------]]></text>
+            </staticText>
+	     <staticText>
+                <reportElement x="0" y="325" width="1000" height="20" />
+                <textElement textAlignment="Left">
+                    <font size="10" isBold="false"/>
+                </textElement>
+                <text><![CDATA[--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------]]></text>
+				 </staticText>
+
+	     <textField>
+                <reportElement x="20" y="340" width="800" height="20" />
+                <textElement textAlignment = "Left">
+                    <font size="11" isBold="false"/>
+                </textElement>
+                <textFieldExpression class = "java.lang.String">
+      <![CDATA[$P{NOTES}]]>
+   </textFieldExpression>
+    </textField>
+     <textField>
+                <reportElement x="20" y="360" width="800" height="20" />
+                <textElement textAlignment = "Left">
+                    <font size="11" isBold="false"/>
+                </textElement>
+                <textFieldExpression class = "java.lang.String">
+      <![CDATA[$P{NOTES1}]]>
+   </textFieldExpression>
+    </textField>
+     <textField>
+                <reportElement x="20" y="370" width="800" height="20" />
+                <textElement textAlignment = "Left">
+                    <font size="11" isBold="false"/>
+                </textElement>
+                <textFieldExpression class = "java.lang.String">
+      <![CDATA[$P{NOTES2}]]>
+   </textFieldExpression>
+    </textField> <textField>
+                <reportElement x="20" y="380" width="800" height="20" />
+                <textElement textAlignment = "Left">
+                    <font size="11" isBold="false"/>
+                </textElement>
+                <textFieldExpression class = "java.lang.String">
+      <![CDATA[$P{NOTES3}]]>
+   </textFieldExpression>
+    </textField>
+    <textField>
+                <reportElement x="20" y="395" width="800" height="20" />
+                <textElement textAlignment = "Left">
+                    <font size="11" isBold="false"/>
+                </textElement>
+                <textFieldExpression class = "java.lang.String">
+      <![CDATA[$P{NOTES4}]]>
+   </textFieldExpression>
+    </textField>
+    <textField>
+                <reportElement x="600" y="410" width="200" height="20" />
+                <textElement textAlignment = "Left">
+                    <font size="11" isBold="false"/>
+                </textElement>
+                <textFieldExpression class = "java.lang.String">
+      <![CDATA[$P{NOTES5}]]>
+   </textFieldExpression>
+    </textField>
+    <textField>
+                <reportElement x="20" y="425" width="800" height="20" />
+                <textElement textAlignment = "Left">
+                    <font size="11" isBold="false"/>
+                </textElement>
+                <textFieldExpression class = "java.lang.String">
+      <![CDATA[$P{NOTES6}]]>
+   </textFieldExpression>
+    </textField>
+
+</band>
+    </columnHeader>
+        <columnFooter>
+                <band height="7" splitType="Stretch">
+                        <line>
+                                <reportElement positionType="FixRelativeToBottom" x="0" y="3" width="802" height="1"/>
+                                <graphicElement>
+                                        <pen lineWidth="0.5" lineColor="#999999"/>
+                                </graphicElement>
+                        </line>
+                </band>
+        </columnFooter>
+        <summary>
+                <band splitType="Stretch"/>
+        </summary>
+</jasperReport>

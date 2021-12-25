@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 13, 2016 6:24:09 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+	<class name="com.socialindiaservices.vo.FunctionMasterTblVO"
+		table="mvp_function_tbl" >
+
+		<id name="functionId" type="java.lang.Integer">
+			<column name="FUNCTION_ID" />
+			<generator class="identity" />
+		</id>
+		<property name="functionName" type="string">
+			<column name="FUNCTION_NAME" length="100"/>
+		</property>
+		
+		<property name="statusFlag" type="java.lang.Integer">
+			<column name="STATUS_FLAG"/>
+		</property>
+		<property name="entryDatetime" type="timestamp">
+			<column name="ENTRY_TIME" length="19" />
+		</property>
+		<property name="modifyDatetime" type="timestamp">
+			<column name="MODIFY_TIME" length="19" />
+		</property>
+		<property name="ivrBnobjEVENT_TYPE" type="java.lang.Integer">
+			<column name="EVENT_TYPE" length="11" />
+		</property>
+	</class>
+</hibernate-mapping>
+

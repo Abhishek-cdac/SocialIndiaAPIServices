@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "../lib/struts-2.3.dtd">
+
+<struts>
+<package name="Donationlist" namespace="/" extends="struts-default,json-default">
+	 <!--  <action name="issueDonationmgmttbl" class="com.pack.Donationissuelist.Donationissuelistviewall">
+		<result name="success" type="json"></result>
+	</action> -->
+	<action name="donationToList" class="com.pack.donation.DonationToList">
+		<result name="success" type="json"></result>
+	</action>
+	<action name="donationPost" class="com.pack.donation.DonationAddEdit">
+		<result name="success" type="json"></result>
+	</action>
+	<action name="donationSrchList" class="com.pack.donation.DonationSearchList">
+		<result name="success" type="json"></result>
+	</action>
+	 <action name="deleteDonation" class="com.pack.donation.DonationDelete">
+		<result name="success" type="json"></result>
+	</action>
+	<!--<action name="confirmDonationEntry" class="com.pack.Donationissuelist.ConfirmDonationEntry">
+		<result name="success" type="json"></result>
+	</action>
+	<action name="DonationEntry" class="com.pack.Donationissuelist.DonationEntry">
+		<result name="success" type="json"></result>
+	</action>
+	 <action name="issueDonationhistorymgmttbl" class="com.pack.Donationissuelist.Donationissuehistorylistviewall">
+		<result name="success" type="json"></result>
+	</action> -->
+</package>
+</struts>

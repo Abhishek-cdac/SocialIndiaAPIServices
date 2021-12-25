@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 5, 2017 11:25:37 AM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.socialindiaservices.vo.MvpDonationInstitutionTbl" table="mvp_donation_institution_tbl" >
+        <id name="institutionId" type="java.lang.Integer">
+            <column name="INSTITUTION_ID" />
+            <generator class="identity" />
+        </id>
+        <property name="institutionName" type="string">
+            <column name="INSTITUTION_NAME" length="200" />
+        </property>
+         <property name="institutionContact" type="string">
+            <column name="CONTACT" length="200" />
+        </property>
+           <property name="institutionAddress" type="string">
+            <column name="ADDRESS" length="200" />
+        </property>
+       
+         <property name="imageName" type="string">
+            <column name="IMAGE" length="200" />
+        </property>
+        
+        <property name="status" type="java.lang.Integer">
+            <column name="STATUS">
+                <comment>0- DEACTIVE, 1 - ACTIVE</comment>
+            </column>
+        </property>
+        <many-to-one name="entryBy" column="ENTRY_BY"
+			class="com.siservices.signup.persistense.UserMasterTblVo" lazy="false"></many-to-one>
+			
+			 <many-to-one name="societyId" column="SOCIETY_ID"
+			class="com.siservices.uam.persistense.SocietyMstTbl" lazy="false"></many-to-one>
+			
+        <property name="entryDate" type="timestamp">
+            <column name="ENTRY_DATE" length="19" />
+        </property>
+        <property name="modifyDate" type="timestamp">
+            <column name="MODIFY_DATE" length="19"/>
+        </property>
+    </class>
+</hibernate-mapping>

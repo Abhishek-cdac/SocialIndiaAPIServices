@@ -1,0 +1,22 @@
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "../lib/struts-2.3.dtd">
+
+<struts>
+	<package name="skilledhelpservices" namespace="/" extends="struts-default,json-default">
+		<action name="skilled_directory_search" class="com.mobi.skillhelp.SkillDirectoryListSearch">
+			<result name="success" type="json"></result>
+		</action>
+		<action name="service_booking_new" class="com.mobi.skillhelp.NewBooking">
+			<result name="success" type="json"></result>
+		</action>
+		<action name="service_booking_update" class="com.mobi.skillhelp.Bookingupdate">
+			<result name="success" type="json"></result>
+		</action>	
+		<action name="service_booking_delete" class="com.mobi.skillhelp.Bookingdelete">
+			<result name="success" type="json"></result>
+		</action>
+		<action name="my_service_booking_list" class="com.mobi.skillhelp.Bookinglist">
+			<result name="success" type="json"></result>
+		</action>				
+	</package>
+</struts>

@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 10, 2016 1:28:28 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.mobi.addpost.MvpAdpostAttchTbl" table="mvp_adpost_attch_tbl">
+        <id name="adpostAttchId" type="java.lang.Integer">
+            <column name="ADPOST_ATTCH_ID" />
+            <generator class="identity" />
+        </id>
+       
+        <property name="attachName" type="string">
+            <column name="ATTACH_NAME" length="50" />
+        </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="STATUS">
+                <comment>1-ACTIVE 0-DEACTIVE</comment>
+            </column>
+        </property>
+        <property name="thumbImage" column="THUMP_IMAGE" type="string" length="50"></property>	
+        
+			<property name="ivrBnFILE_TYPE" column="FILE_TYPE" type="integer" length="11"></property>
+			
+        <property name="entryDatetime" type="timestamp">
+            <column name="ENTRY_DATETIME" length="19" />
+        </property>
+        <property name="modifyDatetime" type="timestamp">
+            <column name="MODIFY_DATETIME" length="19" />
+        </property>
+        
+         <many-to-one name="postUniqueId" class="com.mobi.addpost.MvpAdpostTbl" lazy="false" fetch="select">
+            <column name="POST_UNIQUE_ID" />
+        </many-to-one>
+        
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.mobi.commonvo.PrivacyInfoTblVO" table="mvp_privacy_info_tbl" >
+		<id name="uniqId" type="java.lang.Integer">
+			<column name="UNIQ_ID" />
+			<generator class="identity" />
+		</id>
+		<property name="privacyFlg" type="java.lang.Integer">
+			<column name="PRIVACY_FLG" />
+		</property>
+		<property name="usrIds" type="string">
+			<column name="USR_IDS" />
+		</property>
+		<property name="favouriteMenuIds" type="string">
+			<column name="FAVOURITE_MENU_IDS" />
+		</property>
+		<property name="status" type="java.lang.Integer">
+			<column name="STATUS" />
+		</property>
+		<property name="entryDatetime" type="timestamp">
+			<column name="ENRTY_DATETIME" length="19" />
+		</property>
+		<property name="modifyDatetime" type="timestamp">
+			<column name="MODIFY_DATETIME" length="19" />
+		</property>
+		<many-to-one name="usrId" column="USR_ID" class="com.siservices.signup.persistense.UserMasterTblVo" lazy="false"></many-to-one>
+	</class>
+</hibernate-mapping>

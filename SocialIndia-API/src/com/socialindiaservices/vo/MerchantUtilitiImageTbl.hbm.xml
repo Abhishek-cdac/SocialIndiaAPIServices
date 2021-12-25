@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 13, 2016 6:24:09 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+	<class name="com.socialindiaservices.vo.MerchantUtilitiImageTblVO"
+		table="mvp_mrch_utility_image_tbl" >
+
+		<id name="merchantImageId" type="java.lang.Integer">
+			<column name="UTILITY_IMAGE_ID" />
+			<generator class="identity" />
+		</id>
+		<property name="imageName" type="java.lang.String" length="200">
+			<column name="IMAGE_NAME" />
+		</property>
+		<property name="statusFlag" type="java.lang.Integer">
+		<column name="STATUS"></column>
+		</property>
+		<property name="entryDatetime" type="timestamp">
+			<column name="ENTRY_DATETIME" />
+		</property>
+		<property name="docDateFolderName" type="string">
+			<column name="DOC_DATE_FLDR" length="30" />
+		</property>
+		<property name="modifyDatetime" type="timestamp">
+			<column name="MODY_DATETIME"  />
+		</property>
+		<many-to-one name="merchantUtilId" column="UNIQUE_ID"
+			class="com.socialindiaservices.vo.MerchantUtilitiTblVO" lazy="false"></many-to-one>
+			<many-to-one name="entryBy" column="ENTRY_BY"
+			class="com.siservices.signup.persistense.UserMasterTblVo" lazy="false"></many-to-one>
+	</class>
+</hibernate-mapping>
+

@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Sep 17, 2016 5:02:59 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.socialindiaservices.vo.GatepassEntryTblVO" table="mvp_gatepass_entry_tbl" >
+        <id name="entryId" type="java.lang.Integer">
+            <column name="ENTRY_ID" />
+            <generator class="identity" />
+        </id>
+         <property name="status" type="java.lang.Integer">
+            <column name="STATUS" />
+        </property>
+        <property name="inDatetime" type="timestamp">
+            <column name="IN_DATETIME"/>
+        </property>
+         <property name="outDatetime" type="timestamp">
+            <column name="OUT_DATETIME"/>
+        </property>
+         <property name="entryDateTime" type="timestamp">
+            <column name="ENTRY_DATETIME"/>
+        </property>
+        <property name="modifyDateTime" type="timestamp">
+            <column name="MODIFY_DATETIME"/>
+        </property>
+        <many-to-one name="passId" class="com.socialindiaservices.vo.MvpGatepassDetailTbl" lazy="false">
+            <column name="PASS_ID" />
+        </many-to-one>
+         <many-to-one name="entryBy" class="com.siservices.signup.persistense.UserMasterTblVo" lazy="false">
+            <column name="ENTRY_BY" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

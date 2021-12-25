@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "../lib/struts-2.3.dtd">
+
+<struts>
+	<package name="mobiProfileServices" namespace="/" extends="struts-default,json-default">
+
+		<action name="profilepicupdate" class="com.mobile.profile.profileDetails">
+			<result name="success" type="json"></result>
+		</action>
+		
+		<action name="addedpersonal_skillslist" class="com.mobile.profile.personalProfileList">
+			<result name="success" type="json"></result>
+		</action>
+		
+		<action name="delete_pskill" class="com.mobile.profile.personalProfileDelete">
+			<result name="success" type="json"></result>
+		</action>
+		
+		<action name="update_pskill" class="com.mobile.profile.PersonalProfileUpdate">
+			<result name="success" type="json"></result>
+		</action>
+		
+			<action name="loginverify" class="com.mobile.login.verify.loginVerify">
+			<result name="success" type="json"></result>
+		</action>
+		
+			<action name="user_profile_view" class="com.mobile.profile.userProfileView">
+			<result name="success" type="json"></result>
+		</action>
+		
+		<action name="createlogin" class="com.mobile.login.verify.createLogin">
+			<result name="success" type="json"></result>
+		</action>
+		
+		<action name="verifyEmail" class="com.mobile.login.verify.verifyEmail">
+		<result name="success">resources/jsp/verifyemail/verifyemail.jsp</result>
+    	<result name="input">resources/jsp/verifyemail/verifyemail.jsp</result>
+			<!-- <result name="success" type="json"></result> -->
+		</action>
+		
+			<action name="createpasswd" class="com.mobile.login.verify.createPassword">
+			<result name="success" type="json"></result>
+		</action>
+		
+		<action name="profilepercent" class="com.mobile.profile.profilepercent">
+			<result name="success" type="json"></result>
+		</action>
+		
+		<action name="user_profile_update" class="com.mobile.profile.profileUpdate">
+			<result name="success" type="json"></result>
+		</action>
+		
+		<action name="notificationStatus" class="com.mobile.profile.NotificationStatusUpdate">
+			<result name="success" type="json"></result>
+		</action>
+		
+		<action name="onlineStatusupdate" class="com.mobile.profile.OnlineStatusUpdate">
+			<result name="success" type="json"></result>
+		</action>
+		
+		<action name="user_profile_info" class="com.mobile.profile.GetProfileDetail">
+			<result name="success" type="json"></result>
+		</action>
+		
+	</package>
+</struts>

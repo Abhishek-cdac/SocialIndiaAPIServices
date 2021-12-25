@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 29, 2016 11:14:41 AM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.pack.complaintVO.ComplaintsTblVO" table="mvp_complaints_tbl">
+        <id name="complaintsId" type="java.lang.Integer">
+            <column name="COMPLAINTS_ID" />
+            <generator class="native" />
+        </id>
+        <many-to-one name="usrRegTblByFromUsrId" class="com.siservices.signup.persistense.UserMasterTblVo" lazy="false">
+            <column name="USR_ID" />
+        </many-to-one>
+        <many-to-one name="groupMstTblByFromGroupId" class="com.siservices.uam.persistense.GroupMasterTblVo" fetch="select">
+            <column name="GROUP_ID" />
+        </many-to-one>
+        <!-- <many-to-one name="groupMstTblByFromGroupId" class="GroupMstTbl" fetch="select">
+            <column name="FROM_GROUP_ID" />
+        </many-to-one>
+        <many-to-one name="usrRegTblByToUsrId" class="UsrRegTbl" fetch="select">
+            <column name="TO_USR_ID" />
+        </many-to-one> -->
+         <property name="feedId" type="java.lang.Integer">
+            <column name="FEED_ID"  /> </property>
+         <property name="usrRegTblByToUsrId" type="java.lang.Integer">
+            <column name="TO_USR_ID"  />
+        </property>
+        <property name="groupMstTblByToGroupId" type="java.lang.Integer">
+            <column name="TO_GROUP_ID" />
+        </property>
+        <property name="complaintsTitle" type="string">
+            <column name="COMPLAINTS_TITLE" length="500" />
+        </property>
+        <property name="complaintsDesc" type="string">
+            <column name="COMPLAINTS_DESC" length="65535" />
+        </property>
+         <property name="ShrtDesc" type="string">
+            <column name="SHORT_DESC" length="200" />
+        </property>
+        <property name="complaintsFileName1" type="string">
+            <column name="IMAGE_NAME_1" length="150" />
+        </property>
+         <property name="complaintsFileName2" type="string">
+            <column name="IMAGE_NAME_2" length="150" />
+        </property>
+         <property name="complaintsFileName3" type="string">
+            <column name="IMAGE_NAME_3" length="150" />
+        </property>
+        <property name="videoPath" type="string">
+            <column name="VIDEO_PATH" length="250" />
+        </property>
+        <property name="complaintsOthersEmail" type="string">
+            <column name="COMPLAINTS_OTHERS_EMAIL" length="100" />
+        </property>
+        <property name="closereason" type="string">
+            <column name="CLOSE_REASON"  />
+        </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="STATUS">
+                <comment>0- deactive, 1 - active, 2 -progress, 3 - Complete</comment>
+            </column>
+        </property>
+        <property name="entryBy" type="java.lang.Integer">
+            <column name="ENTRY_BY" />
+        </property>
+        <property name="complaintsCompleteBy" type="java.lang.Integer">
+            <column name="COMPLAINTS_COMPLETE_BY" />
+        </property>
+        <property name="entryDatetime" type="timestamp">
+            <column name="ENTRY_DATETIME" length="19" />
+        </property>
+        
+         <property name="modifyDatetime" type="timestamp">
+            <column name="MODIFY_DATETIME" length="19" />
+        </property>
+      
+       <property name="compliantsToFlag" type="java.lang.Integer">
+            <column name="COMPLAINTS_TO_FLAG"  />
+        </property>
+        
+    </class>
+</hibernate-mapping>

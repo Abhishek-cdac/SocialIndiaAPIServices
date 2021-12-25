@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "../lib/struts-2.3.dtd">
+
+<struts>
+	<package name="contactusreportissue" namespace="/" extends="struts-default,json-default">
+		<!-- <action name="reportissue" class="com.mobi.contactusreportissue.Reportissue">
+			<result name="success" type="json"></result>
+		</action>
+		
+		<action name="contactus" class="com.mobi.contactusreportissue.ContactUs">
+			<result name="success" type="json"></result>
+		</action>	 -->
+		
+		<action name="reportissue" class="com.mobi.contactusissuereport.IssueReport">
+			<result name="success" type="json"></result>
+		</action>
+		
+		<action name="contactus" class="com.mobi.contactusissuereport.ContactUs">
+			<result name="success" type="json"></result>
+		</action>		
+	</package>
+</struts>

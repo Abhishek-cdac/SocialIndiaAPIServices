@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 13, 2016 6:24:09 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+	<class name="com.socialindiaservices.vo.DocumentShareTblVO"
+		table="doc_share_tbl" >
+
+		<id name="documentShareId" type="java.lang.Integer">
+			<column name="DOC_SHARE_ID" />
+			<generator class="identity" />
+		</id>
+		<property name="status" type="java.lang.Integer">
+			<column name="STATUS" />
+		</property>
+		<property name="entryDatetime" type="timestamp">
+			<column name="ENTRY_DATE" length="19" />
+		</property>
+		<property name="modifyDatetime" type="timestamp">
+			<column name="MODIFY_DATE" length="19" />
+		</property>
+		<many-to-one name="documentId" column="DOCMNT_ID"
+			class="com.socialindiaservices.vo.DocumentManageTblVO" lazy="false"></many-to-one>
+		<many-to-one name="userId" column="USR_ID"
+			class="com.siservices.signup.persistense.UserMasterTblVo" lazy="false"></many-to-one>
+			<many-to-one name="entryBy" column="ENRTY_BY"
+			class="com.siservices.signup.persistense.UserMasterTblVo" lazy="false"></many-to-one>
+	</class>
+</hibernate-mapping>
+

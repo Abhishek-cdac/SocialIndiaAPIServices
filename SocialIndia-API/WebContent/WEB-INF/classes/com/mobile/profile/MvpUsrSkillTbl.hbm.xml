@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Sep 27, 2016 7:58:18 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.mobile.profile.MvpUsrSkillTbl" table="mvp_usr_skill_tbl">
+        <id name="uniqueId" type="java.lang.Integer">
+            <column name="UNIQUE_ID" />
+            <generator class="identity" />
+        </id>
+       
+        <property name="skillSts" type="java.lang.Integer">
+            <column name="SKILL_STS">
+                <comment>0- DeActive, 1 - Active</comment>
+            </column>
+        </property>
+        
+         <property name="skillName" type="string">
+            <column name="SKILL_NAME" length="50" />
+        </property>
+        
+        <property name="enrtyDatetime" type="timestamp">
+            <column name="ENRTY_DATETIME" length="19" />
+        </property>
+        <property name="modifyDatetime" type="timestamp">
+            <column name="MODIFY_DATETIME" length="19"  />
+        </property>
+        
+         <many-to-one name="ivrBnSKILL_ID" class="com.pack.commonvo.SkillMasterTblVO" fetch="select" lazy="false">
+            <column name="SKILL_ID" />
+        </many-to-one>
+        
+        <many-to-one name="userId" class="com.siservices.signup.persistense.UserMasterTblVo" fetch="select" lazy="false">
+            <column name="USR_ID" /></many-to-one>
+            
+        <many-to-one name="iVOCATEGORY_ID" class="com.pack.commonvo.CategoryMasterTblVO" fetch="select" lazy="false">
+            <column name="CATEGORY_ID" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

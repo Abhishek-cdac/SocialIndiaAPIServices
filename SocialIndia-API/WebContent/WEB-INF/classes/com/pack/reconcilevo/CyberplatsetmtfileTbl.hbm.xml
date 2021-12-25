@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.pack.reconcilevo.CyberplatsetmtfileTblVo" table="mvp_utlty_cybrplt_sttlmtfile_tbl">
+		<id name="ivrBnCBPLT_FILE_ID" column="CBPLT_FILE_ID" type="integer">
+			<generator class="native"></generator>
+		</id>	
+		<property name="ivrBnFLIENAME" column="FLIENAME" type="string" length="250"></property>
+		<property name="ivrBnCHECK_SUM" column="CHECK_SUM" type="string" length="100"></property>		
+		<property name="ivrBnExctSTATUS" column="EXTRACT_STATUS" type="integer" length="11"></property>				
+		<property name="ivrBnSTATUS" column="STATUS" type="integer" length="11"></property>		
+		<property name="ivrBnENTRY_DATETIME" column="ENTRY_DATETIME" type="timestamp"></property>
+		<many-to-one name="ivrBnENTRY_BY" column="ENTRY_BY" class="com.siservices.signup.persistense.UserMasterTblVo" lazy="false"></many-to-one>						
+	</class>
+</hibernate-mapping>

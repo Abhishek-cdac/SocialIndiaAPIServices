@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 13, 2016 6:24:09 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+	<class name="com.socialindiaservices.vo.MaintenanceFeeTblVO"
+		table="maintenance_fee_tbl" >
+
+		<id name="maintenanceId" type="java.lang.Integer">
+			<column name="MAINTENANCE_ID" />
+			<generator class="identity" />
+		</id>
+		<property name="serviceCharge" type="float">
+			<column name="SERVICE_CHARGE" />
+		</property>
+		<property name="billDate" type="timestamp">
+			<column name="BILL_DATE" />
+		</property>
+		<property name="municipalTax" type="float">
+		<column name="MUNICIPAL_TAX"></column>
+		</property>
+		<property name="penalty" type="float">
+		<column name="PENALITY"></column>
+		</property>
+		<property name="waterCharge" type="float">
+		<column name="WATER_CHARGE"></column>
+		</property>
+		<property name="nonOccupancyCharge" type="float">
+		<column name="NON_OCCUPANCY_CHARGE"></column>
+		</property>
+		<property name="culturalCharge" type="float">
+		<column name="CULTURAL_CHARGE"></column>
+		</property>
+		<property name="sinkingFund" type="float">
+		<column name="SINKING_FUND"></column>
+		</property>
+		<property name="repairFund" type="float">
+		<column name="REPAIR_FUND"></column>
+		</property>
+		<property name="insuranceCharges" type="float">
+		<column name="INSURANCE_CHARGES"></column>
+		</property>
+		<property name="playZoneCharge" type="float">
+		<column name="PLAY_ZONE_CHARGE"></column>
+		</property>
+		<property name="majorRepairFund" type="float">
+		<column name="MAJOR_REPAIR_FUND"></column>
+		</property>
+		<property name="uploadFileName" type="java.lang.String" length="50">
+		<column name="UPLOADED_FIEL_NAME"></column>
+		</property>
+		<property name="interest" type="float">
+		<column name="INTEREST"></column>
+		</property>
+		
+		<property name="latefee" type="float">
+		<column name="LATE_FEES"></column>
+		</property>
+		<property name="carpark1" type="float">
+		<column name="CAR_PARK_1"></column>
+		</property>
+		<property name="carpark2" type="float">
+		<column name="CAR_PARK_2"></column>
+		</property><property name="twowheeler1" type="float">
+		<column name="TWO_WHEELER_1"></column>
+		</property>
+		<property name="twowheeler2" type="float">
+		<column name="TWO_WHEELER_2"></column>
+		</property>
+		<property name="sundayadjust" type="float">
+		<column name="SUNDRY_ADJUST"></column>
+		</property>
+		<property name="protax" type="float">
+		<column name="PRO_TAX"></column>
+		</property>
+		<property name="exceespay" type="float">
+		<column name="EXCESS_PAY"></column>
+		</property>
+		<property name="clubhouse" type="float">
+		<column name="CLUB_HOUSE"></column>
+		</property>
+		<property name="arrears" type="float">
+		<column name="ARREARS"></column>
+		</property>
+		<property name="previousdue" type="float">
+		<column name="PREVIOUS_DUES"></column>
+		</property>
+		<property name="appfees" type="float">
+		<column name="APP_SUBSCRIP_FEE"></column>
+		</property>
+		<property name="amountword" type="java.lang.String" length="200">
+		<column name="AMOUNT_IN_WORDS"></column>
+		</property>
+		<property name="billno" type="java.lang.String" length="20">
+		<column name="BILL_NO"></column>
+		</property>
+		<property name="flatno" type="java.lang.String" length="20">
+		<column name="FLAT_NO"></column>
+		</property>
+		<property name="flatarea" type="java.lang.String" length="20">
+		<column name="FLAT_AREA"></column>
+		</property>
+		<property name="notes" type="java.lang.String" length="60">
+		<column name="NOTES"></column>
+		</property>
+		<property name="miscellious" type="java.lang.String" length="50">
+		<column name="MISCELLIOUS"></column>
+		</property>
+				
+		<property name="totbillamt" type="float">
+		<column name="TOTAL_AMOUNT"></column>
+		</property>
+		<property name="statusFlag" type="java.lang.Integer">
+		<column name="STATUS_FLAG"></column>
+		</property>
+		<property name="paidStatus" type="java.lang.Integer">
+		<column name="PAID_STATUS"></column>
+		</property>
+		<property name="entryDatetime" type="timestamp">
+			<column name="ENTRY_DATETIME" />
+		</property>
+		<property name="modifyDatetime" type="timestamp">
+			<column name="MODIFY_DATETIME" length="19" />
+		</property>
+		<property name="dataUploadFrom" type="java.lang.Integer">
+		<column name=" 	DATA_UPL_FRM" />
+		</property>
+		 <property name="pdfstatus" type="string">
+            <column name="PDF_STATUS" length="1" />
+        </property>
+		<many-to-one name="userId" column="USR_ID"
+			class="com.siservices.signup.persistense.UserMasterTblVo" lazy="false"></many-to-one>
+			<many-to-one name="entryBy" column="ENTRY_BY"
+			class="com.siservices.signup.persistense.UserMasterTblVo" lazy="false"></many-to-one>
+	</class>
+</hibernate-mapping>
+

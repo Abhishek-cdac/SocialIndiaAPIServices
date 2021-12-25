@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "../lib/struts-2.3.dtd">
+
+<struts>
+<package name="Notificationlist" namespace="/" extends="struts-default,json-default">
+	  <action name="notificationviewall" class="com.pack.Notificationlist.Notificationlistviewall">
+		<result name="success" type="json"></result>
+	</action> 
+	 <action name="notificationalert" class="com.pack.Notificationlist.Notificationlistalert">
+		<result name="success" type="json"></result>
+	</action> 
+	 <action name="notificationupdates" class="com.pack.Notificationlist.Notificationlistupdates">
+		<result name="success" type="json"></result>
+	</action> 
+</package>
+</struts>

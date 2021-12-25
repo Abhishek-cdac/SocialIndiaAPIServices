@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "../lib/struts-2.3.dtd">
+
+<struts>
+<package name="issuemgmt" namespace="/" extends="struts-default,json-default">
+
+	  <action name="issuemgmt" class="com.socialindiaservices.issuemgmt.Issueviewall">
+		<result name="success" type="json"></result>
+	</action> 
+	 <action name="createissue" class="com.socialindiaservices.issuemgmt.IssueUpdate">
+		<result name="success" type="json"></result>
+	</action> 
+		
+		 <action name="issueupdate" class="com.socialindiaservices.issuemgmt.IssueUpdate">
+		<result name="success" type="json"></result>
+	</action> 
+		
+</package>
+</struts>

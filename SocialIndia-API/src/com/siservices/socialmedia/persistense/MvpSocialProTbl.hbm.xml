@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 13, 2016 10:10:39 AM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.siservices.socialmedia.persistense.MvpSocialProTbl" table="mvp_social_pro_tbl" >
+        <id name="uniqueId" type="java.lang.Integer">
+            <column name="UNIQUE_ID" />
+            <generator class="identity" />
+        </id>
+       
+        <property name="name" type="string">
+            <column name="NAME" length="100" />
+        </property>
+        <property name="firstName" type="string">
+            <column name="FIRST_NAME" length="100" />
+        </property>
+        <property name="lastName" type="string">
+            <column name="LAST_NAME" length="100" />
+        </property>
+        <property name="socialId" type="string">
+            <column name="SOCIAL_ID" length="50">
+                <comment>Id get from social media</comment>
+            </column>
+        </property>
+        <property name="emailId" type="string">
+            <column name="EMAIL_ID" length="200" />
+        </property>
+        <property name="gender" type="string">
+            <column name="GENDER" length="10" />
+        </property>
+        <property name="pictureUrl" type="string">
+            <column name="PICTURE_URL" length="1000" />
+        </property>
+        <property name="pictureUrlMobile" type="string">
+            <column name="PICTURE_URL_MOBILE" length="1000" />
+        </property>
+        <property name="location" type="string">
+            <column name="LOCATION" length="80" />
+        </property>
+        <property name="address" type="string">
+            <column name="ADDRESS" length="500" />
+        </property>
+        <property name="socialNw" type="string">
+            <column name="SOCIAL_NW" length="20">
+                <comment>FB,TW</comment>
+            </column>
+        </property>
+        <property name="loginCount" type="java.lang.Integer">
+            <column name="LOGIN_COUNT" />
+        </property>
+        <property name="longaccesstoken" type="string">
+            <column name="LONGACCESSTOKEN" length="100" />
+        </property>
+        <property name="tokenExpire" type="string">
+            <column name="TOKEN_EXPIRE" length="300" />
+        </property>
+        <property name="actSts" type="java.lang.Integer">
+            <column name="ACT_STS" />
+        </property>
+        <property name="enrtyDatetime" type="timestamp">
+            <column name="ENRTY_DATETIME" length="19" />
+        </property>
+        <property name="modifyDatetime" type="timestamp">
+            <column name="MODIFY_DATETIME" length="19" />
+        </property>
+        
+         <many-to-one name="userId" class="com.siservices.signup.persistense.UserMasterTblVo" fetch="select">
+            <column name="USR_ID" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

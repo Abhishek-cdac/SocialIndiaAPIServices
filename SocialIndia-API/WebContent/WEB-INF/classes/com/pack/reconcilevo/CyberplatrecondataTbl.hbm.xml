@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.pack.reconcilevo.CyberplatrecondataTblVo" table="mvp_utlty_cybrplt_sttlmnt_reconn_tbl">
+		<id name="cpCyberplatReconId" column="CYBST_RCNN_ID" type="integer">
+			<generator class="native"></generator>
+		</id>	
+		<property name="cpOutletCode" column="OUTLET_CODE" type="integer" length="11"></property>
+		<property name="cpProviderName" column="PROVIDER_NAME" type="string" length="200"></property>
+		<property name="cpNumber" column="NUMBER" type="string" length="100"></property>	
+		<property name="cpAmount" column="AMOUNT" type="double"></property>
+		<property name="cpDealerTransId" column="DEALER_TRANS_ID" type="string" length="200"></property>
+		<property name="cpCyberplatTransId" column="CYBERPLAT_TRANS_ID" type="string" length="200"></property>	
+		<property name="cpOptorTransId" column="OPTOR_TRANS_ID" type="string" length="200"></property>
+		<property name="cpDateRecPayment" column="DATE_RCV_PAYMT" type="timestamp"></property>
+		<property name="cpDateCompPayment" column="DATE_COMPLT_PAYMT" type="timestamp"></property>	
+		<property name="cpStatus" column="STATUS" type="string" length="50"></property>
+		<property name="cpReconStatus" column="RECON_STATUS" type="integer" length="11"></property>	
+		<property name="cpEntryDatetime" column="ENTRY_DATETIME" type="timestamp"></property>
+		<many-to-one name="cpCbpltFileId" column="CBPLT_FILE_ID" class="com.pack.reconcilevo.CyberplatsetmtfileTblVo" lazy="false"></many-to-one>
+		<many-to-one name="cpEntryBy" column="ENTRY_BY" class="com.siservices.signup.persistense.UserMasterTblVo" lazy="false"></many-to-one>						
+	</class>
+</hibernate-mapping>

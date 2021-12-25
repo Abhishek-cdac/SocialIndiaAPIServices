@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 13, 2016 6:24:09 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+	<class name="com.socialindiaservices.vo.BiometricDeviceInfoTblVO"
+		table="biom_device_info" >
+
+		<id name="ID" type="java.lang.Integer">
+			<column name="Id" />
+			<generator class="identity" />
+		</id>
+		<property name="socyteaId" type="java.lang.String" length="45">
+			<column name="societyId"></column>
+		</property>
+		<property name="bioDeviceLogId" type="java.lang.String" length="45">
+			<column name="DeviceLogId"></column>
+		</property>
+		<property name="bioDeviceId" type="java.lang.String" length="45">
+			<column name="DeviceId"></column>
+		</property>
+		<property name="bioUserId" type="java.lang.String" length="45">
+			<column name="UserId"></column>
+		</property>
+		<property name="bioLogDate" type="java.lang.String" length="45">
+			<column name="LogDate"></column>
+		</property>
+		<property name="bioStatusCode" type="java.lang.String" length="45">
+			<column name="StatusCode"></column>
+		</property>
+		<property name="bioDuration" type="java.lang.String" length="45">
+			<column name="Duration"></column>
+		</property>
+		<property name="bioVerificationMode" type="java.lang.String" length="45">
+			<column name="VerificationMode"></column>
+		</property>
+		<property name="bioinsertdate" type="timestamp">
+			<column name="insert_date" length="19" not-null="true" />
+		</property>
+	</class>
+</hibernate-mapping>

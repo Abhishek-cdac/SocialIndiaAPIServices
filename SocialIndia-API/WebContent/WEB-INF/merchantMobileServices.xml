@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "../WebContent/WEB-INF/lib/struts-2.3.dtd">
+
+<struts>
+	<package name="merchantServices" namespace="/" extends="struts-default,json-default">
+
+
+		<action name="shop_browse_catogory_list" class="com.mobi.merchant.MerchantCaregoryList">
+			<result name="success" type="json"></result>
+		</action>
+	<action name="shop_catogory_list" class="com.mobi.merchant.MerchantSearchList">
+			<result name="success" type="json"></result>
+		</action>
+		<action name="merchant_issue_search_list" class="com.mobi.merchant.MearchantIssueList">
+			<result name="success" type="json"></result>
+		</action>
+		<action name="customer_product_order" class="com.mobi.merchant.CustomerProductOrder">
+			<result name="success" type="json"></result>
+		</action>
+		<action name="key_for_search" class="com.mobi.merchant.MerchantKeySearchList">
+			<result name="success" type="json"></result>
+		</action>
+		<action name="merchant_issue_posting" class="com.mobi.merchant.MerchantIssuePosting">
+			<result name="success" type="json"></result>
+		</action>
+		<action name="merchant_customer_rating" class="com.mobi.merchant.MerchantCustomerRating">
+			<result name="success" type="json"></result>
+		</action>
+		<action name="labour_customer_rating" class="com.mobi.merchant.MerchantFeedBackAdd">
+			<result name="success" type="json"></result>
+		</action>
+	</package>
+</struts>

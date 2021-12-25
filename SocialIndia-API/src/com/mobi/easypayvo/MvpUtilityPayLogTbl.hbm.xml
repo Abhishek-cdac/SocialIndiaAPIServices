@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.mobi.easypayvo.MvpUtilityPayLogTbl" table="mvp_utility_pay_log_tbl">
+        <id name="logId" type="java.lang.Integer">
+            <column name="LOG_ID" />
+            <generator class="native" />
+        </id>
+        <property name="utilityPayId" type="integer">
+            <column name="UTILITY_PAY_ID"  />
+        </property>
+        <property name="VRequestLog" type="string">
+            <column name="V_REQUEST_LOG" length="65535" />
+        </property>
+        <property name="VResponseLog" type="string">
+            <column name="V_RESPONSE_LOG" length="65535" />
+        </property>
+        <property name="PRequestLog" type="string">
+            <column name="P_REQUEST_LOG" length="65535" />
+        </property>
+        <property name="PResponseLog" type="string">
+            <column name="P_RESPONSE_LOG" length="65535" />
+        </property>
+        <property name="SRequestLog" type="string">
+            <column name="S_REQUEST_LOG" length="65535" />
+        </property>
+        <property name="SResponseLog" type="string">
+            <column name="S_RESPONSE_LOG" length="65535" />
+        </property>
+        <property name="entryDatetime" type="timestamp">
+            <column name="ENTRY_DATETIME" length="19" />
+        </property>
+        <property name="modifyDatetime" type="timestamp">
+            <column name="MODIFY_DATETIME" length="19" />
+        </property>
+        
+    </class>
+</hibernate-mapping>

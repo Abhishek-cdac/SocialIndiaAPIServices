@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 13, 2016 6:24:09 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+	<class name="com.socialindiaservices.vo.FacilityMstTblVO"
+		table="facility_mst_tbl" >
+
+		<id name="facilityId" type="java.lang.Integer">
+			<column name="FACILITY_ID" />
+			<generator class="identity" />
+		</id>
+		<property name="facilityName" type="string">
+			<column name="FACILITY_NAME" length="100"/>
+		</property>
+		<property name="place" type="string">
+			<column name="PLACE" length="200"/>
+		</property>
+		<property name="description" type="string">
+			<column name="DESCRIPTION"  />
+		</property>
+		<property name="facilityImg" type="string">
+			<column name="FACILITY_IMG"  />
+		</property>
+		<property name="statusFlag" type="java.lang.Integer">
+			<column name="ACT_STAT"/>
+		</property>
+		<property name="societyKey" type="string">
+			<column name="SOCIETY_KEY"/>
+		</property>
+		<property name="entryDatetime" type="timestamp">
+			<column name="ENTRY_DATETIME" length="19" />
+		</property>
+		<property name="modifyDatetime" type="timestamp">
+			<column name="MODIFY_DATETIME" length="19" />
+		</property>
+			<many-to-one name="entryBy" column="ENTRY_BY"
+			class="com.siservices.signup.persistense.UserMasterTblVo" lazy="false"></many-to-one>
+			<many-to-one name="updatedBy" column="UPDATED_BY"
+			class="com.siservices.signup.persistense.UserMasterTblVo" lazy="false"></many-to-one>
+	</class>
+</hibernate-mapping>
+

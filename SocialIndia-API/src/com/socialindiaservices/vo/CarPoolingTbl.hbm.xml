@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Sep 17, 2016 5:02:59 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.socialindiaservices.vo.CarPoolingTblVO" table="mvp_carpooling_tbl" >
+        <id name="poolId" type="java.lang.Integer">
+            <column name="POOL_ID" />
+            <generator class="identity" />
+        </id>
+       
+        <property name="youWillBe" type="java.lang.Integer">
+            <column name="YOU_WILL_BE" />
+        </property>
+        <property name="returnTrip" type="java.lang.Integer">
+            <column name="RETURN_TRIP" />
+        </property>
+        <property name="tripFromCity" type="string">
+            <column name="TRIP_FROM_CITY" length="100"></column>
+        </property>
+        <property name="tripToCity" type="string">
+            <column name="TRIP_TO_CITY" length="100"></column>
+        </property>
+         <property name="tripfromPlaceId" type="string">
+            <column name="TRIP_FROM_PLACE_ID" length="200"></column>
+        </property>
+         <property name="triptoPlaceId" type="string">
+            <column name="TRIP_TO_PLACE_ID" length="200"></column>
+        </property>
+        <property name="tripStartDate" type="timestamp">
+            <column name="TRIP_START_DATE" length="19" />
+        </property>
+        <property name="tripEndDate" type="timestamp">
+            <column name="TRIP_END_DTAE" length="19" />
+        </property>
+         <property name="days" type="string">
+            <column name="DAYS" length="20"></column>
+        </property>
+         <property name="tripFrequency" type="java.lang.Integer">
+            <column name="TRIP_FREQUENCY" />
+        </property>
+         <property name="additionalinfo" type="string">
+            <column name="ADDITIONAL_INFO"></column>
+        </property>
+         <property name="seatsAvaliable" type="java.lang.Integer">
+            <column name="SEAT_AVAILABLE" />
+        </property>
+         <property name="status" type="java.lang.Integer">
+            <column name="STATUS" />
+        </property>
+        <many-to-one name="entryByGroup" class="com.siservices.uam.persistense.GroupMasterTblVo" lazy="false">
+            <column name="ENTRY_BY_GRP_ID" />
+        </many-to-one>
+         <many-to-one name="entryBy" class="com.siservices.signup.persistense.UserMasterTblVo" lazy="false">
+            <column name="ENTRY_BY" />
+        </many-to-one>
+         <property name="entryDateTime" type="timestamp">
+            <column name="ENTRY_DATETIME" length="19" />
+        </property>
+        <property name="modifyDateTime" type="timestamp">
+            <column name="MODIFY_DATETIME" length="19" />
+        </property>
+        <many-to-one name="carId" class="com.socialindiaservices.vo.CarMasterTblVO" lazy="false">
+            <column name="CAR_ID" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

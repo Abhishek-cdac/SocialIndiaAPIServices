@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.mobi.feedvo.FeedLikeUnlikeTBLVO" table="mvp_feed_likes">
+		<id name="likeId" type="java.lang.Integer">
+			<column name="LIKE_ID" />
+			<generator class="identity" />
+		</id>
+		<property name="usrId" type="java.lang.Integer">
+			<column name="USR_ID"/>
+		</property>
+		<property name="feedId" type="java.lang.Integer">
+			<column name="FEED_ID"/>			
+		</property>
+		<property name="feedFlg" type="java.lang.Integer">
+			<column name="FEED_FLG" />
+		</property>
+		<property name="likeUnlikeFlg" type="java.lang.Integer">
+			<column name="LIKE_UNLIKE_FLG" />
+		</property>
+		<property name="status" type="java.lang.Integer">
+			<column name="STATUS"/>			
+		</property>
+		<property name="entryDatetime" type="timestamp">
+			<column name="ENTRY_DATETIME" length="19" />
+		</property>
+		<property name="modifyDatetime" type="timestamp">
+			<column name="MODIFY_DATETIME" length="19" not-null="true" />
+		</property>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+   "../lib/struts-2.3.dtd">
+
+<struts>
+	<package name="reportGenetation" extends="default">
+				<action name="transactionListxlsreport" class="com.mobi.easypay.TansactionListPDF">
+			<result name="success" type="jasper">
+				<param name="location">/resources/jsp/PDFCreation/transactionListXls.jasper</param>
+				<param name="dataSource">transactionListObj</param>
+				<param name="format">XLS</param>
+				<param name="contentDisposition">attachment;filename="transactionList.xls"</param>
+			</result>
+			<result name="input">/resources/jsp/homejsp
+			</result> 
+		</action>
+
+	</package>
+</struts>

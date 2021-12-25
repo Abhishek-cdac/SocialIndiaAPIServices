@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "../lib/struts-2.3.dtd">
+
+<struts>
+	<package name="utilitymgmtservices" namespace="/" extends="struts-default,json-default">
+
+	<action name="savegeneraldocument" class="com.social.utititymgmt.NewGeneralDocument">
+			<result name="success" type="json"></result>
+		</action>
+		<action name="savemaintenancedocument" class="com.social.utititymgmt.NewMaintenanceDocumentVaiForm">
+			<result name="success" type="json"></result>
+		</action>
+			<action name="getDocumentFolders" class="com.social.utititymgmt.GetDocumentFolderDetails">
+			<result name="success" type="json"></result>
+		</action>
+			<action name="documentDelete" class="com.social.utititymgmt.DocumentModification">
+			<result name="success" type="json"></result>
+		</action>
+		<action name="savemaintenancedocumentexcel" class="com.social.utititymgmt.SaveMaintenanceExcelDocument">
+			<result name="success" type="json"></result>
+		</action>
+		
+		<action name="savemaintenancedocumentimage" class="com.social.utititymgmt.SaveMaintenanceImageDocument">
+			<result name="success" type="json"></result>
+		</action>
+		<action name="generaldoclst" class="com.social.utititymgmt.GeneralDocMasterList">
+			<result name="success" type="json"></result>
+		</action>
+		<action name="getDocValueEdit" class="com.social.utititymgmt.GetDocumentEditValues">
+			<result name="success" type="json"></result>
+		</action>
+		<action name="editgeneraldocumentaction" class="com.social.utititymgmt.EditGeneralDocument">
+			<result name="success" type="json"></result>
+		</action>
+		<action name="editmaintenancedocument" class="com.social.utititymgmt.EditMaintenanceDocumentVaiForm">
+			<result name="success" type="json"></result>
+		</action>
+		<action name="editimagemaintenancedocument" class="com.social.utititymgmt.EditMaintenanceDocumentVaiImage">
+			<result name="success" type="json"></result>
+		</action>
+		<action name="getDocValueView" class="com.social.utititymgmt.GetDocumentViewValues">
+			<result name="success" type="json"></result>
+		</action>
+			<action  name="addShareimgmaintenanceNames" class="com.social.utititymgmt.AddShareimgmaintenanceNames">
+			<result name="success" type="json"></result>
+			</action>
+			<action  name="addNewmaintenanceFormdocument" class="com.social.utititymgmt.AddShareFormmaintenanceNames">
+			<result name="success" type="json"></result>
+			</action>
+			<action  name="addAdditionalGeneralsharename" class="com.social.utititymgmt.AddAdditionalGeneralsharename">
+			<result name="success" type="json"></result>
+			</action>
+			<action  name="savegeneraldocumentImages" class="com.social.utititymgmt.SaveGeneralDocumentImages">
+			<result name="success" type="json"></result>
+			</action>
+			<action name="bookingtabledetails" class="com.social.utititymgmt.FacilityBookingListall">
+			<result name="success" type="json"></result>
+		</action>
+		<action name="bookinglistupdates" class="com.social.utititymgmt.BookingUpdate">
+			<result name="success" type="json"></result>
+		</action>
+		<action name="pdfbilldoclst" class="com.social.utititymgmt.SaveMaintenanceExcelDocument" method="pdfGenerator">
+		<result name="success" type="json"></result>
+		</action>
+		<action name="checkmaintenancebill" class="com.social.utititymgmt.CheckMaintenanceBill">
+		<result name="success" type="json"></result>
+		</action>
+		
+	</package>
+</struts>

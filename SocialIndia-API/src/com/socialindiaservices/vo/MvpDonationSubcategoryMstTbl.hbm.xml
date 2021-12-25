@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 5, 2017 11:25:37 AM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.socialindiaservices.vo.MvpDonationSubcategoryMstTbl" table="mvp_donation_subcategory_mst_tbl" >
+        <id name="subcategoryId" type="java.lang.Integer">
+            <column name="SUBCATEGORY_ID" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="mvpDonationCategoryMstTbl" class="com.socialindiaservices.vo.MvpDonationCategoryMstTbl" fetch="select">
+            <column name="CATEGORY_ID" />
+        </many-to-one>
+        <property name="subcategoryName" type="string">
+            <column name="SUBCATEGORY_NAME" length="200" />
+        </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="STATUS">
+                <comment>0- DEACTIVE, 1 - ACTIVE</comment>
+            </column>
+        </property>
+       <many-to-one name="entryBy" column="ENTRY_BY"
+			class="com.siservices.signup.persistense.UserMasterTblVo" lazy="false"></many-to-one>
+        <property name="entryDate" type="timestamp">
+            <column name="ENTRY_DATE" length="19" />
+        </property>
+        <property name="modifyDate" type="timestamp">
+            <column name="MODIFY_DATE" length="19"  />
+        </property>
+
+    </class>
+</hibernate-mapping>

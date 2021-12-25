@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.pack.commonvo.CityMasterTblVO" table="city_mst_tbl">
+		<id name="cityId" column="CITY_ID" type="integer">
+			<generator class="native"></generator>
+		</id>
+		<property name="cityName" column="CITY_NAME" type="string" length="50"></property>
+		<many-to-one name="stateId" column="STATE_ID" class="com.pack.commonvo.StateMasterTblVO" lazy="false"></many-to-one>
+	</class>
+</hibernate-mapping>

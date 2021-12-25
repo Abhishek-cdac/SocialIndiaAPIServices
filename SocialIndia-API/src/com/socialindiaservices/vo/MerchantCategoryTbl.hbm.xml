@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Aug 17, 2016 11:27:35 AM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.socialindiaservices.vo.MerchantCategoryTblVO" table="mvp_mrch_category_tbl"  >
+        <id name="mrchCategoryId" type="java.lang.Integer">
+            <column name="MRCH_CATEGORY_ID" />
+            <generator class="identity" />
+        </id>
+        <property name="mrchCategoryName" type="string">
+            <column name="MRCH_CATEGORY_NAME" length="50" />
+        </property>
+         <property name="mrchCategoryDesc" type="string">
+            <column name="DESCP" length="65535"/>
+        </property>
+         <property name="mrchCategoryImage" type="string">
+            <column name="IMAGE_NAME" length="65535"/>
+        </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="STATUS">
+                <comment>1-ACTIVE 2-INACTIVE</comment>
+            </column>
+        </property>
+        <property name="entryDatetime" type="timestamp">
+            <column name="ENTRY_DATETIME" length="19" />
+        </property>
+        <property name="modifyDatetime" type="timestamp">
+            <column name="MODIFY_DATETIME" length="19"  />
+        </property>
+         <many-to-one name="entryBy" column="ENTRY_BY"
+			class="com.siservices.signup.persistense.UserMasterTblVo" lazy="false">
+			</many-to-one>
+    </class>
+</hibernate-mapping>

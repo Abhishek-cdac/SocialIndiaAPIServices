@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "../lib/struts-2.3.dtd">
+
+<struts>
+<package name="timelinefeedservices" namespace="/" extends="struts-default,json-default">
+	   
+	<action name="timelinefeedsupdates" class="com.pack.timelinefeed.Timelinefeedupdates">
+		<result name="success" type="json"></result>
+	</action>
+	<action name="feed_list" class="com.mobi.feed.FeedList">
+		<result name="success" type="json"></result>
+	</action>
+	<action name="feed_post" class="com.mobi.feed.FeedPost">
+		
+		<result name="success" type="json"></result>
+	</action>
+	<action name="feed_edit" class="com.mobi.feed.FeedEdit">
+		<result name="success" type="json"></result>
+	</action>
+	<action name="feed_delete" class="com.mobi.feed.FeedDelete">
+		<result name="success" type="json"></result>
+	</action>
+	<action name="comment_post" class="com.mobi.feed.FeedCommentPost">		
+		<result name="success" type="json"></result>
+	</action>
+	<action name="comment_list" class="com.mobi.feed.FeedCommentList">
+		<result name="success" type="json"></result>
+	</action>
+	<action name="comment_delete" class="com.mobi.feed.FeedCommentDelete">
+		<result name="success" type="json"></result>
+	</action>
+	<action name="feed_like_unlike" class="com.mobi.feed.FeedLikeUnlike">
+		<result name="success" type="json"></result>
+	</action>
+	<action name="privacy_category" class="com.mobi.feed.PrivacyListCategory">
+		<result name="success" type="json"></result>
+	</action>
+	<action name="privacy_users" class="com.mobi.feed.PrivacyListUsers">
+		<result name="success" type="json"></result>
+	</action>
+	<action name="privacy_update" class="com.mobi.feed.PrivacyUpdate">
+		<result name="success" type="json"></result>
+	</action>
+	<action name="feed_sample_test" class="com.mobi.feed.PostedUserDetail">
+		<result name="success" type="json"></result>
+	</action>
+	<action name="feed_share" class="com.mobi.feed.ShareFeed">
+		<result name="success" type="json"></result>
+	</action>
+	<action name="feed_privacy_update" class="com.mobi.feed.FeedPrivacyEdit">
+		<result name="success" type="json"></result>
+	</action>
+</package>
+</struts>

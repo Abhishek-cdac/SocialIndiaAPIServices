@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"  "../lib/struts-2.3.dtd">
+
+<struts>
+	<package name="siTownShipmgmt" namespace="/" extends="struts-default,json-default">
+
+		
+		<action name="siTownShipmgmt" class="com.siservices.townShipMgmt.siTownShipmgmt">
+			<result name="success" type="json"></result>
+		</action>
+		
+		<action name="siTownShipCreate" class="com.siservices.townShipMgmt.siTownShipCreate">
+			<result name="success" type="json"></result>
+		</action>
+		
+		<action name="siTownShipView" class="com.siservices.townShipMgmt.siTownShipView">
+			<result name="success" type="json"></result>
+		</action>
+		
+		<action name="siTownShipEditAction" class="com.siservices.townShipMgmt.siTownShipEditAction">
+			<result name="success" type="json"></result>
+		</action>
+		
+		<action name="siTownShipEditUpdateAction" class="com.siservices.townShipMgmt.siTownShipEditUpdateAction">
+			<result name="success" type="json"></result>
+		</action>
+		
+		<action name="siTownShipGenerateNewKey" class="com.siservices.townShipMgmt.siTownShipGenerateNewKey">
+			<result name="success" type="json"></result>
+		</action>
+		<action name="addnewtownshipProfileImages" class="com.siservices.townShipMgmt.AddNewProfileImages">
+			<result name="success" type="json"></result>
+		</action>
+	</package>
+</struts>

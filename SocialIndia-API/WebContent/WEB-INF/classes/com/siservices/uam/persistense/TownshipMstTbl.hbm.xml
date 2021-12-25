@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 14, 2016 2:48:14 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.siservices.uam.persistense.TownshipMstTbl" table="township_mst_tbl">
+        <id name="townshipId" type="java.lang.Integer">
+            <column name="TOWNSHIP_ID" />
+            <generator class="identity" />
+        </id>
+       
+        <property name="townshipUniqueId" type="string">
+            <column name="TOWNSHIP_UNIQUE_ID" length="50"  />
+        </property>
+        <property name="townshipName" type="string">
+            <column name="TOWNSHIP_NAME" length="50" />
+        </property>
+         <property name="activationKey" type="string">
+            <column name="ACTIVATION_KEY" length="50" />
+        </property>
+         <property name="oldActivationKey" type="string">
+            <column name="OLD_ACTIVATION_KEY" length="50" />
+        </property>
+        
+          <property name="townshiplogoname" type="string">
+            <column name="TOWNSHIP_LOGO_NAME" length="50" />
+        </property>
+         <property name="townshipiconame" type="string">
+            <column name="TOWNSHIP_ICO_NAME" length="50" />
+        </property>
+         <property name="townshipcolourcode" type="string">
+            <column name="TOWNSHIP_COLOUR_CODE" length="50" />
+        </property>
+        <property name="entryby" type="java.lang.Integer">
+            <column name="ENTRYBY" />
+        </property>
+        <property name="entryDatetime" type="timestamp">
+            <column name="ENTRY_DATETIME" length="19" />
+        </property>
+        <property name="modifyDatetime" type="timestamp">
+            <column name="MODIFY_DATETIME" length="19"  />
+        </property>
+       
+         <property name="noOfSociety" type="integer">
+            <column name="NO_OF_SOCIETIES"  />
+        </property>
+         <property name="noOfFlats" type="integer">
+            <column name="NO_OF_FLATS"  />
+        </property>
+         <property name="address" type="string">
+            <column name="ADDRESS" length="50" />
+        </property>
+     
+      <property name="builderName" type="string">
+            <column name="	BUILDER_NAME" length="200" />
+        </property>
+        
+         <property name="emailId" type="string">
+            <column name="BUILDER_EMAILID" length="50" />
+        </property>
+        
+         <property name="isdCode" type="string">
+            <column name="ISDCODE" length="10" />
+        </property>
+        
+         <property name="mobileNo" type="string">
+            <column name="BUILDER_PHONENO" length="15" />
+        </property>
+        
+         <property name="landMark" type="string">
+            <column name="LANDMARK" length="30" />
+        </property>
+        
+         <property name="imprintName" type="string">
+            <column name="IMPRINT_NAME" length="30" />
+        </property>
+         <property name="status" type="integer">
+            <column name="STATUS"  />
+        </property>
+     
+        <many-to-one name="stateId" class="com.pack.commonvo.StateMasterTblVO" fetch="select" lazy="false">
+            <column name="STATE_ID" />
+        </many-to-one>
+        
+        <many-to-one name="cityId" class="com.pack.commonvo.CityMasterTblVO" fetch="select" lazy="false">
+            <column name="CITY_ID" />
+        </many-to-one>
+        
+        <many-to-one name="countryId" class="com.pack.commonvo.CountryMasterTblVO" fetch="select" lazy="false">
+            <column name="COUNTRY_ID" />
+        </many-to-one>
+        
+<!--         <many-to-one name="pstlId" column="PSTL_ID" class="com.pack.commonvo.PostalCodeMasterTblVO" lazy="false"></many-to-one> -->
+ <property name="pstlId" type="integer">
+            <column name="PSTL_ID"  />
+        </property>
+    </class>
+</hibernate-mapping>

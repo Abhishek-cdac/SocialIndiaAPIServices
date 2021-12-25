@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "../lib/struts-2.3.dtd">
+
+<struts>
+	<package name="uamServices" namespace="/" extends="struts-default,json-default">
+
+		<action name="ssusermgmt" class="com.siservices.uamm.userMgmtAction">
+			<result name="success" type="json"></result>
+		</action>
+		
+		<action name="biossusermgmt" class="com.socialindia.generalmgnt.biouserMgmtAction">
+			<result name="success" type="json"></result>
+		</action>
+		
+		<action name="ssgroupmgmt" class="com.siservices.uamm.groupMgmtAction">
+			<result name="success" type="json"></result>
+		</action>
+
+		<action name="menuList" class="com.siservices.login.menuListLoad">
+			<result name="success" type="json"></result>
+		</action>
+		
+		<action name="groupList" class="com.siservices.uamm.groupListLoad">
+			<result name="success" type="json"></result>
+		</action>
+		
+		<action name="getMenuRights" class="com.siservices.uamm.getMenuRights">
+			<result name="success" type="json"></result>
+		</action>
+
+		<action name="createNewGroup" class="com.siservices.uamm.createNewGroup">
+			<result name="success" type="json"></result>
+		</action>
+		
+		<action name="deleteGroup" class="com.siservices.uamm.deleteGroup">
+			<result name="success" type="json"></result>
+		</action>
+		
+			<action name="editGroup" class="com.siservices.uamm.editGroup">
+			<result name="success" type="json"></result>
+		</action>
+		
+		<action name="userCreation" class="com.siservices.uamm.userCreation">
+			<result name="success" type="json"></result>
+		</action>
+		
+		<action name="userDelete" class="com.siservices.uamm.userDelete">
+			<result name="success" type="json"></result>
+		</action>
+		
+		<action name="userEdit" class="com.siservices.uamm.userEditAction">
+			<result name="success" type="json"></result>
+		</action>
+		
+			<action name="userUpdate" class="com.siservices.uamm.userUpdate">
+			<result name="success" type="json"></result>
+		</action>
+		<action name="rightsCreation" class="com.siservices.uamm.rightsCreation">
+			<result name="success" type="json"></result>
+		</action>
+		
+		<action name="societylist" class="com.siservices.uamm.societylist">
+			<result name="success" type="json"></result>
+		</action>
+		
+			<action name="groupTypeUpdated" class="com.siservices.uamm.GroupUpdate">
+			<result name="success" type="json"></result>
+		</action>
+	</package>
+</struts>

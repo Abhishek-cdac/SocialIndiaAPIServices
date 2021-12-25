@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "../lib/struts-2.3.dtd">
+
+<struts>
+	<package name="commonservices" namespace="/" extends="struts-default,json-default">
+
+		<action name="countrylist" class="com.pack.commonapi.Countrylst">
+			<result name="success" type="json"></result>
+		</action>
+		
+		<action name="statelist" class="com.pack.commonapi.Statelst">
+			<result name="success" type="json"></result>
+		</action>
+		
+		<action name="citylist" class="com.pack.commonapi.Citylst">
+			<result name="success" type="json"></result>
+		</action>
+		
+		<action name="postallist" class="com.pack.commonapi.Postalcodelst">
+			<result name="success" type="json"></result>
+		</action>
+		
+		<action name="dbversiondownload" class="com.pack.commonapi.Dbversion">
+			<result name="success" type="json"></result>
+		</action>
+	
+		<action name="idcardlist" class="com.pack.commonapi.IDCardlst">
+			<result name="success" type="json"></result>
+		</action>
+		
+		<action name="knownuslist" class="com.pack.commonapi.Knownuslst">
+			<result name="success" type="json"></result>
+		</action>
+		
+		<action name="edulst" class="com.pack.commonapi.Educationlst">
+			<result name="success" type="json"></result>
+		</action>
+		
+		<action name="categorylst" class="com.pack.commonapi.Categorylst">
+			<result name="success" type="json"></result>
+		</action>
+		
+		<action name="skilllst" class="com.pack.commonapi.SkillMasterlst">
+			<result name="success" type="json"></result>
+		</action>
+		
+		<action name="doclst" class="com.pack.commonapi.DocMasterlst">
+			<result name="success" type="json"></result>
+		</action>
+		
+		<action name="staffcatgeorylst" class="com.pack.commonapi.StaffCategorylst">
+			<result name="success" type="json"></result>
+		</action>
+		
+		<action name="laborwrktyplst" class="com.pack.commonapi.LaborWrkTyplst">
+			<result name="success" type="json"></result>
+		</action>
+		
+		<action name="dbversiondownload" class="com.pack.commonapi.Dbversion">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">dbfiledownloadstream</param>
+				<param name="contentDisposition">attachment;filename=${filename}</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+		
+		<action name="companylst" class="com.pack.commonapi.companylist">
+			<result name="success" type="json"></result>
+		</action>
+		
+		<action name="groupType" class="com.pack.commonapi.Grouplst">
+			<result name="success" type="json"></result>
+		</action>
+	
+		<action name="accessInfoMgmt" class="com.pack.access.accessMgmt">
+			<result name="success" type="json"></result>
+		</action>
+	
+		<action name="simaterialCategoryList" class="com.pack.commonapi.simaterialCategoryList">
+			<result name="success" type="json"></result>
+		</action>
+		
+		<action name="downloadexternalfiles" class="com.pack.commonapi.Downloadexternalfiles">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">dbfiledownloadstream</param>
+				<param name="contentDisposition">attachment;filename=${filename}</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+			<action name="commonselect" class="com.pack.commonapi.CommonDashboardqry">
+			<result name="success" type="json"></result>
+		</action>
+		<action name="townshipList" class="com.pack.commonapi.TownshipList">
+			<result name="success" type="json"></result>
+		</action>
+		<action name="dashboardfavoritescount" class="com.pack.commonapi.DashboardFavoritesCNT">
+			<result name="success" type="json"></result>
+		</action>
+		<action name="dashboardrecentactivity" class="com.pack.commonapi.RecentActivityaction">
+			<result name="success" type="json"></result>
+		</action>
+		<action name="getproductorderdetail" class="com.pack.commonapi.GetProductorderdetailaction">
+			<result name="success" type="json"></result>
+		</action>
+		<action name="updatedproductorderdetail" class="com.pack.commonapi.Updatedproductorder">
+			<result name="success" type="json"></result>
+		</action>
+			<action name="declineproductorderdetail" class="com.pack.commonapi.Declineproductorder">
+			<result name="success" type="json"></result>
+		</action>
+		<action name="appdpqueries" class="com.pack.commonapi.AppDBQueries">
+			<result name="success" type="json"></result>
+		</action>
+	</package>
+</struts>

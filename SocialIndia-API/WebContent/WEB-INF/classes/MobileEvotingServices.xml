@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "../lib/struts-2.3.dtd">
+
+<struts>
+	<package name="evotingServices" namespace="/" extends="struts-default,json-default">
+
+		
+		<action name="createEvoting" class="com.mobi.evoting.EvotingCreation">
+			<result name="success" type="json"></result>
+		</action>
+		<action name="evoting_list" class="com.mobi.evoting.EvotingList">
+			<result name="success" type="json"></result>
+		</action>
+		<action name="deleteEvoting" class="com.mobi.evoting.DeleteEvoting">
+			<result name="success" type="json"></result>
+		</action>
+		<action name="residentevoting_list" class="com.mobi.evoting.ResidentEvotingList">
+			<result name="success" type="json"></result>
+		</action>
+		<action name="residentAddVoting" class="com.mobi.evoting.ResidentAddVoting">
+			<result name="success" type="json"></result>
+		</action>
+		<action name="publishEvoting" class="com.mobi.evoting.PublishEvoting">
+			<result name="success" type="json"></result>
+		</action>
+
+	</package>
+</struts>

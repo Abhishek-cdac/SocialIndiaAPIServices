@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+   "../lib/struts-2.3.dtd">
+
+<struts>
+	<package name="socialmediaServices" namespace="/" extends="struts-default,json-default">
+
+		<action name="twitterAction" class="com.siservices.socialmediaa.twitterAction">
+			<result name="success" type="json"></result>
+		</action>
+		
+			<action name="twitterInfoSave" class="com.siservices.socialmediaa.twitterInfoSave">
+			<result name="success" type="json"></result>
+		</action>
+		
+		<action name="facebookAction" class="com.siservices.socialmediaa.facebookAction">
+			<result name="success" type="json"></result>
+		</action>
+
+		<action name="facebookInfoSave" class="com.siservices.socialmediaa.facebookInfoSave">
+			<result name="success" type="json"></result>
+		</action>
+	</package>
+</struts>

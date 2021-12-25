@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"  "../lib/struts-2.3.dtd">
+
+<struts>
+<package name="reconcileService" namespace="/" extends="struts-default,json-default">
+	
+	<action name="newpaygatefile" class="com.pack.reconcile.PaygateuploadFile">
+		<result name="success" type="json"></result>
+	</action>
+	<action name="newcyberplatefile" class="com.pack.reconcile.CyberplateuploadFile">
+		<result name="success" type="json"></result>
+	</action>
+	
+		<action name="cyberplatmgmtaction" class="com.pack.reconcile.CyberPlatMgmtTable">
+		<result name="success" type="json"></result>
+	</action>
+	<action name="paygatemgmtaction" class="com.pack.reconcile.PaygatemgmtTable">
+		<result name="success" type="json"></result>
+		</action>
+		<action name="paycyberdeleteaction" class="com.pack.reconcile.PaygatCyberDatelete">
+		<result name="success" type="json"></result>
+		</action>
+		<action name="reconicileserviceMgmt" class="com.pack.reconcile.ReconicileMgmtTbl">
+		<result name="success" type="json"></result>
+		</action>
+		
+		<action name="reconDataExtract" class="com.pack.reconcile.ReconDataExtract">
+		<result name="success" type="json"></result>
+	</action>
+		
+</package>
+</struts>

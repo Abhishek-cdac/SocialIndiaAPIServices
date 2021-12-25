@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.pack.reconcilevo.PaygaterecondataTblVo" table="mvp_paygate_settlemt_recon_data_tbl">
+		<id name="pgPaygatReconId" column="PAYGT_RCNN_ID" type="integer">
+			<generator class="native"></generator>
+		</id>	
+		
+		<property name="pgTransactionId" column="TRANSACTION_ID" type="string" length="100"></property>
+		<property name="pgMerchantName" column="MERCHAT_NAME" type="string" length="250"></property>
+		<property name="pgGatewayRef" column="GATEWAY_REF" type="string" length="250"></property>
+		<property name="pgOrderNo" column="ORDER_NO" type="string" length="100"></property>
+		<property name="pgAmount" column="AMOUNT" type="double"></property>
+		<property name="pgTransactionFee" column="TRANSACTION_FEE" type="double"></property>
+		<property name="pgServiceTax" column="SERVICE_TAX" type="double"></property>
+		<property name="pgSwatBharatCess" column="SWACHH_BHARAT_CESS" type="double"></property>
+		<property name="pgKrishKalyanCess" column="KRISHI_KALYAN_CESS" type="double"></property>
+		<property name="pgNetAmount" column="NET_AMOUNT" type="double"></property>	
+			<property name="pgCountry" column="COUNTRY" type="string" length="50"></property>
+		<property name="pgCurrency" column="CURRENCY" type="string" length="50"></property>
+		<property name="pgGateway" column="GATEWAY" type="string" length="50"></property>
+		<property name="pgPaymode" column="PAYMODE" type="string" length="50"></property>				
+		<property name="pgScheme" column="SCHEME" type="integer" length="11"></property>	
+			<property name="pgEmail" column="EMAIL" type="string" length="150"></property>
+		<property name="pgMobile" column="MOBILE" type="string" length="50"></property>
+		<property name="pgStatus" column="STATUS" type="string" length="15"></property>
+		<property name="pgSubStatus" column="SUB_STATUS" type="string" length="250"></property>
+		<property name="pgMerchantId" column="MERCHANT_ID" type="string" length="50"></property>	
+		<property name="pgTransactionDate" column="TRANSACTION_DATE" type="timestamp"></property>
+		<property name="pgTransStatusDate" column="TRANSACTION_STS_DATE" type="timestamp"></property>
+		<property name="pgDateNum" column="DATE_NUM" type="string" length="10"></property>
+		<property name="pgUdf1" column="UDF1" type="string"></property>
+		<property name="pgUdf3" column="UDF3" type="string"></property>
+		<property name="pgUdf5" column="UDF5" type="string"></property>	
+		<property name="pgActStatus" column="ACT_STATUS" type="integer" length="11"></property>	
+		<property name="pgEntryDatetime" column="ENTRY_DATETIME" type="timestamp"></property>
+		<many-to-one name="pgPaygateSettleId" column="PAYGATE_SETTLE_ID" class="com.pack.reconcilevo.PaygatesetmtfileTblVo" lazy="false"></many-to-one>
+		<many-to-one name="pgEntryBy" column="ENTRY_BY" class="com.siservices.signup.persistense.UserMasterTblVo" lazy="false"></many-to-one>						
+	</class>
+</hibernate-mapping>

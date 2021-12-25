@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "../lib/struts-2.3.dtd">
+
+<struts>
+	<package name="mobiCompliantsServices" namespace="/" extends="struts-default,json-default">
+
+		
+		<action name="complaint_list" class="com.mobi.complaints.ComplaintList">
+			<result name="success" type="json"></result>
+		</action>
+		
+		<action name="complaint_delete" class="com.mobi.complaints.ComplaintDelete">
+			<result name="success" type="json"></result>
+		</action>
+		
+		<action name="complaint_post" class="com.mobi.complaints.CompliantPost">
+			<result name="success" type="json"></result>
+		</action>
+		<action name="complaint_post_committe" class="com.mobi.complaints.CompliantPost">
+			<result name="success" type="json"></result>
+		</action>
+		
+	</package>
+</struts>

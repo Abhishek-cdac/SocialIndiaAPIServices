@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 7, 2016 3:21:47 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.socialindiaservices.vo.MvpGatepassDetailTbl" table="mvp_gatepass_detail_tbl" >
+        <id name="passId" type="java.lang.Integer">
+            <column name="PASS_ID" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="MvpSkillTbl" column="SKILL_ID"
+			class="com.pack.commonvo.SkillMasterTblVO" lazy="false"></many-to-one>
+
+      <many-to-one name="entryBy" column="ENTRY_BY"
+			class="com.siservices.signup.persistense.UserMasterTblVo" lazy="false"></many-to-one>
+
+       <many-to-one name="MvpIdcardTbl" column="ID_CARD_TYPE"
+			class="com.pack.commonvo.IDCardMasterTblVO" lazy="false"></many-to-one>
+
+        <property name="gatepassNo" type="string">
+            <column name="GATEPASS_NO" length="50" unique="true" />
+        </property>
+        <property name="visitorName" type="string">
+            <column name="VISITOR_NAME" length="100" />
+        </property>
+        <property name="visitorImage" type="string">
+            <column name="VISITOR_IMAGE" length="200" />
+        </property>
+        <property name="passType" type="java.lang.Integer">
+            <column name="PASS_TYPE">
+                <comment>1-TEMPORARY,2-PERAMNENT</comment>
+            </column>
+        </property>
+        <property name="dateOfBirth" type="timestamp">
+            <column name="DATE_OF_BIRTH" length="19" />
+        </property>
+        <property name="email" type="string">
+            <column name="EMAIL" length="100" />
+        </property>
+        <property name="mobileNo" type="string">
+            <column name="MOBILE_NO" length="20" />
+        </property>
+        <property name="idCardNumber" type="string">
+            <column name="ID_CARD_NUMBER" length="100" />
+        </property>
+        <property name="issueDate" type="date">
+            <column name="ISSUE_DATE" length="19" />
+        </property>
+        <property name="issueTime" type="time">
+            <column name="ISSUE_TIME" length="19" />
+        </property>
+
+        <property name="expiryDate" type="timestamp">
+            <column name="EXPIRY_DATE" length="19" />
+        </property>
+
+        <property name="description" type="string">
+            <column name="DESCRIPTION" length="65535" />
+        </property>
+        <property name="noOfAccompanies" type="java.lang.Integer">
+            <column name="NO_OF_ACCOMPANIES" />
+        </property>
+        <property name="vehicleNumber" type="string">
+            <column name="VEHICLE_NUMBER" length="50" />
+        </property>
+        <property name="visitorLocation" type="string">
+            <column name="VISITOR_LOCATION" length="100" />
+        </property>
+        <property name="statusFlag" type="java.lang.Integer">
+            <column name="STATUS_FLAG">
+                <comment>1--&gt;ACTIVE,2--&gt;DEACTIVE,3--&gt;DELETED</comment>
+            </column>
+        </property>
+        <property name="entryDatetime" type="timestamp">
+            <column name="ENTRY_DATETIME" length="19" />
+        </property>
+        <property name="modifyDatetime" type="timestamp">
+            <column name="MODIFY_DATETIME" length="19"  />
+        </property>
+        <property name="modifyBy" type="java.lang.Integer">
+            <column name="MODIFY_BY" />
+        </property>
+<property name="visitorstatus" type="java.lang.Integer">
+            <column name="VISITOR_STATUS" />
+        </property>
+    </class>
+</hibernate-mapping>

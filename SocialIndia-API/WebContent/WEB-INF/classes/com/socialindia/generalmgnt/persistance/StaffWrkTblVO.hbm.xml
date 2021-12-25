@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 13, 2016 10:10:39 AM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.socialindia.generalmgnt.persistance.StaffWrkTblVO" table="mvp_staff_wrk_tbl" >
+       
+        <id name="staffWrkId" type="java.lang.Integer">
+            <column name="STAFF_WRK_ID" />
+            <generator class="identity" />
+        </id>
+            <!-- <key-property name="staffWrkId" type="java.lang.Integer">
+                <column name="STAFF_WRK_ID" />
+            </key-property>
+            <key-property name="staffId" type="java.lang.Integer">
+                <column name="STAFF_ID" />
+            </key-property> -->
+            <property name="workDtl" type="string">
+                <column name="WORK_DTL" length="65535" />
+            </property>
+            <property name="workStartDate" type="timestamp">
+                <column name="WORK_START_DATE" length="19" />
+            </property>
+            <property name="workEndDate" type="timestamp">
+                <column name="WORK_END_DATE" length="19" />
+            </property>
+            <property name="status" type="java.lang.Integer">
+                <column name="STATUS" />
+            </property>
+            <property name="entryBy" type="java.lang.Integer">
+                <column name="ENTRY_BY" />
+            </property>
+             <property name="weeklyoff" type="java.lang.String" length="50">
+            <column name="WEEKLY_OFF" />
+        </property>
+            <property name="entryDatetime" type="timestamp">
+                <column name="ENTRY_DATETIME" length="19" />
+            </property>
+            <property name="modifyDatetime" type="timestamp">
+                <column name="MODIFY_DATETIME" length="19" />
+            </property>
+        
+       
+          <many-to-one name="staffID" class="com.socialindia.generalmgnt.persistance.StaffMasterTblVo" fetch="select" lazy="false"> 
+            <column name="STAFF_ID" />
+        </many-to-one>
+        
+    </class>
+</hibernate-mapping>
