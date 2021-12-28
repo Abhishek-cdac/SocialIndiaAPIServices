@@ -142,7 +142,7 @@ public class ResidentExcel{
 
 							}else{
 								locObjRestprfvo.setSocietyId(null);
-							}	
+							}
 							password=locCommutillObj.getRandomval("AZ_09", 10);
 							//								password="1234567890";
 							locObjRestprfvo.setPassword(locCommutillObj.stringToMD5(password));
@@ -189,10 +189,24 @@ public class ResidentExcel{
 								locObjRestprfvo.setOccupation(jsonColumnArray.getString(11));
 							}
 
-							if(jsonColumnArray.length() == 13){
+							if(jsonColumnArray.length() >= 13){
 								System.out.println(jsonColumnArray.get(12));
 								locObjRestprfvo.setBloodType(jsonColumnArray.getString(12));
 							}
+
+							if(jsonColumnArray.length() >= 14){
+								System.out.println("Gender : "+jsonColumnArray.get(13));
+								locObjRestprfvo.setGender(jsonColumnArray.getString(13));
+							}
+
+							if(jsonColumnArray.length() >= 15){
+								System.out.println("Members in family : "+jsonColumnArray.get(14));
+								int value = (jsonColumnArray.getString(14) != null) && !(jsonColumnArray.getString(14).equals("")) ? jsonColumnArray.getInt(14) : 0;
+								System.out.println("Members in family : "+value);
+								locObjRestprfvo.setMembersInFamily(value);
+							}
+							
+							
 							String lvrGrpunqid = jsonColumnArray.getString(2) + locCommutillObj.getRandomval("AZ_09", 10);
 							locObjRestprfvo.setGroupUniqId(lvrGrpunqid);
 							// Select Group Code on REsident	

@@ -306,13 +306,11 @@ public class GatepassPost extends ActionSupport {
 							userMst = otp.checkUserDetails(rid);
 						}
 						if (userMst != null) {
-							System.out.println("::::1 "
-									+ userMst.getSocietyId().getSocietyId());
+							//System.out.println("::::1 "	+ userMst.getSocietyId().getSocietyId());
 							int count = 0;
 							String locVrSlQry = "";
 							Date dt = new Date();
-							int societyId = userMst.getSocietyId()
-									.getSocietyId();
+							//int societyId = userMst.getSocietyId().getSocietyId();
 
 							System.out
 									.println("insert************************");
@@ -461,10 +459,9 @@ public class GatepassPost extends ActionSupport {
 								if (time != null && !time.equalsIgnoreCase("")
 										&& !time.equalsIgnoreCase("null")) {
 
+									formatter1 = new SimpleDateFormat("h:mm a");
 									Date issuetime = formatter1.parse(time);
 
-									formatter1 = new SimpleDateFormat(
-											"HH:mm:ss");
 									String issuetimestr = formatter1
 											.format(issuetime);
 
@@ -822,10 +819,14 @@ public class GatepassPost extends ActionSupport {
 										String.valueOf(gatepass_Id));
 								locObjRspdataJson.put("flat_no", flatno);
 
-								String soclogoimg = userMst.getSocietyId()
-										.getLogoImage();
-								int societyid = userMst.getSocietyId()
-										.getSocietyId();
+								String soclogoimg = null;
+								int societyid = 0;
+								try {
+									soclogoimg = userMst.getSocietyId().getLogoImage();
+									societyid = userMst.getSocietyId().getSocietyId();
+								}catch (NullPointerException e) {
+									//do nothing
+								}
 								String lvrSocytname = null, lvrInvitorname = null;
 								if (userMst.getSocietyId() != null) {
 									lvrSocytname = userMst.getSocietyId()
@@ -845,8 +846,7 @@ public class GatepassPost extends ActionSupport {
 									lvrInvitorname = lvrInvitorname.trim();
 								}
 
-								System.out.println("societyid::::::::::  "
-										+ societyId);
+								//System.out.println("societyid::::::::::  " + societyId);
 								if (soclogoimg != null
 										&& soclogoimg.length() > 0) {
 									locObjRspdataJson

@@ -37,6 +37,7 @@ public class ResidentDaoservice implements ResidentDao{
 		int mobCount=0;
 		String result="";	
 		session = HibernateUtil.getSession();
+		Integer societyId = 0;
 		try {
 			Commonutility.toWriteConsole("Step 1 : ResidentDaoservice saveResidentInfo_int() called");
 			
@@ -46,7 +47,13 @@ public class ResidentDaoservice implements ResidentDao{
 			
 			if (Commonutility.checkempty(pIntcmprobj.getMobileNo())) {
 				Commonutility.toWriteConsole("Step 2 : Upload Excel Found mobile no");
-				String qry1 = "from UserMasterTblVo where mobileNo  ='"+pIntcmprobj.getMobileNo()+"' and societyId ="+pIntcmprobj.getSocietyId()+" and statusFlag in(1,0,2) ";		      
+				try {
+					societyId = pIntcmprobj.getSocietyId().getSocietyId();
+				}catch (Exception e) {
+					Commonutility.toWriteConsole("No records presend in database for key provided in excel against SOCIETY KEY column");
+					log.logMessage("No records presend in database for key provided in excel against SOCIETY KEY column,\n"+e, "error", ResidentDaoservice.class);
+				}
+				String qry1 = "from UserMasterTblVo where mobileNo  ='"+pIntcmprobj.getMobileNo()+"' and societyId ="+societyId+" and statusFlag in(1,0,2) ";		      
 				Query query1 = session.createQuery(qry1);
 				userDetailsListmob = query1.list();		      
 				if(userDetailsListmob!=null &&userDetailsListmob.size()>0){

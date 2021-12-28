@@ -252,9 +252,15 @@ public class GatepassEntry extends ActionSupport{
 									locObjRspdataJson.put("flat_no",  "");
 								}
 							System.out.println("----- "+flatno);
-							String soclogoimg=locLDTblvoObj.getEntryBy().getSocietyId().getLogoImage();
-							int societyid =locLDTblvoObj.getEntryBy().getSocietyId().getSocietyId();
-							System.out.println("societyid::::::::::  "+societyid);
+							String soclogoimg=null;
+							int societyid = 0;
+							try {
+								soclogoimg=locLDTblvoObj.getEntryBy().getSocietyId().getLogoImage();
+								societyid =locLDTblvoObj.getEntryBy().getSocietyId().getSocietyId();
+								System.out.println("societyid::::::::::  "+societyid);
+							}catch (NullPointerException e) {
+								// TODO: handle exception
+							}
 							if(soclogoimg!=null && soclogoimg.length()>0){
 							locObjRspdataJson.put("society_logo",  Commonutility.toCheckNullEmpty(getText("external.uploadfile.society.mobilepath")+societyid+"/"+soclogoimg));
 							}
@@ -298,6 +304,7 @@ public class GatepassEntry extends ActionSupport{
 			locObjRspdataJson=new JSONObject();
 			log.logMessage(getText("Eex") + ex, "error", GatepassEntry.class);
 			serverResponse(ivrservicecode,getText("status.error"),"R0003",mobiCommon.getMsg("R0003"),locObjRspdataJson,is_mobile);
+			ex.printStackTrace();
 		} finally {
 			loc_slQry=null;locQryObj= null;
 			if(locSession!=null){locSession.flush();locSession.clear();locSession.close();locSession=null;}
